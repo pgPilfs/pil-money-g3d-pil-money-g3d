@@ -1,0 +1,65 @@
+.computer {
+    height: 200px;
+  }
+  .cont-banner,
+  .registro {
+    background-color: #ededed;
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-left: 200px;
+    padding-bottom: 20px;
+  }
+  .ingresar,
+  .generar {
+    background-color: #591e4a;
+    color: #ffffff;
+    padding: 10px 50px;
+    font: bold;
+  }
+  .operaciones {
+    margin-top: 30px;
+  }
+  .tit-op {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  .first-row,
+  .second-row {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 50px;
+  }
+  .fas,
+  .fab,
+  .far {
+    color: #591e4a;
+  }
+  .op-ppal {
+    margin-left: 460px;
+    margin-top: 25px;
+  }
+  .first-row {
+    border-bottom: 1px dashed #ccc;
+  }
+  .transf,
+  .extranj {
+    border-left: 1px dashed #ccc;
+    border-right: 1px dashed #ccc;
+  }
+  .instruc {
+    margin-left: 150px;
+  }
+  .pasos {
+    margin-left: 275px;
+  }
+  .icon-row {
+    margin-left: 50px;
+    font-size: 50px;
+  }
+  .generar {
+    margin-left: 275px;
+    margin-top: 25px;
+  }
+  
+  
