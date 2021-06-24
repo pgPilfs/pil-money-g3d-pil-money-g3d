@@ -1,0 +1,18 @@
+form {
+    background-color: white;
+}
+
+img {
+    padding-left: 30%;
+}
+
+
+/* #btnRegistro {
+    color: white;
+} */
+
+.btn-success {
+    color: white;
+    background-color: #5b1c4b;
+    border-color: #5b1c4b;
+}

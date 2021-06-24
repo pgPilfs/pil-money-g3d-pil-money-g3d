@@ -1,0 +1,101 @@
+<div class="container-fluid" id="containerReg">
+    <div class="row">
+        <div class="col-12"><br><br><br></div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <p style="font-size: 200%; color: aliceblue;">Digitalizamos tu dinero </p>
+            <p style="font-size: 200%; color: aliceblue">Para que realizes todas las operaciones que necesites.</p>
+
+            <img src="https://i.postimg.cc/cJPMMfM5/logo2.jpg" alt="">
+
+        </div>
+        <div class="col-2">
+
+        </div>
+        <div class="col-4">
+            <form class="row g-3 rounded" style=" color: #5b1c4b;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label id="lblNombreTxt" class="form-label">Nombre/s</label>
+                        <input type="text" class="form-control" id="nombreTxt" placeholder="Ingresa tu nombre/s">
+                    </div>
+                    <div class="col-md-6">
+                        <label id="lblApellidoTxt" class="form-label">Apellido/s</label>
+                        <input type="text" class="form-control" id="apellidoTxt" placeholder="Ingresa tu apellido/s">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailTxt" placeholder="Ingresa el mail">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="passTxt" placeholder="Escribe aqui tu contraseña">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telTxt" placeholder="0351-1233123">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Teléfono alternativo</label>
+                        <input type="tel" class="form-control" id="tel2Txt" placeholder="0351-1233123">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="inputAddress" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Nombre dirección 123..">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Dirección 2</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="departamento, piso..">
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Provincia</label>
+                    <select id="cboProvincia" class="form-select">
+                    <option selected disabled>Elige una provincia</option>
+                    <option>Córdoba</option>
+                    <option value="">Buenos Aires</option>
+                    <option value="">Mendoza</option>
+                    <option value="">Tucuman</option>
+                    <option value="">San Luis</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                    <!-- <label for="">Adjunta aqui dos capturas de tu DNI</label>
+                    <input type="file" id="myFile" name="filename"> -->
+                    <label class="form-label" for="customFile">Adjunta aqui una captura de tu DNI</label>
+                    <input type="file" class="form-control" id="customFile" />
+
+                </div>
+
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="btnTerminos">
+                        <label class="form-check-label" for="gridCheck">
+                      Acepto los términos y condiciones
+                    </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="button" id="btnRegistro" class="btn btn-success">Registrarme!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
