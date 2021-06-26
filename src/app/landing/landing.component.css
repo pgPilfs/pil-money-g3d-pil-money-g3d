@@ -1,12 +1,12 @@
 .text-bg{
-  color: #fff;
+  /* color: #fff; */
   text-align: left;
   float: right;
   width: 100%;
   max-width: 431px;
 }
 .text-bg h1{
-  color: #fff;
+  /* color: #fff; */
   padding-top: 50px;
   font-size: 71px;
   line-height: 85px;
@@ -15,10 +15,9 @@
 }
 .ingresar{
   color: #fff;
-  border: solid 5px;
   font-size: 17px;
-  background-color: transparent;
-  color: #fff !important;
+  background-color: #591e4a;
+  /* color: #fff !important; */
   padding: 13px 0px;
   width: 100%;
   max-width: 210px;
@@ -28,22 +27,12 @@
   border-radius: 40px;
   font-weight: 500;
 }
-.images_box{
-  margin: 0px;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+.fondo{
+  background-image: url(https://s2.aconvert.com/convert/p3r68-cdx67/tlx4d-896si.png);
+  background-repeat: no-repeat;
+    background-size: contain;
 }
-.information{
-  background-color: #dd00ff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23dd00ff' cx='50' cy='0' r='50'/%3E%3Cg fill='%23d800f4' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d200e9' cx='50' cy='100' r='50'/%3E%3Cg fill='%23cd00de' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c702d4' cx='50' cy='200' r='50'/%3E%3Cg fill='%23c105c9' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23bb08bf' cx='50' cy='300' r='50'/%3E%3Cg fill='%23b40bb5' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ae0eac' cx='50' cy='400' r='50'/%3E%3Cg fill='%23a710a2' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a11399' cx='50' cy='500' r='50'/%3E%3Cg fill='%239a1590' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23931788' cx='50' cy='600' r='50'/%3E%3Cg fill='%238c197f' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23851a77' cx='50' cy='700' r='50'/%3E%3Cg fill='%237e1b6f' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23761c67' cx='50' cy='800' r='50'/%3E%3Cg fill='%236f1d5f' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23681d58' cx='50' cy='900' r='50'/%3E%3Cg fill='%23601e51' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23591e4a' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: contain;
-}
-/* .segunda_foto{
-  width: 500px;
-  height: 644px;
-} */
+
 .bg-holder{
   position: absolute;
   width: 100%;
@@ -135,7 +124,7 @@ h6{
 
 .text-op{
   padding-top: 50px;
-  font-size: px;
+  font-size: 28px;
   line-height: 85px;
   padding-bottom: 25px;
   font-weight: bold;
