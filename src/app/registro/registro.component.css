@@ -1,0 +1,23 @@
+#containerReg {
+    background: #5b1c4b;
+}
+
+form {
+    background-color: white;
+}
+
+img {
+    padding-left: 30%;
+}
+
+.btn-outline-success {
+    border-color: #5b1c4b;
+    color: #5b1c4b;
+    background-color: white;
+    cursor: pointer;
+}
+
+.btn-outline-success:hover {
+    background-color: #5b1c4b;
+    color: white;
+}
