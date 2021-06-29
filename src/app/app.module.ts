@@ -15,7 +15,7 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
 
-    RegistroComponent
+    RegistroComponent,
 
     LandingComponent,
     FooterComponent,
