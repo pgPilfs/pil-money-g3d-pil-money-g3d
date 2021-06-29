@@ -1,15 +1,11 @@
-@font-face {
-    font-family: OpenSans;
-    src: "../assets/fonts";
-}
-
 body {
     background: #eee;
     }
 
 .header2 {
     color: #8d97ad;
-    font-weight: 300
+    font-weight: 300;
+    font-family: 'OpenSans-Regular';
 }
 
 .header2.bg-success-gradiant {
