@@ -1,0 +1,125 @@
+<<<<<<< HEAD
+body {
+    background: #eee;
+    }
+
+=======
+>>>>>>> 910d281f7544eb08c314b6cbbdeb40a4ac8de17f
+.header2 {
+    color: #8d97ad;
+    font-weight: 300;
+    font-family: 'OpenSans-Regular';
+}
+
+.header2.bg-success-gradiant {
+    background: #591e4a;
+    background: -webkit-linear-gradient(legacy-direction(to right), #591e4a 0%, #904b7f 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#591e4a), to(#904b7f));
+    background: -webkit-linear-gradient(left, #591e4a 0%, #904b7f 100%);
+    background: -o-linear-gradient(left, #591e4a 0%, #904b7f 100%);
+    background: linear-gradient(to right, #591e4a 0%, #904b7f 100%)
+}
+
+/*.header2 .font-12 {
+    font-size: 12px;
+    font-family: OpenSans-Regular;
+}*/
+
+.header2 .dropdown-item {
+    padding: 8px 1rem;
+    color: #8d97ad
+}
+
+.header2 .h2-nav .navbar-nav .nav-item .nav-link {
+    padding: 15px 0px;
+    color: #ffffff;
+    font-weight: 400;
+    
+}
+
+.header2 .h2-nav .navbar-nav .nav-item .nav-link:hover {
+    color: #ffffff;
+    
+}
+
+.header2 .h2-nav .navbar-nav .nav-item {
+    margin: 0 10px ;
+    
+
+}
+
+@media (min-width: 1024px) {
+    .header2 .navbar-nav>.dropdown .dropdown-menu {
+        min-width: 210px;
+        margin-top: 0px
+    }
+}
+
+@media (min-width: 1024px) {
+    .header2 .dropdown-submenu:hover>.dropdown-menu {
+        display: block
+    }
+}
+
+.header2 .dropdown-toggle::after {
+    display: none
+}
+
+@media (min-width: 1024px) {
+    .header2 .hover-dropdown .navbar-nav>.dropdown:hover>.dropdown-menu {
+        display: block;
+        margin-top: 0px
+    }
+}
+
+.header2 .btn-dark {
+    color: #fff;
+    background-color: #591e4a;
+    border-color: #ffffff;
+    
+}
+
+.header2 .btn-dark:hover {
+    color: #591e4a;
+    background-color: #ffffff;
+    border-color: #ffffff
+}
+
+.header2 .h2-nav .navbar-nav .nav-item .btn {
+    opacity: 0.5
+}
+
+.header2 .h2-nav .navbar-nav .nav-item .btn:hover {
+    opacity: 1
+}
+
+.header2 .dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0;
+    border-radius: 0.25rem;
+    display: none
+}
+
+ul {
+    margin-right: 400px;
+    margin-top: 0;
+}
+
+.ml-auto {
+    /*margin-right: 800px;*/
+    margin-top: 0px;
+    margin-left: 410px;
+}
+
+a.nav-link {
+    width: 90px;
+    text-align: center;
+    display: block ruby;
+}
+.btn {
+   margin-top: 8px;
+   width: 130px;
+   margin-left: 20px;
+   margin-right: 20px;
+}
