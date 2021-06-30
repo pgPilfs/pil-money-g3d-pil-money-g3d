@@ -35,15 +35,26 @@
                                 </div>
                                 <h3 class="mb-5 text-center heading">Pipay Wallet</h3>
                                 <h6 class="msg-info">Ingrese su cuenta</h6>
-                                <div class="form-group"> <label class="form-control-label text-muted">Usuario</label> <input type="text" id="email" name="email" placeholder="E-mail" class="form-control"> </div>
-                                <div class="form-group"> <label class="form-control-label text-muted">Contraseña</label> <input type="password" id="psw" name="psw" placeholder="Contraseña" class="form-control"> </div>
-                                <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color">Iniciar Sesión</button> </div>
-                                <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">Olvidaste tu Contraseña?</small></a> </div>
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                                    <div class="form-group"> 
+                                        <label class="form-control-label text-muted">Usuario</label> 
+                                        <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+                                        <small class="form-text text-muted" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required" style="color:red">Por favor, ingrese el email</small>
+                                        <small class="form-text text-muted" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email" style="color:red">Email mal ingresado</small> 
+                                    </div>
+                                    <div class="form-group"> 
+                                        <label class="form-control-label text-muted">Contraseña</label> 
+                                        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                                        <small class="form-text text-muted" *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required" style="color:red">Por favor, ingrese contraseña</small> 
+                                    </div>
+                                    <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color">Iniciar Sesión</button> </div>
+                                    <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">Olvidaste tu Contraseña?</small></a> </div>
+                                </form>
                             </div>
                         </div>
                         <div class="bottom text-center mb-5">
                             <p href="#" class="sm-text mx-auto mb-10">No estas Registrado?</p>
-                            <button class="btn btn-white ml-2">Crear Cuenta</button>
+                            <button class="btn btn-white ml-2" >Crear Cuenta</button>
                         </div>
                     </div>
                     <div class="card card2">
