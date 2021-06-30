@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 body {
     background: #eee;
     }
 
-=======
->>>>>>> 910d281f7544eb08c314b6cbbdeb40a4ac8de17f
 .header2 {
     color: #8d97ad;
     font-weight: 300;
@@ -112,14 +109,37 @@ ul {
     margin-left: 410px;
 }
 
-a.nav-link {
-    width: 90px;
-    text-align: center;
-    display: block ruby;
-}
+
 .btn {
    margin-top: 8px;
    width: 130px;
    margin-left: 20px;
    margin-right: 20px;
+}
+#ullogin{
+    margin-right: 10px;
+}
+#BottonCollapser{
+    border-color: white;
+}
+#IconoCollapser{
+    color: white;
+}
+#IconoServicios{
+    color: white;
+    margin-left: 3px;
+}
+@media (width: 2000px) {
+    a.nav-link {
+        width: 90px;
+        text-align: cente;
+        display: block ruby;
+    }
+}
+@media (width:992px) {
+    a.nav-link {
+        width: 90px;
+        text-align: start;
+        display: block ruby;
+    }
 }
