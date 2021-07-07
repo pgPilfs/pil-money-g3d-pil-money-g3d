@@ -112,14 +112,6 @@ h6{
   margin-inline-end: 0px;
   line-height: 1.2;
 }
-@media(min-width: 1200px){
-  .fs-1{
-    font-size: 2.1rem !important;
-  }
-  .text-op{
-    font-size:25px;
-  }
-}
 
 .text-op{
   padding-top: 50px;
@@ -212,3 +204,28 @@ h6{
   border-radius: 40px;
   font-weight: 500;
 }
+
+@media(min-width: 1200px){
+  .fs-1{
+    font-size: 2.1rem !important;
+  }
+  .text-op{
+    font-size:25px;
+  }
+}
+ @media(max-width:500px){
+  .bloque-APP .border-1 h1 {
+    font-size: 20px;
+  }
+  .bloque-APP{
+    margin: 0px;
+    padding-left: 17px;
+  }
+  .bloque-APP .border-2 img{
+    right: -44px;
+    position: absolute;
+    bottom: 0px;
+    height: 247px;
+    width: 236px
+  }
+ }

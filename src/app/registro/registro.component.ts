@@ -22,19 +22,20 @@ export class RegistroComponent implements OnInit {
   }
   initializeForm(): void {
     this.registroForm = this.fb.group({
-        name: ['', Validators.required],
-        surname:['',Validators.required],
+        name: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
+        surname:['', [Validators.required,Validators.pattern('^[a-zA-Z]+$') ]],
         email:new FormControl('', [Validators.required, Validators.email]),
-        password: new FormControl('', [Validators.required]),
-        phoneNumber: ['', Validators.required],
-        phoneNumber2:['', Validators.required],
+        phoneNumber: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
+        phoneNumber2:['', [Validators.required, Validators.pattern("[0-9]{10}")]],
         address: ['', Validators.required],
         address2: ['', Validators.required],
         city: ['', Validators.required],
-        provincias: ['', Validators.required],
-
+        provincia: ['', Validators.required],
         termsYcond: [false, Validators.required],
-      
+        password:['', [
+          Validators.required,
+          Validators.pattern(/^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}$/)
+        ]]
     
     });
 
