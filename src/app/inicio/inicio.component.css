@@ -1,5 +1,9 @@
-.probando{
-    background-color: thistle;
+.inicio{
+
+    position: fixed;
+}
+.contenido{
+    position: absolute;
 }
 .tit-inicio{
     position: absolute;
@@ -31,7 +35,7 @@
 }
 
 .cta-ppal{
-    position: absolute;
+    position: fixed;
 width: 700px;
 height: 169px;
 left: 304px;
@@ -126,7 +130,7 @@ text-align: center;
 }
 
 .cta-dolares{
-    position: absolute;
+    position: fixed;
 width: 388px;
 height: 169px;
 left: 1027px;
@@ -207,7 +211,7 @@ align-items: center;
 text-align: center;
 }
 .cta-ctu{
-    position: absolute;
+    position: fixed;
 width: 388px;
 height: 169px;
 left: 1027px;
@@ -283,4 +287,19 @@ line-height: 21px;
 display: flex;
 align-items: center;
 text-align: center;
+}
+.btn-mov{
+    position: fixed;
+    height: 51px;
+    left: 813px;
+    top: 387px;
+    color: white;
+    background: #591E4A; 
+}
+.list-mov{
+    position: absolute;
+    width: 698px;
+    height: 579px;
+    left: 306px;
+    top: 452px;
 }
