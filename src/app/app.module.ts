@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { InicioComponent } from './inicio/inicio.component';
 
 
     LoginComponent,
-        InicioComponent
+        InicioComponent,
+        MenuComponent
 
   ],
   imports: [
