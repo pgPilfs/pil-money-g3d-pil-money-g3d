@@ -11,6 +11,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TransferenciaComponent } from './transferencia/transferencia.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
 
 
-    LoginComponent
+    LoginComponent,
+        TransferenciaComponent
 
   ],
   imports: [

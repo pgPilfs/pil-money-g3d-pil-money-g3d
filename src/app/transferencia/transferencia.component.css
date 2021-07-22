@@ -1,0 +1,116 @@
+.tit-transfer{
+    position: absolute;
+    width: 213px;
+    height: 60px;
+    left: 304px;
+    top: 28px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.transferir{
+    position: absolute;
+    width: 1117px;
+    height: 233px;
+    left: 293px;
+    top: 152px;  
+}
+.tit-donde{
+    position: fixed;
+    width: 503px;
+    height: 40px;
+    left: 302px;
+    top: 161px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;  
+}
+.otra-cuenta{
+    position: fixed;
+    width: 425px;
+    height: 85px;
+    left: 351px;
+    top: 234px;
+    border: 1px solid #591E4A;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
+}
+.log-otra-cuenta{
+    position: fixed;
+    width: 98px;
+    height: 61px;
+    left: 368px;
+    top: 243px;
+    background: #591E4A;  
+}
+.txt-otra-cuenta{
+    position: fixed;
+    width: 269px;
+    height: 58px;
+    left: 504px;
+    top: 246px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;  
+}
+.mis-cuentas{
+    position: fixed;
+    width: 425px;
+    height: 85px;
+    left: 847px;
+    top: 234px;
+    border: 1px solid #591E4A;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
+}
+.log-mis-cuentas{
+    position: fixed;
+    width: 98px;
+    height: 61px;
+    left: 864px;
+    top: 243px;
+    background: #591E4A;  
+}
+.txt-mis-cuentas{
+    position: fixed;
+    width: 269px;
+    height: 58px;
+    left: 1000px;
+    top: 246px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;  
+}
+.contacts{
+    position: fixed;
+    width: 1102px;
+    height: 562px;
+    left: 308px;
+    top: 405px;      
+}
+.tit-contacts{
+    position: fixed;
+    width: 503px;
+    height: 40px;
+    left: 302px;
+    top: 402px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;  
+}
