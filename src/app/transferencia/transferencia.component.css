@@ -1,5 +1,4 @@
 .tit-transfer{
-    position: absolute;
     width: 213px;
     height: 60px;
     left: 304px;
@@ -13,18 +12,13 @@
     color: #000000;
 }
 .transferir{
-    position: absolute;
     width: 1117px;
-    height: 233px;
-    left: 293px;
-    top: 152px;  
+    height: 233px; 
 }
 .tit-donde{
-    position: fixed;
     width: 503px;
     height: 40px;
-    left: 302px;
-    top: 161px;
+    margin-bottom: 45px;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -33,76 +27,65 @@
     align-items: center;  
 }
 .otra-cuenta{
-    position: fixed;
     width: 425px;
     height: 85px;
-    left: 351px;
-    top: 234px;
+    margin-left: 45px;
     border: 1px solid #591E4A;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
 }
 .log-otra-cuenta{
-    position: fixed;
     width: 98px;
     height: 61px;
-    left: 368px;
-    top: 243px;
+    margin: 10px;
     background: #591E4A;  
 }
 .txt-otra-cuenta{
-    position: fixed;
     width: 269px;
     height: 58px;
-    left: 504px;
-    top: 246px;
+    margin-left: 118px;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
     display: flex;
     align-items: center;  
+    margin-top: -51px
 }
 .mis-cuentas{
-    position: fixed;
     width: 425px;
     height: 85px;
-    left: 847px;
-    top: 234px;
+    margin-top: -87px;
+    margin-left: auto;
     border: 1px solid #591E4A;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
 }
 .log-mis-cuentas{
-    position: fixed;
     width: 98px;
     height: 61px;
-    left: 864px;
-    top: 243px;
+    margin: 10px;
     background: #591E4A;  
 }
 .txt-mis-cuentas{
-    position: fixed;
     width: 269px;
     height: 58px;
-    left: 1000px;
-    top: 246px;
+    margin-left: 118px;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
     display: flex;
     align-items: center;  
+    margin-top: -51px
 }
 .contacts{
-    position: fixed;
     width: 1102px;
     height: 562px;
     left: 308px;
     top: 405px;      
 }
 .tit-contacts{
-    position: fixed;
     width: 503px;
     height: 40px;
     left: 302px;
@@ -113,4 +96,32 @@
     line-height: 42px;
     display: flex;
     align-items: center;  
+}
+.contact-list{
+    margin-left: 45px;
+}
+.form-check{
+    margin-top: 30px;
+}
+.line{
+    color: #591E4A;
+    height: 3px;
+}
+.btn-transferir{
+    margin-top: 30px;
+    border-color: #591E4A;
+}
+.btn-transferir:hover{
+    color: #fff;
+    background-color: #591E4A;
+}
+.bank{
+    height: 51px;
+    margin-left: 21px;
+    margin-top: 4px;
+}
+.arrow{
+    height: 51px;
+    margin-left: 21px;
+    margin-top: 4px;
 }
