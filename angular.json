@@ -33,8 +33,9 @@
               "node_modules/bootstrap/dist/js/bootstrap.min.js"],
             "styles": 
               [
+                "src/custom-theme.scss",
                 "node_modules/bootstrap/dist/css/bootstrap.css",
-                "src/styles.css"
+              "src/styles.css"
               ]
           },
           "configurations": {
