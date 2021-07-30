@@ -11,7 +11,10 @@ import { LandingComponent } from './landing/landing.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InicioComponent } from './inicio/inicio.component';
+import { MenuComponent } from './menu/menu.component';
 
+import{ScriptServiceService} from './Services/script-service.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
 
 
-    LoginComponent
+    LoginComponent,
+        InicioComponent,
+        MenuComponent
 
   ],
   imports: [
@@ -34,7 +39,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    ScriptServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
