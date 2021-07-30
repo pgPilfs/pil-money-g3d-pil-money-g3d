@@ -1,16 +1,7 @@
-.inicio{
-
-    position: fixed;
-}
-.contenido{
-    position: absolute;
-}
 .tit-inicio{
-    position: absolute;
+    padding-top: 12px;
     width: 213px;
     height: 60px;
-    left: 304px;
-    top: 28px;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
@@ -20,7 +11,7 @@
     color: #000000;
 }
 .ppal{
-    position: absolute;
+
     width: 370px;
     height: 53px;
     left: 306px;
@@ -35,8 +26,7 @@
 }
 
 .cta-ppal{
-    position: fixed;
-width: 700px;
+width: 652px;
 height: 169px;
 left: 304px;
 top: 199px;
@@ -46,22 +36,17 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .logo-ppal{
-    position: fixed;
 width: 140px;
 height: 111px;
-left: 322px;
-top: 217px;
+margin: 10px;
 
 background: #591E4A;
 }
 .nombre-ppal{
-    position: fixed;
 width: 112px;
 height: 77px;
-left: 351px;
-top: 233px;
-
-
+padding-top: 34px;
+padding-left: 34px;
 font-style: normal;
 font-weight: normal;
 font-size: 36px;
@@ -73,54 +58,45 @@ text-align: center;
 color: #FFFFFF;
 }
 .money-ppal{
-    position: fixed;
     width: 249px;
 height: 36px;
-left: 485px;
-top: 223px;
-
+margin-top: -109px;
+margin-left: 183px;
 font-style: normal;
 font-weight: normal;
 font-size: 36px;
 line-height: 42px;
 }
 .caja-ppal{
-    position: fixed;
     width: 221px;
     height: 27px;
-    left: 485px;
-    top: 283px;
+    margin-left: 183px;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
 }
-.datos, .datos2{
-    position: fixed;
-width: 279px;
-height: 38px;
-left: 720px;
-top: 277px;
 
-
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 23px;
-display: flex;
-align-items: center;
-text-align: center;
+.datos{
+    margin-left: 186px;
 }
+
 .datos2{
     margin-left: 116px;
 }
+
+.datos, .datos2, .datos-ctu, .datos-dol{
+    color: black;
+}
+
+.datos:hover, .datos2:hover, .datos-ctu:hover, .datos-dol:hover{
+    color: #591E4A;
+}
 .otras-ctas{
-    position: absolute;
     width: 370px;
     height: 53px;
-    left: 1023px;
-    top: 120px;
-
+    margin-left: 781px;
+    margin-top: -243px;
     font-style: normal;
     font-weight: normal;
     font-size: 36px;
@@ -130,11 +106,9 @@ text-align: center;
 }
 
 .cta-dolares{
-    position: fixed;
 width: 388px;
 height: 169px;
-left: 1027px;
-top: 198px;
+margin-left: 781px;
 
 border: 1px solid #591E4A;
 box-sizing: border-box;
@@ -142,21 +116,18 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .logo-dol{
-    position: fixed;
 width: 117px;
 height: 107px;
-left: 1039px;
-top: 222px;
+margin: 10px;
 
 background: #591E4A;
 }
 
 .nombre-dol{
-    position: fixed;
 width: 105px;
 height: 73px;
-left: 1061px;
-top: 239px;
+padding-top: 34px;
+padding-left: 22px;
 
 font-style: normal;
 font-weight: normal;
@@ -171,11 +142,10 @@ color: #FFFFFF;
 }
 
 .money-dol{
-    position: fixed;
 width: 207px;
 height: 54px;
-left: 1170px;
-top: 243px;
+margin-top: -109px;
+margin-left: 149px;
 
 font-style: normal;
 font-weight: normal;
@@ -184,24 +154,20 @@ line-height: 28px;
 }
 
 .caja-dol{
-    position: fixed;
 width: 194px;
 height: 27px;
-left: 1170px;
-top: 275px;
-
+margin-left: 149px;
+margin-top: -29px;
 font-style: normal;
 font-weight: normal;
 font-size: 18px;
 line-height: 21px;
 }
 .datos-dol{
-    position: fixed;
 width: 279px;
 height: 56px;
-left: 1169px;
-margin-top: 80px;
-
+margin-top: -32px;
+margin-left: 149px;
 font-style: normal;
 font-weight: normal;
 font-size: 18px;
@@ -211,31 +177,26 @@ align-items: center;
 text-align: center;
 }
 .cta-ctu{
-    position: fixed;
 width: 388px;
 height: 169px;
-left: 1027px;
-top: 387px;
-
+margin-left: 781px;
+margin-top:20px ;
 border: 1px solid #591E4A;
 box-sizing: border-box;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .logo-ctu{
-    position: fixed;
 width: 117px;
 height: 107px;
-left: 1039px;
-top: 411px;
+margin: 10px;
 
 background: #591E4A;
 }
 .nombre-ctu{
-    position: fixed;
 width: 105px;
 height: 73px;
-left: 1061px;
-top: 428px;
+padding-top: 34px;
+padding-left: 22px;
 
 
 font-style: normal;
@@ -249,11 +210,10 @@ text-align: center;
 color: #FFFFFF;
 }
 .money-ctu{
-    position: fixed;
 width: 207px;
 height: 54px;
-left: 1170px;
-top: 432px;
+margin-top: -109px;
+margin-left: 149px;
 
 font-family: Roboto;
 font-style: normal;
@@ -262,24 +222,20 @@ font-size: 24px;
 line-height: 28px;
 }
 .caja-ctu{
-    position: fixed;
     width: 233px;
     height: 22px;
-    left: 1170px;
-    top: 464px;
-    
+    margin-left: 149px;
+    margin-top: -29px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;  
 }
 .datos-ctu{
-    position: fixed;
 width: 279px;
 height: 56px;
-left: 1169px;
-margin-top: 80px;
-
+margin-top: -32px;
+margin-left: 149px;
 font-style: normal;
 font-weight: normal;
 font-size: 18px;
@@ -289,19 +245,16 @@ align-items: center;
 text-align: center;
 }
 .btn-mov{
-    position: fixed;
     height: 51px;
-    left: 813px;
-    top: 387px;
+    margin-top: -86px;
+    margin-left: 466px;
     color: white;
     background: #591E4A; 
 }
 .list-mov{
-    position: absolute;
     width: 698px;
     height: 579px;
-    left: 306px;
-    top: 452px;
+    margin-top: -100px;
 }
 .home-section{
     position: relative;
@@ -315,8 +268,4 @@ text-align: center;
   .sidebar.open ~ .home-section{
     left: 250px;
     width: calc(100% - 250px);
-  }
-  .home-section .text{
-    display: inline-block;
-    margin: 18px
   }
