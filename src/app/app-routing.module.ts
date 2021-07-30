@@ -5,13 +5,15 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TransferenciaComponent } from './transferencia/transferencia.component';
 
 const routes: Routes = [
   {path: '', component:LandingComponent},
   {path: 'registro', component:RegistroComponent},
   {path: 'login', component:LoginComponent},
   {path: 'inicio', component:InicioComponent},
-  {path: 'menu', component:MenuComponent}
+  {path: 'menu', component:MenuComponent},
+  {path: 'transferencia', component:TransferenciaComponent}
 ];
 
 @NgModule({
