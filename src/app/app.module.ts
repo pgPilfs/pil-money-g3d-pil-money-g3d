@@ -11,27 +11,23 @@ import { LandingComponent } from './landing/landing.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
-
+import { TransferenciaComponent } from './transferencia/transferencia.component';
 import{ScriptServiceService} from './Services/script-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
     RegistroComponent,
-
     LandingComponent,
     FooterComponent,
     HeaderComponent,
-
-
     LoginComponent,
-        InicioComponent,
-        MenuComponent
-
+    TransferenciaComponent,
+    InicioComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
