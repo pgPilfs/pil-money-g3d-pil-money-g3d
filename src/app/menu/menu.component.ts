@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ScriptServiceService} from './../Services/script-service.service'
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _CargarScript:ScriptServiceService) { 
+    _CargarScript.Carga(["script"]);
+  }
 
   ngOnInit(): void {
   }

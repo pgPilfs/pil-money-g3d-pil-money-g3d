@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 
+import{ScriptServiceService} from './Services/script-service.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { MenuComponent } from './menu/menu.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    ScriptServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
