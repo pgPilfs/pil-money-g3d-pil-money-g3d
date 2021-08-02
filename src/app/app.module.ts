@@ -19,22 +19,23 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 
+import { InicioComponent } from './inicio/inicio.component';
+import { MenuComponent } from './menu/menu.component';
+import { TransferenciaComponent } from './transferencia/transferencia.component';
+import{ScriptServiceService} from './Services/script-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
     RegistroComponent,
-
     LandingComponent,
     FooterComponent,
     HeaderComponent,
-
-
     LoginComponent,
-        VerDetallesComponent
-
+    TransferenciaComponent,
+    InicioComponent,
+    MenuComponent,
+    VerDetallesComponent
   ],
   imports: [
     BrowserModule,
@@ -50,8 +51,10 @@ import {MatSelectModule} from '@angular/material/select';
   ],
   providers: [
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ScriptServiceService
   ],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
