@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { LandingComponent } from './landing/landing.component';
@@ -9,6 +9,8 @@ import { TransferenciaComponent } from './transferencia/transferencia.component'
 import { VerDetallesComponent } from './ver-detalles/ver-detalles.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { TransferenciaOtraCuentaComponent } from './transferencia-otra-cuenta/transferencia-otra-cuenta.component';
+import { TransferenciaContactoComponent } from './transferencia-contacto/transferencia-contacto.component';
+import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propia/transferencia-cuenta-propia.component';
 
 const routes: Routes = [
   {path: '', component:LandingComponent},
@@ -21,7 +23,9 @@ const routes: Routes = [
     {path: 'transferencia', component:TransferenciaComponent},
     {path: 'detalles', component:VerDetallesComponent},
     {path: 'inicio', component:InicioComponent},
-    {path: 'transferenciaotra',component:TransferenciaOtraCuentaComponent}
+    {path: 'transferenciaotra',component:TransferenciaOtraCuentaComponent},
+    {path:'transferenciacontacto',component:TransferenciaContactoComponent},
+    {path:'transferenciacuentapropia',component:TransferenciaCuentaPropiaComponent}
   ]}
 ];
 

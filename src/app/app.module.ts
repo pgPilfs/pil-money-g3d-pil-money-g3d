@@ -26,6 +26,8 @@ import{ScriptServiceService} from './Services/script-service.service';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { TransferenciaOtraCuentaComponent } from './transferencia-otra-cuenta/transferencia-otra-cuenta.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { TransferenciaContactoComponent } from './transferencia-contacto/transferencia-contacto.component';
+import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propia/transferencia-cuenta-propia.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MenuComponent,
     VerDetallesComponent,
     PaginaPrincipalComponent,
-    TransferenciaOtraCuentaComponent
+    TransferenciaOtraCuentaComponent,
+    TransferenciaContactoComponent,
+    TransferenciaCuentaPropiaComponent
   ],
   imports: [
     BrowserModule,
