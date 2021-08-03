@@ -1,0 +1,63 @@
+<span class="titulo"> Tramferir desde </span>
+<div class="dropdown listaCuenta">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #591E4A;">
+        CA $ N° 4017421-1 - $50.000,00
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+</div>
+<span class="text-quien">¿A quién le querés transferir?</span>
+<div class="iputs row">
+    <div>
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1"></mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ingresa el ALIAS</mat-label>
+            <input matInput placeholder="MARTA.RUIZ" value="">
+        </mat-form-field>
+    </div>
+  <div>
+    <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1"> </mat-radio-button>
+      </mat-radio-group>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ingresa el CBUoCVU</mat-label>
+        <input matInput placeholder="MARTA.RUIZ" value="">
+    </mat-form-field>
+  </div>
+   
+</div>
+
+<label class="label-dinero">¿Cuánto dinero querés enviar?</label>
+<div class="imput-dinero">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>$0.00</mat-label>
+        <input matInput placeholder="" value="">
+    </mat-form-field>
+</div>   
+<label class="concepto">Concepto</label>
+<div class="dropdown listaConcepto">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #591E4A;">
+        Varios
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+</div>
+<label class="label-mensaje">
+    Mensaje (opcional)
+</label>
+<div class="imput-mensaje">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Escribí un comentario</mat-label>
+        <input matInput placeholder="" value="">
+    </mat-form-field>
+</div>   
+
+<button type="button" class="btn btn-primary btn-transferir">Transferir</button>

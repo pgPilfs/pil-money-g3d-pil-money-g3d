@@ -23,6 +23,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import{ScriptServiceService} from './Services/script-service.service';
+import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
+import { TransferenciaOtraCuentaComponent } from './transferencia-otra-cuenta/transferencia-otra-cuenta.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import{ScriptServiceService} from './Services/script-service.service';
     TransferenciaComponent,
     InicioComponent,
     MenuComponent,
-    VerDetallesComponent
+    VerDetallesComponent,
+    PaginaPrincipalComponent,
+    TransferenciaOtraCuentaComponent
   ],
   imports: [
     BrowserModule,
@@ -47,12 +52,14 @@ import{ScriptServiceService} from './Services/script-service.service';
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ],
   providers: [
     MatDatepickerModule,
     MatNativeDateModule,
-    ScriptServiceService
+    ScriptServiceService,
+    MatRadioModule
   ],
  
   bootstrap: [AppComponent]
