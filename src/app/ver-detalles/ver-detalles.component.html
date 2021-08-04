@@ -1,0 +1,78 @@
+<div class="conteiner-fluid">
+
+    <div class="fondo col-12">
+        <div class="ca-dinero col-4">
+            <span >CA $40.000,00</span><br>
+            <span class="numero-cuenta">N° 4017421-1 355-1</span>
+
+        </div>
+        <div class="CBU col-4">
+            <span>CBU</span><br>
+            <span>007035583546843</span>
+        </div>
+        <div class="alias col-4">
+            <span>Alias</span><br>
+            <span>ABRIL.CHARCO.METRO</span>
+        </div>
+    </div>
+
+    <div class="lista-movimientos col-12">
+
+            <div class="txt-mov">
+                    <span>Movimientos</span>
+            </div>
+            <div class="row bnt-datemov" >
+
+                <div class="Select-list">
+                    <button class="btn btn-outline-secondary dropdown-toggle btn-mov" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Todos los movimientos</button>
+                </div>
+                <div class="date-picker">
+                    <mat-form-field  class="selector-datepicker" appearance="fill">
+                        <mat-label >Fechas</mat-label>
+                        <input  matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker  #picker></mat-datepicker>
+                    </mat-form-field>
+                </div> 
+            </div>
+
+
+
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Egresos de dinero</a></li>
+            <li><a class="dropdown-item" href="#">Ingresos de dinero</a></li>
+        </ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Descipcion</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12/07/2021</td>
+                    <td>Extraccion Cajero</td>
+                    <td>-$2.000,00</td>
+                </tr>
+                <tr>
+                    <td>12/07/2021</td>
+                    <td>Extraccion Cajero</td>
+                    <td>-$2.000,00</td>
+                </tr>
+                <tr>
+                    <td>12/07/2021</td>
+                    <td>Extraccion Cajero</td>
+                    <td>-$2.000,00</td>
+                </tr>
+                <tr>
+                    <td>12/07/2021</td>
+                    <td>Extraccion Cajero</td>
+                    <td>-$2.000,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

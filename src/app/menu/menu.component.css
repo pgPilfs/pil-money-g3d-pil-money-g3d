@@ -214,9 +214,9 @@
   width: 50px;
   background: none;
 }
-/* .home-section{
+ .home-section{
   position: relative;
-  background: #E4E9F7;
+  
   min-height: 100vh;
   top: 0;
   left: 78px;
@@ -234,7 +234,7 @@
   font-size: 25px;
   font-weight: 500;
   margin: 18px
-} */
+} 
 @media (max-width: 420px) {
   .sidebar li .tooltip{
     display: none;

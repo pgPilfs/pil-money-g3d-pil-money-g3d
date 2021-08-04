@@ -1,0 +1,173 @@
+.titulo{
+    position: absolute;
+width: 399px;
+height: 56px;
+left: 304px;
+top: 144px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 35px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.listaCuenta{
+    position: absolute;
+width: 423px;
+height: 45px;
+left: 311px;
+top: 216px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+}
+
+.text-quien{
+    position: absolute;
+width: 586px;
+height: 61px;
+left: 311px;
+top: 296px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.iputs{
+    position: absolute;
+    width: 494px;
+    left: 342px;
+    top: 383px;
+    background: #FFFFFF;
+}
+
+.label-dinero{
+    position: absolute;
+width: 586px;
+height: 61px;
+left: 304px;
+top: 558px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+.imput-dinero{
+    position: absolute;
+width: 130px;
+height: 74px;
+left: 399px;
+top: 627px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 25px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.concepto{
+    position: absolute;
+width: 183px;
+height: 61px;
+left: 304px;
+top: 709px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+}
+.listaConcepto{
+    position: absolute;
+width: 145px;
+height: 42px;
+left: 370px;
+top: 776px;
+
+
+}
+
+.label-mensaje{
+    position: absolute;
+width: 324px;
+height: 74px;
+left: 628px;
+top: 702px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+}
+.imput-mensaje{
+    position: absolute;
+width: 400px;
+height: 31px;
+left: 628px;
+top: 780px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 25px;
+display: flex;
+align-items: center;
+
+
+
+}
+.btn-transferir{
+    position: absolute;
+width: 268px;
+height: 46px;
+left: 1117px;
+top: 850px;
+bottom: 20px;
+
+
+background: #591E4A;
+}
