@@ -256,16 +256,3 @@ text-align: center;
     height: 579px;
     margin-top: -100px;
 }
-.home-section{
-    position: relative;
-    min-height: 100vh;
-    top: 0;
-    left: 78px;
-    width: calc(100% - 78px);
-    transition: all 0.5s ease;
-    z-index: 2;
-  }
-  .sidebar.open ~ .home-section{
-    left: 250px;
-    width: calc(100% - 250px);
-  }

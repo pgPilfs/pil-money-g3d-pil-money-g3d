@@ -23,7 +23,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import{ScriptServiceService} from './Services/script-service.service';
-import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
+
 import { TransferenciaOtraCuentaComponent } from './transferencia-otra-cuenta/transferencia-otra-cuenta.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { TransferenciaContactoComponent } from './transferencia-contacto/transferencia-contacto.component';
@@ -41,7 +41,7 @@ import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propi
     InicioComponent,
     MenuComponent,
     VerDetallesComponent,
-    PaginaPrincipalComponent,
+    
     TransferenciaOtraCuentaComponent,
     TransferenciaContactoComponent,
     TransferenciaCuentaPropiaComponent
