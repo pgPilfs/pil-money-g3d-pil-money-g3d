@@ -1,0 +1,258 @@
+.tit-inicio{
+    padding-top: 12px;
+    width: 213px;
+    height: 60px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.ppal{
+
+    width: 370px;
+    height: 53px;
+    left: 306px;
+    top: 120px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.cta-ppal{
+width: 652px;
+height: 169px;
+left: 304px;
+top: 199px;
+border: 1px solid #591E4A;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo-ppal{
+width: 140px;
+height: 111px;
+margin: 10px;
+
+background: #591E4A;
+}
+.nombre-ppal{
+width: 112px;
+height: 77px;
+padding-top: 34px;
+padding-left: 34px;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+}
+.money-ppal{
+    width: 249px;
+height: 36px;
+margin-top: -109px;
+margin-left: 183px;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+}
+.caja-ppal{
+    width: 221px;
+    height: 27px;
+    margin-left: 183px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.datos{
+    margin-left: 186px;
+}
+
+.datos2{
+    margin-left: 116px;
+}
+
+.datos, .datos2, .datos-ctu, .datos-dol{
+    color: black;
+}
+
+.datos:hover, .datos2:hover, .datos-ctu:hover, .datos-dol:hover{
+    color: #591E4A;
+}
+.otras-ctas{
+    width: 370px;
+    height: 53px;
+    margin-left: 781px;
+    margin-top: -243px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.cta-dolares{
+width: 388px;
+height: 169px;
+margin-left: 781px;
+
+border: 1px solid #591E4A;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo-dol{
+width: 117px;
+height: 107px;
+margin: 10px;
+
+background: #591E4A;
+}
+
+.nombre-dol{
+width: 105px;
+height: 73px;
+padding-top: 34px;
+padding-left: 22px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+.money-dol{
+width: 207px;
+height: 54px;
+margin-top: -109px;
+margin-left: 149px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+}
+
+.caja-dol{
+width: 194px;
+height: 27px;
+margin-left: 149px;
+margin-top: -29px;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+}
+.datos-dol{
+width: 279px;
+height: 56px;
+margin-top: -32px;
+margin-left: 149px;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: center;
+}
+.cta-ctu{
+width: 388px;
+height: 169px;
+margin-left: 781px;
+margin-top:20px ;
+border: 1px solid #591E4A;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.logo-ctu{
+width: 117px;
+height: 107px;
+margin: 10px;
+
+background: #591E4A;
+}
+.nombre-ctu{
+width: 105px;
+height: 73px;
+padding-top: 34px;
+padding-left: 22px;
+
+
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+}
+.money-ctu{
+width: 207px;
+height: 54px;
+margin-top: -109px;
+margin-left: 149px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+}
+.caja-ctu{
+    width: 233px;
+    height: 22px;
+    margin-left: 149px;
+    margin-top: -29px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;  
+}
+.datos-ctu{
+width: 279px;
+height: 56px;
+margin-top: -32px;
+margin-left: 149px;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: center;
+}
+.btn-mov{
+    height: 51px;
+    margin-top: -86px;
+    margin-left: 466px;
+    color: white;
+    background: #591E4A; 
+}
+.list-mov{
+    width: 698px;
+    height: 579px;
+    margin-top: -100px;
+}
