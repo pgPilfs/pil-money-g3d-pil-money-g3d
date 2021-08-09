@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
  
   
-  {path: 'menu', component:MenuComponent,children:[
+  {path: 'paginaprincipal', component:MenuComponent,children:[
     {path: 'transferencia', component:TransferenciaComponent},
     {path: 'detalles', component:VerDetallesComponent},
     {path: 'inicio', component:InicioComponent},

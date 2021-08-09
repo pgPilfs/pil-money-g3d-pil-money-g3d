@@ -1,28 +1,34 @@
+.volver{
+    font-size: 26px;
+    margin-left: 1007px;
+} 
 .titulo{
+
     position: absolute;
-width: 399px;
-height: 56px;
-left: 304px;
-top: 144px;
+width: 586px;
+height: 61px;
+
+top: 104px;
 
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
-font-size: 30px;
-line-height: 35px;
+font-size: 36px;
+line-height: 42px;
 display: flex;
 align-items: center;
 
 color: #000000;
+
 }
 
 .listaCuenta{
     position: absolute;
 width: 423px;
 height: 45px;
-left: 311px;
-top: 216px;
 
+top: 198px;
+left: 76px;
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
@@ -39,7 +45,7 @@ color: #FFFFFF;
     position: absolute;
 width: 586px;
 height: 61px;
-left: 311px;
+
 top: 296px;
 
 font-family: Roboto;
@@ -56,7 +62,7 @@ color: #000000;
 .iputs{
     position: absolute;
     width: 494px;
-    left: 342px;
+    left: 76px;
     top: 383px;
     background: #FFFFFF;
 }
@@ -65,7 +71,7 @@ color: #000000;
     position: absolute;
 width: 586px;
 height: 61px;
-left: 304px;
+
 top: 558px;
 
 font-family: Roboto;
@@ -82,7 +88,7 @@ color: #000000;
     position: absolute;
 width: 130px;
 height: 74px;
-left: 399px;
+left: 76px;
 top: 627px;
 
 font-family: Roboto;
@@ -100,9 +106,7 @@ color: #000000;
     position: absolute;
 width: 183px;
 height: 61px;
-left: 304px;
 top: 709px;
-
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
@@ -118,9 +122,8 @@ color: #000000;
     position: absolute;
 width: 145px;
 height: 42px;
-left: 370px;
 top: 776px;
-
+left: 76px;
 
 }
 
@@ -128,7 +131,7 @@ top: 776px;
     position: absolute;
 width: 324px;
 height: 74px;
-left: 628px;
+left: 494px;
 top: 702px;
 
 font-family: Roboto;
@@ -146,7 +149,7 @@ color: #000000;
     position: absolute;
 width: 400px;
 height: 31px;
-left: 628px;
+left: 494px;
 top: 780px;
 
 font-family: Roboto;
@@ -164,10 +167,19 @@ align-items: center;
     position: absolute;
 width: 268px;
 height: 46px;
-left: 1117px;
+left: 886px;
 top: 850px;
 bottom: 20px;
 
 
 background: #591E4A;
+}
+.home-section{
+    position: relative;
+    min-height: 100vh;
+    top: -51px;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
 }
