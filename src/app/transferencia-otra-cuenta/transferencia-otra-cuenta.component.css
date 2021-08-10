@@ -1,7 +1,14 @@
-.volver{
+a{
+    text-decoration: none;
+  }
+  .volver{
     font-size: 26px;
-    margin-left: 1007px;
-} 
+    margin-left: 1158px;
+    margin-top: 21px;
+  } 
+  .arrow, .links_name{
+    color: black;
+  }
 .titulo{
 
     position: absolute;
@@ -174,12 +181,12 @@ bottom: 20px;
 
 background: #591E4A;
 }
-.home-section{
+.home-section {
     position: relative;
     min-height: 100vh;
-    top: -51px;
+    top: 0;
     left: 78px;
     width: calc(100% - 78px);
     transition: all 0.5s ease;
     z-index: 2;
-}
+  }
