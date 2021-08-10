@@ -28,6 +28,7 @@ import { TransferenciaOtraCuentaComponent } from './transferencia-otra-cuenta/tr
 import {MatRadioModule} from '@angular/material/radio';
 import { TransferenciaContactoComponent } from './transferencia-contacto/transferencia-contacto.component';
 import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propia/transferencia-cuenta-propia.component';
+import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propi
     
     TransferenciaOtraCuentaComponent,
     TransferenciaContactoComponent,
-    TransferenciaCuentaPropiaComponent
+    TransferenciaCuentaPropiaComponent,
+    MovPesosComponent
   ],
   imports: [
     BrowserModule,
