@@ -15,6 +15,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 
 import{ScriptServiceService} from './Services/script-service.service';
+import { DatosUsuarioComponent } from './datos-usuario/datos-usuario.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import{ScriptServiceService} from './Services/script-service.service';
 
     LoginComponent,
         InicioComponent,
-        MenuComponent
+        MenuComponent,
+        DatosUsuarioComponent
 
   ],
   imports: [
