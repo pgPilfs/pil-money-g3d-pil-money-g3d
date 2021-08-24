@@ -234,7 +234,7 @@ line-height: 28px;
 .datos-ctu{
 width: 279px;
 height: 56px;
-margin-top: -32px;
+margin-top: -7px;;
 margin-left: 149px;
 font-style: normal;
 font-weight: normal;
@@ -243,6 +243,9 @@ line-height: 21px;
 display: flex;
 align-items: center;
 text-align: center;
+}
+.btn-compartir{
+    margin-top: -40px;
 }
 .btn-mov{
     height: 51px;

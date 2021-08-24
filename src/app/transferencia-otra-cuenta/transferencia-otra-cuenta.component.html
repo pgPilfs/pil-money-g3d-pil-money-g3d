@@ -7,15 +7,11 @@
 <div class="container-fluid home-section">
     <span class="titulo"> Transferir desde </span>
     <div class="dropdown listaCuenta">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" style="background-color: #591E4A;">
-            CA $ N° 4017421-1 - $50.000,00
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
+            <option value="pesos" selected>CA $ N° 4017421-1 - $50.000,00</option>
+            <option value="dolares" selected>CA $ N° 4017421-2 - U$D 500</option>
+            <option value="cripto" selected>CA $ N° 4017421-3 - CTU 165</option>
+        </select>
     </div>
     <span class="text-quien">¿A quién le querés transferir?</span>
     <div class="iputs row">
@@ -49,15 +45,14 @@
     </div>
     <label class="concepto">Concepto</label>
     <div class="dropdown listaConcepto">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" style="background-color: #591E4A;">
-            Varios
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
+            <option value="varios" selected>Varios</option>
+            <option value="alquiler" selected>Alquileres</option>
+            <option value="cuota" selected>Cuota</option>
+            <option value="expensas" selected>Expensas</option>
+            <option value="factura" selected>Factura</option>
+            <option value="prestamo" selected>Prestamo</option>
+        </select>
     </div>
     <label class="label-mensaje">
         Mensaje (opcional)

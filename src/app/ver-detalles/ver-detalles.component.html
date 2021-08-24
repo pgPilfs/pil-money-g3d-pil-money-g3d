@@ -24,8 +24,11 @@
             <div class="row bnt-datemov" >
 
                 <div class="Select-list">
-                    <button class="btn btn-outline-secondary dropdown-toggle btn-mov" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Todos los movimientos</button>
+                    <select name="mov" id="mov" class="bg-light" class="btn-mov">
+                        <option value="egreso" selected>Egresos de dinero</option>
+                        <option value="ingreso">Ingreso de dinero</option>
+                        <option value="todos">Todos los movimientos</option>
+                    </select>
                 </div>
                 <div class="date-picker">
                     <mat-form-field  class="selector-datepicker" appearance="fill">

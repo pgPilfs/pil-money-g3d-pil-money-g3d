@@ -1,4 +1,4 @@
-
+<!-- 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
   <div class="container-fluid inicio home-section">
     <h1 class="tit-inicio">Inicio</h1>
@@ -67,18 +67,17 @@
             <p class="caja-ctu">Caja Ahorro Criptomoneda</p>
             <a href="" class="datos-ctu">Ver detalle</a>
             <br>
-            <button type="button" class="btn datos-ctu" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn datos-ctu btn-compartir" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Compartir Datos
               </button>
         </div>
     </div>
     <div class="list-mov text">
-        <button class="btn btn-outline-secondary dropdown-toggle btn-mov" type="button" data-bs-toggle="dropdown"
-            aria-expanded="false">Todos los movimientos</button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Egresos de dinero</a></li>
-            <li><a class="dropdown-item" href="#">Ingresos de dinero</a></li>
-        </ul>
+     <select name="mov" id="mov" class="bg-light" class="btn-mov">
+            <option value="egreso" selected>Egresos de dinero</option>
+            <option value="ingreso">Ingreso de dinero</option>
+            <option value="todos">Todos los movimientos</option>
+        </select>
         <table class="table">
             <thead>
                 <tr>
