@@ -12,6 +12,7 @@ import { TransferenciaOtraCuentaComponent } from './transferencia-otra-cuenta/tr
 import { TransferenciaContactoComponent } from './transferencia-contacto/transferencia-contacto.component';
 import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propia/transferencia-cuenta-propia.component';
 import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
+import { DatosUsuarioComponent } from './datos-usuario/datos-usuario.component';
 
 const routes: Routes = [
   {path: '', component:LandingComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
     {path: 'transferenciaotra',component:TransferenciaOtraCuentaComponent},
     {path:'transferenciacontacto',component:TransferenciaContactoComponent},
     {path:'transferenciacuentapropia',component:TransferenciaCuentaPropiaComponent},
-    {path: 'mov-pesos', component:MovPesosComponent}
+    {path: 'mov-pesos', component:MovPesosComponent},
+    {path: 'mod-usuario', component:DatosUsuarioComponent}
   ]}
 ];
 

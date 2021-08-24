@@ -22,7 +22,6 @@ import {MatSelectModule} from '@angular/material/select';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
-import{ScriptServiceService} from './Services/script-service.service';
 import { DatosUsuarioComponent } from './datos-usuario/datos-usuario.component';
 
 import { TransferenciaOtraCuentaComponent } from './transferencia-otra-cuenta/transferencia-otra-cuenta.component';
@@ -39,7 +38,7 @@ import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
     FooterComponent,
     HeaderComponent,
     LoginComponent,
-    DatosUsuarioComponent
+    DatosUsuarioComponent,
     TransferenciaComponent,
     InicioComponent,
     MenuComponent,
@@ -65,7 +64,6 @@ import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
   providers: [
     MatDatepickerModule,
     MatNativeDateModule,
-    ScriptServiceService,
     MatRadioModule
   ],
  
