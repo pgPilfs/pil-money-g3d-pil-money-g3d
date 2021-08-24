@@ -23,6 +23,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import{ScriptServiceService} from './Services/script-service.service';
+import { DatosUsuarioComponent } from './datos-usuario/datos-usuario.component';
 
 import { TransferenciaOtraCuentaComponent } from './transferencia-otra-cuenta/transferencia-otra-cuenta.component';
 import {MatRadioModule} from '@angular/material/radio';
@@ -38,11 +39,11 @@ import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
     FooterComponent,
     HeaderComponent,
     LoginComponent,
+    DatosUsuarioComponent
     TransferenciaComponent,
     InicioComponent,
     MenuComponent,
     VerDetallesComponent,
-    
     TransferenciaOtraCuentaComponent,
     TransferenciaContactoComponent,
     TransferenciaCuentaPropiaComponent,
