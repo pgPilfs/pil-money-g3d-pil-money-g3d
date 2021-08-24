@@ -1,0 +1,115 @@
+a{
+  text-decoration: none;
+}
+.volver{
+  font-size: 26px;
+  margin-left: 1158px;
+  margin-top: 21px;
+} 
+.arrow, .links_name{
+  color: black;
+}
+.home-section {
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  .tit-op {
+    margin-top: 72px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-op {
+    border-color: #591e4a;
+    width: 238px;
+    height: 50px;
+  }
+  .btn-op:hover {
+    color: #fff;
+    background-color: #591e4a;
+  }
+  .btn-ingresar {
+    margin-top: 25px;
+    margin-left: 173px;
+  }
+  .btn-retirar {
+    margin-top: 25px;
+    margin-left: -101px;
+  }
+  .retirar-din{
+      font-size: 30px;
+  }
+  .ingreso {
+    margin-top: 40px;
+    margin-right: 247px;
+  }
+  .btn-confirmar {
+    background-color: #591e4a;
+    color: white;
+  }
+  label {
+    padding-top: 19px;
+  }
+  .small1 {
+    color: red;
+  }
+  @media (max-width: 375px) {
+    .home-section {
+      left: 0px;
+    }
+    .btn-op {
+      width: 150px;
+    }
+    .btn-ingresar {
+      margin-left: 0px;
+    }
+    .btn-retirar {
+      margin-left: 0px;
+    }
+    .ingreso {
+      margin-right: 0px;
+    }
+  }
+  @media (max-width: 425px) {
+    .home-section {
+      left: 0px;
+    }
+    .btn-op {
+      width: 150px;
+    }
+    .btn-ingresar {
+      margin-left: 0px;
+    }
+    .btn-retirar {
+      margin-left: 0px;
+    }
+    .ingreso {
+      margin-right: 0px;
+    }
+  }
+  @media(max-width: 768px){
+    .btn-ingresar {
+      margin-left: 20px;
+    }
+    .btn-retirar {
+      margin-left: 20px;
+    }
+  }
+  @media(max-width: 1024px){
+    .btn-ingresar {
+      margin-left: 20px;
+    }
+    .btn-retirar {
+      margin-left: 20px;
+    }
+  }
+  
