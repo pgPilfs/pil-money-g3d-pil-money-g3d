@@ -1,0 +1,261 @@
+a{
+    text-decoration: none;
+  }
+  .volver{
+    font-size: 26px;
+    margin-left: 1158px;
+    margin-top: 21px;
+  } 
+  .arrow, .links_name{
+    color: black;
+  } 
+  .home-section {
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+.titulo{
+    position: absolute;
+    width: 586px;
+    height: 61px;
+
+top: 104px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.listaCuenta{
+    position: absolute;
+width: 423px;
+height: 45px;
+top: 198px;
+left: 76px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+}
+
+.text-quien{
+    position: absolute;
+width: 586px;
+height: 61px;
+left: 311px;
+top: 296px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.iputs{
+    position: absolute;
+    width: 370px;
+    height: 30px;
+    left: 300px;
+    top:400px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    
+    color: #000000;
+}
+
+
+.label-dinero{
+    position: absolute;
+    width: 586px;
+    height: 61px;
+    
+    top: 558px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+.imput-dinero{
+    position: absolute;
+width: 130px;
+height: 74px;
+left: 76px;
+top: 627px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 25px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.concepto{
+    position: absolute;
+width: 183px;
+height: 61px;
+top: 709px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+}
+.listaConcepto{
+    position: absolute;
+width: 145px;
+height: 42px;
+left: 76px;
+top: 776px;
+
+
+}
+
+.label-mensaje{
+    position: absolute;
+width: 324px;
+height: 74px;
+left: 628px;
+top: 702px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+}
+.imput-mensaje{
+    position: absolute;
+width: 400px;
+height: 31px;
+left: 628px;
+top: 780px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 25px;
+display: flex;
+align-items: center;
+
+
+
+}
+.btn-transferir{
+    position: absolute;
+width: 268px;
+height: 46px;
+left: 886px;
+top: 850px;
+bottom: 20px;
+
+
+background: #591E4A;
+}
+
+.cta-dolares{    
+width: 388px;
+height: 169px;
+margin-left: -54px;
+margin-right: 103px;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+    
+.logo-dol{
+    width: 117px;
+    height: 107px;
+    margin: 10px;
+    
+    background: #591E4A;
+}
+    
+.nombre-dol{
+    width: 105px;
+    height: 73px;
+    padding-top: 34px;
+    padding-left: 22px;
+    
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+    
+}
+.money-dol{
+    width: 207px;
+    height: 54px;
+    margin-top: -109px;
+    margin-left: 149px;
+    
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.caja-dol{
+        width: 194px;
+        height: 27px;
+        margin-left: 149px;
+        margin-top: -29px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+}

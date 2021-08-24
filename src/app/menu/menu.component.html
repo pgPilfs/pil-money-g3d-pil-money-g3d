@@ -3,26 +3,36 @@
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
         <div class="logo_name">PIPAY WALLET</div>
+        <a routerLink="/paginaprincipal/mod-usuario">
+          <i class='bx bxs-user-detail'></i>
+        </a>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
       <li>
-        <a href="">
+        <a routerLink="/paginaprincipal/inicio">
             <i class='bx bx-home'></i>
             <span class="links_name">Inicio</span>
         </a>
         <span class="tooltip">Inicio</span>
       </li>
      <li>
-        <a href="">
+        <a routerLink="/paginaprincipal/transferencia">
             <i class='bx bx-transfer'></i>
             <span class="links_name">Transferencias</span>
         </a>
         <span class="tooltip">Transferencias</span>
      </li>
      <li>
-        <a href="">
-            <i class='bx bx-home'></i>
+      <a routerLink="/paginaprincipal/mov-pesos">
+          <i class='bx bx-credit-card'></i>
+          <span class="links_name">Ingresar/Retirar Dinero</span>
+      </a>
+      <span class="tooltip">Ingresar/Retirar Dinero</span>
+   </li>
+     <li>
+        <a>
+            <i class='bx bx-building-house'></i>
             <span class="links_name">Pagos de servicios</span>
         </a>
         <span class="tooltip">Pago de servicios</span>
@@ -44,7 +54,7 @@
      <li>
        <a href="#">
 
-        <i class='bx bx-home'></i>
+        <i class='bx bx-line-chart'></i>
         <span class="links_name">Inversiones</span>
     </a>
     <span class="tooltip">Inversiones</span>
@@ -57,12 +67,14 @@
           <div class="job">Apellido</div>
         </div>
       </div>
-      <i class='bx bx-log-out' id="log_out" ></i>
+      <a routerLink=""><i class='bx bx-log-out' id="log_out" ></i></a>
   </li>
     </ul>
   </div>
   <section class="home-section">
-      <div class="text">Home</div>
-  </section>
+     
+        <router-outlet></router-outlet>
+      
+  </section> 
 
 
