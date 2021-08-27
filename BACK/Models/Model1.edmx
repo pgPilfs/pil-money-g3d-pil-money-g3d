@@ -1,0 +1,1457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PilPayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PILPAY-DB.dbo.compra-venta_Divisas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="compra-venta_Divisas">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_extraccion" />
+            <PropertyRef Name="id_deposito" />
+            <PropertyRef Name="monto" />
+            <PropertyRef Name="id_moneda" />
+          </Key>
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="id_extraccion" Type="int" Nullable="false" />
+          <Property Name="id_deposito" Type="int" Nullable="false" />
+          <Property Name="monto" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="id_moneda" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PILPAY-DB.dbo.Contactos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Contactos">
+          <Key>
+            <PropertyRef Name="nombre_usuario" />
+            <PropertyRef Name="CVU" />
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="nombre_usuario" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="CVU" Type="int" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cuentas">
+          <Key>
+            <PropertyRef Name="CVU" />
+          </Key>
+          <Property Name="CVU" Type="int" Nullable="false" />
+          <Property Name="alias" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="saldo" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="id_moneda" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Depositos">
+          <Key>
+            <PropertyRef Name="id_deposito" />
+          </Key>
+          <Property Name="id_deposito" Type="int" Nullable="false" />
+          <Property Name="cod_seguridad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="monto" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="domicilios">
+          <Key>
+            <PropertyRef Name="id_domicilio" />
+          </Key>
+          <Property Name="id_domicilio" Type="int" Nullable="false" />
+          <Property Name="calle" Type="varchar" MaxLength="50" />
+          <Property Name="altura" Type="int" />
+          <Property Name="referencia" Type="varchar" MaxLength="50" />
+          <Property Name="barrio" Type="varchar" MaxLength="50" />
+          <Property Name="ciudad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="provincia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pais" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Elecciones">
+          <Key>
+            <PropertyRef Name="accion_al_vto" />
+          </Key>
+          <Property Name="accion_al_vto" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="id_empresa" />
+          </Key>
+          <Property Name="id_empresa" Type="int" Nullable="false" />
+          <Property Name="nombre_empresa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Extracciones">
+          <Key>
+            <PropertyRef Name="id_extraccion" />
+          </Key>
+          <Property Name="id_extraccion" Type="int" Nullable="false" />
+          <Property Name="cod_seguridad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="monto" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="formaDePago">
+          <Key>
+            <PropertyRef Name="id_formaPago" />
+          </Key>
+          <Property Name="id_formaPago" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inversiones">
+          <Key>
+            <PropertyRef Name="id_Inversion" />
+          </Key>
+          <Property Name="id_Inversion" Type="int" Nullable="false" />
+          <Property Name="tipo_Inversion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="plazo" Type="int" Nullable="false" />
+          <Property Name="importe" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="fecha_operacion" Type="date" Nullable="false" />
+          <Property Name="fecha_vencimiento" Type="date" Nullable="false" />
+          <Property Name="accion_al_vto" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="id_tasa" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Operaciones">
+          <Key>
+            <PropertyRef Name="id_operacion" />
+          </Key>
+          <Property Name="id_operacion" Type="int" Nullable="false" />
+          <Property Name="CVU" Type="int" />
+          <Property Name="fecha_operacion" Type="date" />
+          <Property Name="hora_oprecion" Type="time" Precision="7" />
+          <Property Name="id_deposito" Type="int" />
+          <Property Name="id_extraccion" Type="int" />
+          <Property Name="id_transferencia" Type="int" />
+          <Property Name="id_inversion" Type="int" />
+          <Property Name="id_pago" Type="int" />
+        </EntityType>
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="id_pago" />
+          </Key>
+          <Property Name="id_pago" Type="int" Nullable="false" />
+          <Property Name="id_empresa" Type="int" Nullable="false" />
+          <Property Name="nro_cliente" Type="int" Nullable="false" />
+          <Property Name="monto" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="vencimiento" Type="date" Nullable="false" />
+          <Property Name="cod_barras" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_formaPago" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personas">
+          <Key>
+            <PropertyRef Name="tipo_documento" />
+            <PropertyRef Name="nro_documento" />
+          </Key>
+          <Property Name="tipo_documento" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="nro_documento" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="10" />
+          <Property Name="id_domicilio" Type="int" Nullable="false" />
+          <Property Name="nro_tarjeta" Type="char" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rendimientos">
+          <Key>
+            <PropertyRef Name="tipo_Inversion" />
+            <PropertyRef Name="id_tasa" />
+          </Key>
+          <Property Name="tipo_Inversion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_tasa" Type="int" Nullable="false" />
+          <Property Name="tasa" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Tarjetas">
+          <Key>
+            <PropertyRef Name="nro_tarjeta" />
+          </Key>
+          <Property Name="marca_TC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nro_tarjeta" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="titular" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vencimiento" Type="date" Nullable="false" />
+          <Property Name="CVV" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="DNI" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipo_moneda">
+          <Key>
+            <PropertyRef Name="id_moneda" />
+          </Key>
+          <Property Name="id_moneda" Type="int" Nullable="false" />
+          <Property Name="nom_moneda" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cotizacion" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipos_dep-extr">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+          </Key>
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="nombre_tipo" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transferencias">
+          <Key>
+            <PropertyRef Name="id_transferencia" />
+          </Key>
+          <Property Name="id_transferencia" Type="int" Nullable="false" />
+          <Property Name="CVU" Type="int" Nullable="false" />
+          <Property Name="monto" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="concepto" Type="varchar" MaxLength="50" />
+          <Property Name="mensaje" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="nombre_usuario" />
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="nombre_usuario" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="tipo_documento" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="nro_documento" Type="int" Nullable="false" />
+          <Property Name="CVU" Type="int" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_compra-venta_Divisas_Depositos">
+          <End Role="Depositos" Type="Self.Depositos" Multiplicity="1" />
+          <End Role="compra-venta_Divisas" Type="Self.compra-venta_Divisas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Depositos">
+              <PropertyRef Name="id_deposito" />
+            </Principal>
+            <Dependent Role="compra-venta_Divisas">
+              <PropertyRef Name="id_deposito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_compra-venta_Divisas_Extracciones">
+          <End Role="Extracciones" Type="Self.Extracciones" Multiplicity="1" />
+          <End Role="compra-venta_Divisas" Type="Self.compra-venta_Divisas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Extracciones">
+              <PropertyRef Name="id_extraccion" />
+            </Principal>
+            <Dependent Role="compra-venta_Divisas">
+              <PropertyRef Name="id_extraccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_compra-venta_Divisas_tipo_moneda">
+          <End Role="tipo_moneda" Type="Self.tipo_moneda" Multiplicity="1" />
+          <End Role="compra-venta_Divisas" Type="Self.compra-venta_Divisas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_moneda">
+              <PropertyRef Name="id_moneda" />
+            </Principal>
+            <Dependent Role="compra-venta_Divisas">
+              <PropertyRef Name="id_moneda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_compra-venta_Divisas_Tipos_dep-extr">
+          <End Role="Tipos_dep-extr" Type="Self.Tipos_dep-extr" Multiplicity="1" />
+          <End Role="compra-venta_Divisas" Type="Self.compra-venta_Divisas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_dep-extr">
+              <PropertyRef Name="id_tipo" />
+            </Principal>
+            <Dependent Role="compra-venta_Divisas">
+              <PropertyRef Name="id_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contactos_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Contactos" Type="Self.Contactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="nombre_usuario" />
+              <PropertyRef Name="email" />
+            </Principal>
+            <Dependent Role="Contactos">
+              <PropertyRef Name="nombre_usuario" />
+              <PropertyRef Name="email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuentas_tipo_moneda">
+          <End Role="tipo_moneda" Type="Self.tipo_moneda" Multiplicity="1" />
+          <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_moneda">
+              <PropertyRef Name="id_moneda" />
+            </Principal>
+            <Dependent Role="Cuentas">
+              <PropertyRef Name="id_moneda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Depositos_Tipos_dep-extr">
+          <End Role="Tipos_dep-extr" Type="Self.Tipos_dep-extr" Multiplicity="1" />
+          <End Role="Depositos" Type="Self.Depositos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_dep-extr">
+              <PropertyRef Name="id_tipo" />
+            </Principal>
+            <Dependent Role="Depositos">
+              <PropertyRef Name="id_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Extracciones_Tipos_dep-extr">
+          <End Role="Tipos_dep-extr" Type="Self.Tipos_dep-extr" Multiplicity="1" />
+          <End Role="Extracciones" Type="Self.Extracciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_dep-extr">
+              <PropertyRef Name="id_tipo" />
+            </Principal>
+            <Dependent Role="Extracciones">
+              <PropertyRef Name="id_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inversiones_Elecciones">
+          <End Role="Elecciones" Type="Self.Elecciones" Multiplicity="1" />
+          <End Role="Inversiones" Type="Self.Inversiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Elecciones">
+              <PropertyRef Name="accion_al_vto" />
+            </Principal>
+            <Dependent Role="Inversiones">
+              <PropertyRef Name="accion_al_vto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inversiones_Rendimientos">
+          <End Role="Rendimientos" Type="Self.Rendimientos" Multiplicity="1" />
+          <End Role="Inversiones" Type="Self.Inversiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rendimientos">
+              <PropertyRef Name="tipo_Inversion" />
+              <PropertyRef Name="id_tasa" />
+            </Principal>
+            <Dependent Role="Inversiones">
+              <PropertyRef Name="tipo_Inversion" />
+              <PropertyRef Name="id_tasa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Cuentas">
+          <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="CVU" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="CVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Depositos">
+          <End Role="Depositos" Type="Self.Depositos" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Depositos">
+              <PropertyRef Name="id_deposito" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_deposito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Extracciones">
+          <End Role="Extracciones" Type="Self.Extracciones" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Extracciones">
+              <PropertyRef Name="id_extraccion" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_extraccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Inversiones">
+          <End Role="Inversiones" Type="Self.Inversiones" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inversiones">
+              <PropertyRef Name="id_Inversion" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_inversion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Pagos">
+          <End Role="Pagos" Type="Self.Pagos" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pagos">
+              <PropertyRef Name="id_pago" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_pago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Transferencias">
+          <End Role="Transferencias" Type="Self.Transferencias" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transferencias">
+              <PropertyRef Name="id_transferencia" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_transferencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagos_Empresas">
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
+          <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagos_formaDePago">
+          <End Role="formaDePago" Type="Self.formaDePago" Multiplicity="1" />
+          <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="formaDePago">
+              <PropertyRef Name="id_formaPago" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="id_formaPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personas_domicilios">
+          <End Role="domicilios" Type="Self.domicilios" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="domicilios">
+              <PropertyRef Name="id_domicilio" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="id_domicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personas_Tarjetas">
+          <End Role="Tarjetas" Type="Self.Tarjetas" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tarjetas">
+              <PropertyRef Name="nro_tarjeta" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="nro_tarjeta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Cuentas">
+          <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="CVU" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="CVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Personas">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="tipo_documento" />
+              <PropertyRef Name="nro_documento" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="tipo_documento" />
+              <PropertyRef Name="nro_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PilPayModelStoreContainer">
+          <EntitySet Name="Cuentas" EntityType="Self.Cuentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Depositos" EntityType="Self.Depositos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="domicilios" EntityType="Self.domicilios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Elecciones" EntityType="Self.Elecciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Extracciones" EntityType="Self.Extracciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="formaDePago" EntityType="Self.formaDePago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inversiones" EntityType="Self.Inversiones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rendimientos" EntityType="Self.Rendimientos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tarjetas" EntityType="Self.Tarjetas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipo_moneda" EntityType="Self.tipo_moneda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipos_dep-extr" EntityType="Self.Tipos_dep-extr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transferencias" EntityType="Self.Transferencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="compra-venta_Divisas" EntityType="Self.compra-venta_Divisas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [compra-venta_Divisas].[id_tipo] AS [id_tipo], 
+    [compra-venta_Divisas].[id_extraccion] AS [id_extraccion], 
+    [compra-venta_Divisas].[id_deposito] AS [id_deposito], 
+    [compra-venta_Divisas].[monto] AS [monto], 
+    [compra-venta_Divisas].[id_moneda] AS [id_moneda]
+    FROM [dbo].[compra-venta_Divisas] AS [compra-venta_Divisas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Contactos" EntityType="Self.Contactos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Contactos].[nombre_usuario] AS [nombre_usuario], 
+    [Contactos].[CVU] AS [CVU], 
+    [Contactos].[email] AS [email]
+    FROM [dbo].[Contactos] AS [Contactos]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_compra-venta_Divisas_Depositos" Association="Self.FK_compra-venta_Divisas_Depositos">
+            <End Role="Depositos" EntitySet="Depositos" />
+            <End Role="compra-venta_Divisas" EntitySet="compra-venta_Divisas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_compra-venta_Divisas_Extracciones" Association="Self.FK_compra-venta_Divisas_Extracciones">
+            <End Role="Extracciones" EntitySet="Extracciones" />
+            <End Role="compra-venta_Divisas" EntitySet="compra-venta_Divisas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_compra-venta_Divisas_tipo_moneda" Association="Self.FK_compra-venta_Divisas_tipo_moneda">
+            <End Role="tipo_moneda" EntitySet="tipo_moneda" />
+            <End Role="compra-venta_Divisas" EntitySet="compra-venta_Divisas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_compra-venta_Divisas_Tipos_dep-extr" Association="Self.FK_compra-venta_Divisas_Tipos_dep-extr">
+            <End Role="Tipos_dep-extr" EntitySet="Tipos_dep-extr" />
+            <End Role="compra-venta_Divisas" EntitySet="compra-venta_Divisas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contactos_Usuarios" Association="Self.FK_Contactos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Contactos" EntitySet="Contactos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuentas_tipo_moneda" Association="Self.FK_Cuentas_tipo_moneda">
+            <End Role="tipo_moneda" EntitySet="tipo_moneda" />
+            <End Role="Cuentas" EntitySet="Cuentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Depositos_Tipos_dep-extr" Association="Self.FK_Depositos_Tipos_dep-extr">
+            <End Role="Tipos_dep-extr" EntitySet="Tipos_dep-extr" />
+            <End Role="Depositos" EntitySet="Depositos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Extracciones_Tipos_dep-extr" Association="Self.FK_Extracciones_Tipos_dep-extr">
+            <End Role="Tipos_dep-extr" EntitySet="Tipos_dep-extr" />
+            <End Role="Extracciones" EntitySet="Extracciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inversiones_Elecciones" Association="Self.FK_Inversiones_Elecciones">
+            <End Role="Elecciones" EntitySet="Elecciones" />
+            <End Role="Inversiones" EntitySet="Inversiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inversiones_Rendimientos" Association="Self.FK_Inversiones_Rendimientos">
+            <End Role="Rendimientos" EntitySet="Rendimientos" />
+            <End Role="Inversiones" EntitySet="Inversiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Cuentas" Association="Self.FK_Operaciones_Cuentas">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Depositos" Association="Self.FK_Operaciones_Depositos">
+            <End Role="Depositos" EntitySet="Depositos" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Extracciones" Association="Self.FK_Operaciones_Extracciones">
+            <End Role="Extracciones" EntitySet="Extracciones" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Inversiones" Association="Self.FK_Operaciones_Inversiones">
+            <End Role="Inversiones" EntitySet="Inversiones" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Pagos" Association="Self.FK_Operaciones_Pagos">
+            <End Role="Pagos" EntitySet="Pagos" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Transferencias" Association="Self.FK_Operaciones_Transferencias">
+            <End Role="Transferencias" EntitySet="Transferencias" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_Empresas" Association="Self.FK_Pagos_Empresas">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Pagos" EntitySet="Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_formaDePago" Association="Self.FK_Pagos_formaDePago">
+            <End Role="formaDePago" EntitySet="formaDePago" />
+            <End Role="Pagos" EntitySet="Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personas_domicilios" Association="Self.FK_Personas_domicilios">
+            <End Role="domicilios" EntitySet="domicilios" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personas_Tarjetas" Association="Self.FK_Personas_Tarjetas">
+            <End Role="Tarjetas" EntitySet="Tarjetas" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Cuentas" Association="Self.FK_Usuarios_Cuentas">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Personas" Association="Self.FK_Usuarios_Personas">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PilPayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="CVU" />
+          </Key>
+          <Property Name="CVU" Type="Int32" Nullable="false" />
+          <Property Name="alias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="saldo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="id_moneda" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tipo_moneda" Relationship="Self.FK_Cuentas_tipo_moneda" FromRole="Cuentas" ToRole="tipo_moneda" />
+          <NavigationProperty Name="Operaciones" Relationship="Self.FK_Operaciones_Cuentas" FromRole="Cuentas" ToRole="Operaciones" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuarios_Cuentas" FromRole="Cuentas" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Deposito">
+          <Key>
+            <PropertyRef Name="id_deposito" />
+          </Key>
+          <Property Name="id_deposito" Type="Int32" Nullable="false" />
+          <Property Name="cod_seguridad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="monto" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="compra_venta_Divisas" Relationship="Self.FK_compra_venta_Divisas_Depositos" FromRole="Depositos" ToRole="compra_venta_Divisas" />
+          <NavigationProperty Name="Tipos_dep_extr" Relationship="Self.FK_Depositos_Tipos_dep_extr" FromRole="Depositos" ToRole="Tipos_dep_extr" />
+          <NavigationProperty Name="Operaciones" Relationship="Self.FK_Operaciones_Depositos" FromRole="Depositos" ToRole="Operaciones" />
+        </EntityType>
+        <EntityType Name="domicilio">
+          <Key>
+            <PropertyRef Name="id_domicilio" />
+          </Key>
+          <Property Name="id_domicilio" Type="Int32" Nullable="false" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="altura" Type="Int32" />
+          <Property Name="referencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="barrio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK_Personas_domicilios" FromRole="domicilios" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Eleccione">
+          <Key>
+            <PropertyRef Name="accion_al_vto" />
+          </Key>
+          <Property Name="accion_al_vto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Inversiones" Relationship="Self.FK_Inversiones_Elecciones" FromRole="Elecciones" ToRole="Inversiones" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="id_empresa" />
+          </Key>
+          <Property Name="id_empresa" Type="Int32" Nullable="false" />
+          <Property Name="nombre_empresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pagos" Relationship="Self.FK_Pagos_Empresas" FromRole="Empresas" ToRole="Pagos" />
+        </EntityType>
+        <EntityType Name="Extraccione">
+          <Key>
+            <PropertyRef Name="id_extraccion" />
+          </Key>
+          <Property Name="id_extraccion" Type="Int32" Nullable="false" />
+          <Property Name="cod_seguridad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="monto" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="compra_venta_Divisas" Relationship="Self.FK_compra_venta_Divisas_Extracciones" FromRole="Extracciones" ToRole="compra_venta_Divisas" />
+          <NavigationProperty Name="Tipos_dep_extr" Relationship="Self.FK_Extracciones_Tipos_dep_extr" FromRole="Extracciones" ToRole="Tipos_dep_extr" />
+          <NavigationProperty Name="Operaciones" Relationship="Self.FK_Operaciones_Extracciones" FromRole="Extracciones" ToRole="Operaciones" />
+        </EntityType>
+        <EntityType Name="formaDePago">
+          <Key>
+            <PropertyRef Name="id_formaPago" />
+          </Key>
+          <Property Name="id_formaPago" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Pagos" Relationship="Self.FK_Pagos_formaDePago" FromRole="formaDePago" ToRole="Pagos" />
+        </EntityType>
+        <EntityType Name="Inversione">
+          <Key>
+            <PropertyRef Name="id_Inversion" />
+          </Key>
+          <Property Name="id_Inversion" Type="Int32" Nullable="false" />
+          <Property Name="tipo_Inversion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="plazo" Type="Int32" Nullable="false" />
+          <Property Name="importe" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="fecha_operacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_vencimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="accion_al_vto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_tasa" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Eleccione" Relationship="Self.FK_Inversiones_Elecciones" FromRole="Inversiones" ToRole="Elecciones" />
+          <NavigationProperty Name="Rendimiento" Relationship="Self.FK_Inversiones_Rendimientos" FromRole="Inversiones" ToRole="Rendimientos" />
+          <NavigationProperty Name="Operaciones" Relationship="Self.FK_Operaciones_Inversiones" FromRole="Inversiones" ToRole="Operaciones" />
+        </EntityType>
+        <EntityType Name="Operacione">
+          <Key>
+            <PropertyRef Name="id_operacion" />
+          </Key>
+          <Property Name="id_operacion" Type="Int32" Nullable="false" />
+          <Property Name="CVU" Type="Int32" />
+          <Property Name="fecha_operacion" Type="DateTime" Precision="0" />
+          <Property Name="hora_oprecion" Type="Time" Precision="7" />
+          <Property Name="id_deposito" Type="Int32" />
+          <Property Name="id_extraccion" Type="Int32" />
+          <Property Name="id_transferencia" Type="Int32" />
+          <Property Name="id_inversion" Type="Int32" />
+          <Property Name="id_pago" Type="Int32" />
+          <NavigationProperty Name="Cuenta" Relationship="Self.FK_Operaciones_Cuentas" FromRole="Operaciones" ToRole="Cuentas" />
+          <NavigationProperty Name="Deposito" Relationship="Self.FK_Operaciones_Depositos" FromRole="Operaciones" ToRole="Depositos" />
+          <NavigationProperty Name="Extraccione" Relationship="Self.FK_Operaciones_Extracciones" FromRole="Operaciones" ToRole="Extracciones" />
+          <NavigationProperty Name="Inversione" Relationship="Self.FK_Operaciones_Inversiones" FromRole="Operaciones" ToRole="Inversiones" />
+          <NavigationProperty Name="Pago" Relationship="Self.FK_Operaciones_Pagos" FromRole="Operaciones" ToRole="Pagos" />
+          <NavigationProperty Name="Transferencia" Relationship="Self.FK_Operaciones_Transferencias" FromRole="Operaciones" ToRole="Transferencias" />
+        </EntityType>
+        <EntityType Name="Pago">
+          <Key>
+            <PropertyRef Name="id_pago" />
+          </Key>
+          <Property Name="id_pago" Type="Int32" Nullable="false" />
+          <Property Name="id_empresa" Type="Int32" Nullable="false" />
+          <Property Name="nro_cliente" Type="Int32" Nullable="false" />
+          <Property Name="monto" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="vencimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="cod_barras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_formaPago" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK_Pagos_Empresas" FromRole="Pagos" ToRole="Empresas" />
+          <NavigationProperty Name="formaDePago" Relationship="Self.FK_Pagos_formaDePago" FromRole="Pagos" ToRole="formaDePago" />
+          <NavigationProperty Name="Operaciones" Relationship="Self.FK_Operaciones_Pagos" FromRole="Pagos" ToRole="Operaciones" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="tipo_documento" />
+            <PropertyRef Name="nro_documento" />
+          </Key>
+          <Property Name="tipo_documento" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nro_documento" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="id_domicilio" Type="Int32" Nullable="false" />
+          <Property Name="nro_tarjeta" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="domicilio" Relationship="Self.FK_Personas_domicilios" FromRole="Personas" ToRole="domicilios" />
+          <NavigationProperty Name="Tarjeta" Relationship="Self.FK_Personas_Tarjetas" FromRole="Personas" ToRole="Tarjetas" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuarios_Personas" FromRole="Personas" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Rendimiento">
+          <Key>
+            <PropertyRef Name="tipo_Inversion" />
+            <PropertyRef Name="id_tasa" />
+          </Key>
+          <Property Name="tipo_Inversion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_tasa" Type="Int32" Nullable="false" />
+          <Property Name="tasa" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Inversiones" Relationship="Self.FK_Inversiones_Rendimientos" FromRole="Rendimientos" ToRole="Inversiones" />
+        </EntityType>
+        <EntityType Name="Tarjeta">
+          <Key>
+            <PropertyRef Name="nro_tarjeta" />
+          </Key>
+          <Property Name="marca_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nro_tarjeta" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="titular" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vencimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CVV" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DNI" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK_Personas_Tarjetas" FromRole="Tarjetas" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="tipo_moneda">
+          <Key>
+            <PropertyRef Name="id_moneda" />
+          </Key>
+          <Property Name="id_moneda" Type="Int32" Nullable="false" />
+          <Property Name="nom_moneda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cotizacion" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="Cuentas" Relationship="Self.FK_Cuentas_tipo_moneda" FromRole="tipo_moneda" ToRole="Cuentas" />
+          <NavigationProperty Name="compra_venta_Divisas" Relationship="Self.FK_compra_venta_Divisas_tipo_moneda" FromRole="tipo_moneda" ToRole="compra_venta_Divisas" />
+        </EntityType>
+        <EntityType Name="Tipos_dep_extr">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+          </Key>
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="nombre_tipo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Depositos" Relationship="Self.FK_Depositos_Tipos_dep_extr" FromRole="Tipos_dep_extr" ToRole="Depositos" />
+          <NavigationProperty Name="Extracciones" Relationship="Self.FK_Extracciones_Tipos_dep_extr" FromRole="Tipos_dep_extr" ToRole="Extracciones" />
+          <NavigationProperty Name="compra_venta_Divisas" Relationship="Self.FK_compra_venta_Divisas_Tipos_dep_extr" FromRole="Tipos_dep_extr" ToRole="compra_venta_Divisas" />
+        </EntityType>
+        <EntityType Name="Transferencia">
+          <Key>
+            <PropertyRef Name="id_transferencia" />
+          </Key>
+          <Property Name="id_transferencia" Type="Int32" Nullable="false" />
+          <Property Name="CVU" Type="Int32" Nullable="false" />
+          <Property Name="monto" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="concepto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mensaje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Operaciones" Relationship="Self.FK_Operaciones_Transferencias" FromRole="Transferencias" ToRole="Operaciones" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="nombre_usuario" />
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="nombre_usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo_documento" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nro_documento" Type="Int32" Nullable="false" />
+          <Property Name="CVU" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cuenta" Relationship="Self.FK_Usuarios_Cuentas" FromRole="Usuarios" ToRole="Cuentas" />
+          <NavigationProperty Name="Persona" Relationship="Self.FK_Usuarios_Personas" FromRole="Usuarios" ToRole="Personas" />
+          <NavigationProperty Name="Contactos" Relationship="Self.FK_Contactos_Usuarios" FromRole="Usuarios" ToRole="Contactos" />
+        </EntityType>
+        <EntityType Name="compra_venta_Divisas">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_extraccion" />
+            <PropertyRef Name="id_deposito" />
+            <PropertyRef Name="monto" />
+            <PropertyRef Name="id_moneda" />
+          </Key>
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="id_extraccion" Type="Int32" Nullable="false" />
+          <Property Name="id_deposito" Type="Int32" Nullable="false" />
+          <Property Name="monto" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="id_moneda" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Deposito" Relationship="Self.FK_compra_venta_Divisas_Depositos" FromRole="compra_venta_Divisas" ToRole="Depositos" />
+          <NavigationProperty Name="Extraccione" Relationship="Self.FK_compra_venta_Divisas_Extracciones" FromRole="compra_venta_Divisas" ToRole="Extracciones" />
+          <NavigationProperty Name="tipo_moneda" Relationship="Self.FK_compra_venta_Divisas_tipo_moneda" FromRole="compra_venta_Divisas" ToRole="tipo_moneda" />
+          <NavigationProperty Name="Tipos_dep_extr" Relationship="Self.FK_compra_venta_Divisas_Tipos_dep_extr" FromRole="compra_venta_Divisas" ToRole="Tipos_dep_extr" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="nombre_usuario" />
+            <PropertyRef Name="CVU" />
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="nombre_usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CVU" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Contactos_Usuarios" FromRole="Contactos" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_Cuentas_tipo_moneda">
+          <End Role="tipo_moneda" Type="Self.tipo_moneda" Multiplicity="1" />
+          <End Role="Cuentas" Type="Self.Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_moneda">
+              <PropertyRef Name="id_moneda" />
+            </Principal>
+            <Dependent Role="Cuentas">
+              <PropertyRef Name="id_moneda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Cuentas">
+          <End Role="Cuentas" Type="Self.Cuenta" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operacione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="CVU" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="CVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Cuentas">
+          <End Role="Cuentas" Type="Self.Cuenta" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="CVU" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="CVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_compra_venta_Divisas_Depositos">
+          <End Role="Depositos" Type="Self.Deposito" Multiplicity="1" />
+          <End Role="compra_venta_Divisas" Type="Self.compra_venta_Divisas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Depositos">
+              <PropertyRef Name="id_deposito" />
+            </Principal>
+            <Dependent Role="compra_venta_Divisas">
+              <PropertyRef Name="id_deposito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Depositos_Tipos_dep_extr">
+          <End Role="Tipos_dep_extr" Type="Self.Tipos_dep_extr" Multiplicity="1" />
+          <End Role="Depositos" Type="Self.Deposito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_dep_extr">
+              <PropertyRef Name="id_tipo" />
+            </Principal>
+            <Dependent Role="Depositos">
+              <PropertyRef Name="id_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Depositos">
+          <End Role="Depositos" Type="Self.Deposito" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operacione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Depositos">
+              <PropertyRef Name="id_deposito" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_deposito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personas_domicilios">
+          <End Role="domicilios" Type="Self.domicilio" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="domicilios">
+              <PropertyRef Name="id_domicilio" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="id_domicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inversiones_Elecciones">
+          <End Role="Elecciones" Type="Self.Eleccione" Multiplicity="1" />
+          <End Role="Inversiones" Type="Self.Inversione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Elecciones">
+              <PropertyRef Name="accion_al_vto" />
+            </Principal>
+            <Dependent Role="Inversiones">
+              <PropertyRef Name="accion_al_vto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagos_Empresas">
+          <End Role="Empresas" Type="Self.Empresa" Multiplicity="1" />
+          <End Role="Pagos" Type="Self.Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_compra_venta_Divisas_Extracciones">
+          <End Role="Extracciones" Type="Self.Extraccione" Multiplicity="1" />
+          <End Role="compra_venta_Divisas" Type="Self.compra_venta_Divisas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Extracciones">
+              <PropertyRef Name="id_extraccion" />
+            </Principal>
+            <Dependent Role="compra_venta_Divisas">
+              <PropertyRef Name="id_extraccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Extracciones_Tipos_dep_extr">
+          <End Role="Tipos_dep_extr" Type="Self.Tipos_dep_extr" Multiplicity="1" />
+          <End Role="Extracciones" Type="Self.Extraccione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_dep_extr">
+              <PropertyRef Name="id_tipo" />
+            </Principal>
+            <Dependent Role="Extracciones">
+              <PropertyRef Name="id_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Extracciones">
+          <End Role="Extracciones" Type="Self.Extraccione" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operacione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Extracciones">
+              <PropertyRef Name="id_extraccion" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_extraccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagos_formaDePago">
+          <End Role="formaDePago" Type="Self.formaDePago" Multiplicity="1" />
+          <End Role="Pagos" Type="Self.Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="formaDePago">
+              <PropertyRef Name="id_formaPago" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="id_formaPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inversiones_Rendimientos">
+          <End Role="Rendimientos" Type="Self.Rendimiento" Multiplicity="1" />
+          <End Role="Inversiones" Type="Self.Inversione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rendimientos">
+              <PropertyRef Name="tipo_Inversion" />
+              <PropertyRef Name="id_tasa" />
+            </Principal>
+            <Dependent Role="Inversiones">
+              <PropertyRef Name="tipo_Inversion" />
+              <PropertyRef Name="id_tasa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Inversiones">
+          <End Role="Inversiones" Type="Self.Inversione" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operacione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inversiones">
+              <PropertyRef Name="id_Inversion" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_inversion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Pagos">
+          <End Role="Pagos" Type="Self.Pago" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operacione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pagos">
+              <PropertyRef Name="id_pago" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_pago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operaciones_Transferencias">
+          <End Role="Transferencias" Type="Self.Transferencia" Multiplicity="0..1" />
+          <End Role="Operaciones" Type="Self.Operacione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transferencias">
+              <PropertyRef Name="id_transferencia" />
+            </Principal>
+            <Dependent Role="Operaciones">
+              <PropertyRef Name="id_transferencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personas_Tarjetas">
+          <End Role="Tarjetas" Type="Self.Tarjeta" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tarjetas">
+              <PropertyRef Name="nro_tarjeta" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="nro_tarjeta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Personas">
+          <End Role="Personas" Type="Self.Persona" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="tipo_documento" />
+              <PropertyRef Name="nro_documento" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="tipo_documento" />
+              <PropertyRef Name="nro_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_compra_venta_Divisas_tipo_moneda">
+          <End Role="tipo_moneda" Type="Self.tipo_moneda" Multiplicity="1" />
+          <End Role="compra_venta_Divisas" Type="Self.compra_venta_Divisas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_moneda">
+              <PropertyRef Name="id_moneda" />
+            </Principal>
+            <Dependent Role="compra_venta_Divisas">
+              <PropertyRef Name="id_moneda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_compra_venta_Divisas_Tipos_dep_extr">
+          <End Role="Tipos_dep_extr" Type="Self.Tipos_dep_extr" Multiplicity="1" />
+          <End Role="compra_venta_Divisas" Type="Self.compra_venta_Divisas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_dep_extr">
+              <PropertyRef Name="id_tipo" />
+            </Principal>
+            <Dependent Role="compra_venta_Divisas">
+              <PropertyRef Name="id_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contactos_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Contactos" Type="Self.Contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="nombre_usuario" />
+              <PropertyRef Name="email" />
+            </Principal>
+            <Dependent Role="Contactos">
+              <PropertyRef Name="nombre_usuario" />
+              <PropertyRef Name="email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PilPayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cuentas" EntityType="Self.Cuenta" />
+          <EntitySet Name="Depositos" EntityType="Self.Deposito" />
+          <EntitySet Name="domicilios" EntityType="Self.domicilio" />
+          <EntitySet Name="Elecciones" EntityType="Self.Eleccione" />
+          <EntitySet Name="Empresas" EntityType="Self.Empresa" />
+          <EntitySet Name="Extracciones" EntityType="Self.Extraccione" />
+          <EntitySet Name="formaDePagoes" EntityType="Self.formaDePago" />
+          <EntitySet Name="Inversiones" EntityType="Self.Inversione" />
+          <EntitySet Name="Operaciones" EntityType="Self.Operacione" />
+          <EntitySet Name="Pagos" EntityType="Self.Pago" />
+          <EntitySet Name="Personas" EntityType="Self.Persona" />
+          <EntitySet Name="Rendimientos" EntityType="Self.Rendimiento" />
+          <EntitySet Name="Tarjetas" EntityType="Self.Tarjeta" />
+          <EntitySet Name="tipo_moneda" EntityType="Self.tipo_moneda" />
+          <EntitySet Name="Tipos_dep_extr" EntityType="Self.Tipos_dep_extr" />
+          <EntitySet Name="Transferencias" EntityType="Self.Transferencia" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <EntitySet Name="compra_venta_Divisas" EntityType="Self.compra_venta_Divisas" />
+          <EntitySet Name="Contactos" EntityType="Self.Contacto" />
+          <AssociationSet Name="FK_Cuentas_tipo_moneda" Association="Self.FK_Cuentas_tipo_moneda">
+            <End Role="tipo_moneda" EntitySet="tipo_moneda" />
+            <End Role="Cuentas" EntitySet="Cuentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Cuentas" Association="Self.FK_Operaciones_Cuentas">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Cuentas" Association="Self.FK_Usuarios_Cuentas">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_compra_venta_Divisas_Depositos" Association="Self.FK_compra_venta_Divisas_Depositos">
+            <End Role="Depositos" EntitySet="Depositos" />
+            <End Role="compra_venta_Divisas" EntitySet="compra_venta_Divisas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Depositos_Tipos_dep_extr" Association="Self.FK_Depositos_Tipos_dep_extr">
+            <End Role="Tipos_dep_extr" EntitySet="Tipos_dep_extr" />
+            <End Role="Depositos" EntitySet="Depositos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Depositos" Association="Self.FK_Operaciones_Depositos">
+            <End Role="Depositos" EntitySet="Depositos" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personas_domicilios" Association="Self.FK_Personas_domicilios">
+            <End Role="domicilios" EntitySet="domicilios" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inversiones_Elecciones" Association="Self.FK_Inversiones_Elecciones">
+            <End Role="Elecciones" EntitySet="Elecciones" />
+            <End Role="Inversiones" EntitySet="Inversiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_Empresas" Association="Self.FK_Pagos_Empresas">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Pagos" EntitySet="Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_compra_venta_Divisas_Extracciones" Association="Self.FK_compra_venta_Divisas_Extracciones">
+            <End Role="Extracciones" EntitySet="Extracciones" />
+            <End Role="compra_venta_Divisas" EntitySet="compra_venta_Divisas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Extracciones_Tipos_dep_extr" Association="Self.FK_Extracciones_Tipos_dep_extr">
+            <End Role="Tipos_dep_extr" EntitySet="Tipos_dep_extr" />
+            <End Role="Extracciones" EntitySet="Extracciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Extracciones" Association="Self.FK_Operaciones_Extracciones">
+            <End Role="Extracciones" EntitySet="Extracciones" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_formaDePago" Association="Self.FK_Pagos_formaDePago">
+            <End Role="formaDePago" EntitySet="formaDePagoes" />
+            <End Role="Pagos" EntitySet="Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inversiones_Rendimientos" Association="Self.FK_Inversiones_Rendimientos">
+            <End Role="Rendimientos" EntitySet="Rendimientos" />
+            <End Role="Inversiones" EntitySet="Inversiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Inversiones" Association="Self.FK_Operaciones_Inversiones">
+            <End Role="Inversiones" EntitySet="Inversiones" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Pagos" Association="Self.FK_Operaciones_Pagos">
+            <End Role="Pagos" EntitySet="Pagos" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operaciones_Transferencias" Association="Self.FK_Operaciones_Transferencias">
+            <End Role="Transferencias" EntitySet="Transferencias" />
+            <End Role="Operaciones" EntitySet="Operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personas_Tarjetas" Association="Self.FK_Personas_Tarjetas">
+            <End Role="Tarjetas" EntitySet="Tarjetas" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Personas" Association="Self.FK_Usuarios_Personas">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_compra_venta_Divisas_tipo_moneda" Association="Self.FK_compra_venta_Divisas_tipo_moneda">
+            <End Role="tipo_moneda" EntitySet="tipo_moneda" />
+            <End Role="compra_venta_Divisas" EntitySet="compra_venta_Divisas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_compra_venta_Divisas_Tipos_dep_extr" Association="Self.FK_compra_venta_Divisas_Tipos_dep_extr">
+            <End Role="Tipos_dep_extr" EntitySet="Tipos_dep_extr" />
+            <End Role="compra_venta_Divisas" EntitySet="compra_venta_Divisas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contactos_Usuarios" Association="Self.FK_Contactos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Contactos" EntitySet="Contactos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PilPayModelStoreContainer" CdmEntityContainer="PilPayEntities">
+          <EntitySetMapping Name="Cuentas">
+            <EntityTypeMapping TypeName="PilPayModel.Cuenta">
+              <MappingFragment StoreEntitySet="Cuentas">
+                <ScalarProperty Name="CVU" ColumnName="CVU" />
+                <ScalarProperty Name="alias" ColumnName="alias" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="id_moneda" ColumnName="id_moneda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Depositos">
+            <EntityTypeMapping TypeName="PilPayModel.Deposito">
+              <MappingFragment StoreEntitySet="Depositos">
+                <ScalarProperty Name="id_deposito" ColumnName="id_deposito" />
+                <ScalarProperty Name="cod_seguridad" ColumnName="cod_seguridad" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domicilios">
+            <EntityTypeMapping TypeName="PilPayModel.domicilio">
+              <MappingFragment StoreEntitySet="domicilios">
+                <ScalarProperty Name="id_domicilio" ColumnName="id_domicilio" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="altura" ColumnName="altura" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="barrio" ColumnName="barrio" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Elecciones">
+            <EntityTypeMapping TypeName="PilPayModel.Eleccione">
+              <MappingFragment StoreEntitySet="Elecciones">
+                <ScalarProperty Name="accion_al_vto" ColumnName="accion_al_vto" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresas">
+            <EntityTypeMapping TypeName="PilPayModel.Empresa">
+              <MappingFragment StoreEntitySet="Empresas">
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+                <ScalarProperty Name="nombre_empresa" ColumnName="nombre_empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Extracciones">
+            <EntityTypeMapping TypeName="PilPayModel.Extraccione">
+              <MappingFragment StoreEntitySet="Extracciones">
+                <ScalarProperty Name="id_extraccion" ColumnName="id_extraccion" />
+                <ScalarProperty Name="cod_seguridad" ColumnName="cod_seguridad" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="formaDePagoes">
+            <EntityTypeMapping TypeName="PilPayModel.formaDePago">
+              <MappingFragment StoreEntitySet="formaDePago">
+                <ScalarProperty Name="id_formaPago" ColumnName="id_formaPago" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inversiones">
+            <EntityTypeMapping TypeName="PilPayModel.Inversione">
+              <MappingFragment StoreEntitySet="Inversiones">
+                <ScalarProperty Name="id_Inversion" ColumnName="id_Inversion" />
+                <ScalarProperty Name="tipo_Inversion" ColumnName="tipo_Inversion" />
+                <ScalarProperty Name="plazo" ColumnName="plazo" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="fecha_operacion" ColumnName="fecha_operacion" />
+                <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+                <ScalarProperty Name="accion_al_vto" ColumnName="accion_al_vto" />
+                <ScalarProperty Name="id_tasa" ColumnName="id_tasa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operaciones">
+            <EntityTypeMapping TypeName="PilPayModel.Operacione">
+              <MappingFragment StoreEntitySet="Operaciones">
+                <ScalarProperty Name="id_operacion" ColumnName="id_operacion" />
+                <ScalarProperty Name="CVU" ColumnName="CVU" />
+                <ScalarProperty Name="fecha_operacion" ColumnName="fecha_operacion" />
+                <ScalarProperty Name="hora_oprecion" ColumnName="hora_oprecion" />
+                <ScalarProperty Name="id_deposito" ColumnName="id_deposito" />
+                <ScalarProperty Name="id_extraccion" ColumnName="id_extraccion" />
+                <ScalarProperty Name="id_transferencia" ColumnName="id_transferencia" />
+                <ScalarProperty Name="id_inversion" ColumnName="id_inversion" />
+                <ScalarProperty Name="id_pago" ColumnName="id_pago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pagos">
+            <EntityTypeMapping TypeName="PilPayModel.Pago">
+              <MappingFragment StoreEntitySet="Pagos">
+                <ScalarProperty Name="id_pago" ColumnName="id_pago" />
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+                <ScalarProperty Name="nro_cliente" ColumnName="nro_cliente" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="vencimiento" ColumnName="vencimiento" />
+                <ScalarProperty Name="cod_barras" ColumnName="cod_barras" />
+                <ScalarProperty Name="id_formaPago" ColumnName="id_formaPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personas">
+            <EntityTypeMapping TypeName="PilPayModel.Persona">
+              <MappingFragment StoreEntitySet="Personas">
+                <ScalarProperty Name="tipo_documento" ColumnName="tipo_documento" />
+                <ScalarProperty Name="nro_documento" ColumnName="nro_documento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="id_domicilio" ColumnName="id_domicilio" />
+                <ScalarProperty Name="nro_tarjeta" ColumnName="nro_tarjeta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rendimientos">
+            <EntityTypeMapping TypeName="PilPayModel.Rendimiento">
+              <MappingFragment StoreEntitySet="Rendimientos">
+                <ScalarProperty Name="tipo_Inversion" ColumnName="tipo_Inversion" />
+                <ScalarProperty Name="id_tasa" ColumnName="id_tasa" />
+                <ScalarProperty Name="tasa" ColumnName="tasa" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tarjetas">
+            <EntityTypeMapping TypeName="PilPayModel.Tarjeta">
+              <MappingFragment StoreEntitySet="Tarjetas">
+                <ScalarProperty Name="marca_TC" ColumnName="marca_TC" />
+                <ScalarProperty Name="nro_tarjeta" ColumnName="nro_tarjeta" />
+                <ScalarProperty Name="titular" ColumnName="titular" />
+                <ScalarProperty Name="vencimiento" ColumnName="vencimiento" />
+                <ScalarProperty Name="CVV" ColumnName="CVV" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipo_moneda">
+            <EntityTypeMapping TypeName="PilPayModel.tipo_moneda">
+              <MappingFragment StoreEntitySet="tipo_moneda">
+                <ScalarProperty Name="id_moneda" ColumnName="id_moneda" />
+                <ScalarProperty Name="nom_moneda" ColumnName="nom_moneda" />
+                <ScalarProperty Name="cotizacion" ColumnName="cotizacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipos_dep_extr">
+            <EntityTypeMapping TypeName="PilPayModel.Tipos_dep_extr">
+              <MappingFragment StoreEntitySet="Tipos_dep-extr">
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transferencias">
+            <EntityTypeMapping TypeName="PilPayModel.Transferencia">
+              <MappingFragment StoreEntitySet="Transferencias">
+                <ScalarProperty Name="id_transferencia" ColumnName="id_transferencia" />
+                <ScalarProperty Name="CVU" ColumnName="CVU" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="PilPayModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="tipo_documento" ColumnName="tipo_documento" />
+                <ScalarProperty Name="nro_documento" ColumnName="nro_documento" />
+                <ScalarProperty Name="CVU" ColumnName="CVU" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="compra_venta_Divisas">
+            <EntityTypeMapping TypeName="PilPayModel.compra_venta_Divisas">
+              <MappingFragment StoreEntitySet="compra-venta_Divisas">
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="id_extraccion" ColumnName="id_extraccion" />
+                <ScalarProperty Name="id_deposito" ColumnName="id_deposito" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="id_moneda" ColumnName="id_moneda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contactos">
+            <EntityTypeMapping TypeName="PilPayModel.Contacto">
+              <MappingFragment StoreEntitySet="Contactos">
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="CVU" ColumnName="CVU" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
