@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Prueba.Models
+namespace PipayWallet.Models
 {
     public partial class Contacto
     {
-        public string NombreUsuario { get; set; }
-        public int Cvu { get; set; }
-        public string Email { get; set; }
+        public int IdContacto { get; set; }
+        public int? IdUsuario { get; set; }
+        public int? IdUsuarioagendado { get; set; }
 
-        public virtual Usuario Usuario { get; set; }
+        public virtual Usuario IdUsuarioNavigation { get; set; }
     }
 }

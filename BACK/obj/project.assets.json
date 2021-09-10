@@ -7336,11 +7336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pinte\\source\\repos\\Prueba\\Prueba.csproj",
-      "projectName": "Prueba",
-      "projectPath": "C:\\Users\\pinte\\source\\repos\\Prueba\\Prueba.csproj",
+      "projectUniqueName": "C:\\Users\\pinte\\source\\repos\\PipayWallet\\PipayWallet.csproj",
+      "projectName": "PipayWallet",
+      "projectPath": "C:\\Users\\pinte\\source\\repos\\PipayWallet\\PipayWallet.csproj",
       "packagesPath": "C:\\Users\\pinte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pinte\\source\\repos\\Prueba\\obj\\",
+      "outputPath": "C:\\Users\\pinte\\source\\repos\\PipayWallet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pinte\\AppData\\Roaming\\NuGet\\NuGet.Config",

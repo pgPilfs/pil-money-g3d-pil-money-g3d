@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wVdPbOVKZQmFVRhlKushfOdylOWOCa7CcwQD3aBrv2JSdBxmgoCXT8/yxJFTj8qY7As8O+77/E218OU/1LivBg==",
+  "dgSpecHash": "MIl1mi0bNSOmkF3G1bdEBkoLnG95VGtpwbZk38ZDnixhca2tTOJvHrefaXKxm8XktbPYO9R4Mx9He2FMXLauvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pinte\\source\\repos\\Prueba\\Prueba.csproj",
+  "projectFilePath": "C:\\Users\\pinte\\source\\repos\\PipayWallet\\PipayWallet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pinte\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pinte\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

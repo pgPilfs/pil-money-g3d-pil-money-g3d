@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:54424",
-      "sslPort": 44381
+      "applicationUrl": "http://localhost:53655",
+      "sslPort": 44380
     }
   },
   "profiles": {
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Prueba": {
+    "PipayWallet": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

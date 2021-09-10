@@ -3,18 +3,26 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Prueba.Models
+namespace PipayWallet.Models
 {
     public partial class Usuario
     {
+        public Usuario()
+        {
+            Contactos = new HashSet<Contacto>();
+            Cuenta = new HashSet<Cuenta>();
+            DatosDeUsuarios = new HashSet<DatosDeUsuario>();
+        }
+
+        public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
-        public string Contraseña { get; set; }
-        public string TipoDocumento { get; set; }
-        public int NroDocumento { get; set; }
-        public int Cvu { get; set; }
+        public string Password { get; set; }
         public string Email { get; set; }
 
-        public virtual Cuenta CvuNavigation { get; set; }
-        public virtual Persona Persona { get; set; }
+
+        public List<DatosDeUsuario> DatosUsuario { get; set; }
+        public virtual ICollection<Contacto> Contactos { get; set; }
+        public virtual ICollection<Cuenta> Cuenta { get; set; }
+        public virtual ICollection<DatosDeUsuario> DatosDeUsuarios { get; set; }
     }
 }

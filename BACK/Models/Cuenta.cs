@@ -3,23 +3,23 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Prueba.Models
+namespace PipayWallet.Models
 {
     public partial class Cuenta
     {
         public Cuenta()
         {
-            Operaciones = new HashSet<Operacione>();
-            Usuarios = new HashSet<Usuario>();
+            Operacions = new HashSet<Operacion>();
         }
 
-        public int Cvu { get; set; }
+        public int IdCuenta { get; set; }
+        public int? IdUsuario { get; set; }
+        public string TipoCuenta { get; set; }
+        public string Cvu { get; set; }
         public string Alias { get; set; }
-        public decimal Saldo { get; set; }
-        public int IdMoneda { get; set; }
+        public int? Saldo { get; set; }
 
-        public virtual TipoMonedum IdMonedaNavigation { get; set; }
-        public virtual ICollection<Operacione> Operaciones { get; set; }
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual Usuario IdUsuarioNavigation { get; set; }
+        public virtual ICollection<Operacion> Operacions { get; set; }
     }
 }
