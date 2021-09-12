@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PipayWallet
+namespace PWFinal
 {
     public class Program
     {

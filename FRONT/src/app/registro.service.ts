@@ -7,7 +7,7 @@ import { Usuario } from './usuario';
   providedIn: 'root'
 })
 export class RegistroService {
-  readonly baseURL='https://localhost:44380/api/Usuario';
+  readonly baseURL='https://localhost:44371/api/usuario';
   constructor(private http:HttpClient) { 
   }
 
@@ -16,8 +16,4 @@ export class RegistroService {
   addUser(userObj:any){
     return this.http.post(this.baseURL,userObj);
   }
-  
-  
-
-  
 }

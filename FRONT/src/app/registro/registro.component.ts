@@ -26,16 +26,28 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerform();
+    
+    // this.registroDatos();
   }
 
   registerform():void{
     this.registroForm= this.fb.group({
-      nombreusuario: new FormControl (''),
+      nombreusuario: new FormControl(''),
+      nombre: new FormControl(''),
+      apellido: new FormControl(''),
+      dni: new FormControl(''),
+      telefono: new FormControl(''),
       email: new FormControl(''),
-      password:new FormControl(''),
+      calle: new FormControl(''),
+      ciudad: new FormControl(''),
+      provincia: new FormControl(''),
+      pais: new FormControl(''),
+      password: new FormControl('')
     });
   }
-
+  
+ 
+  
 
 //   initializeForm(): void {
 //     this.registroForm = this.fb.group({
@@ -59,14 +71,16 @@ export class RegistroComponent implements OnInit {
 // }
 
 onSubmit(){
+  // console.log(this.registroForm.value)
   this.userService.addUser(this.registroForm.value).subscribe(data=>{
-    console.log("Usuario creado")
+    console.log("Creado")
   }, err =>{
 
     console.log(err);
   
   })
 }
+
 
 
 }
