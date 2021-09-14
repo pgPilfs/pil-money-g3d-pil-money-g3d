@@ -1,10 +1,13 @@
 ﻿
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using PILpw.Entitis;
 using PipayWalletFinal.Interfaz;
 using PipayWalletFinal.Models;
-using PWFinal.Entidades;
 using PWFinal.Interfaz;
+using PWFinal.Mapping;
+using PWFinal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,50 +17,49 @@ namespace PipayWalletFinal.Servicios
 {
     public class UsuarioService : IUsuarioService
     {
-        private readonly dbFinalContext _context;
+        private readonly dev_pwContext _context;
         private readonly ICuentaService _cuentaservice;
-        public UsuarioService(dbFinalContext context, ICuentaService cuentaservice)
+        private readonly IMapper _mapper;
+        public UsuarioService(dev_pwContext context, ICuentaService cuentaservice, IMapper mapper)
         {
             _context = context;
             _cuentaservice = cuentaservice;
+            _mapper = mapper;
         }
-        public async Task<Usuario> Guardar(Usuario usuario)
+        public async Task<UsuarioModel> Guardar(UsuarioModel usuario)
         {
-            await _context.Usuarios.AddAsync(usuario);
+            CuentaModel cuenta = new CuentaModel();
+            Random r = new Random();
+            var usuariomap = _mapper.Map<Usuario>(usuario);
+            var usuariocreado=await _context.Usuarios.AddAsync(usuariomap);
             await _context.SaveChangesAsync();
-            var result = await _context.Cuentas.OrderByDescending(x => x.Cvu).FirstOrDefaultAsync();
-            if (result==null )
+            var usuarioguar = _mapper.Map<UsuarioModel>(usuariomap);
+            int id = usuarioguar.IdUsuario;
+
+            int est = 0;
+            //Crea una nueva cuenta
+            do
             {
-                var cvu = 1000000000;
-                Cuenta cuentanueva = new Cuenta
+                
+                int random = r.Next(1000000000, 2000000000);
+                string adicionales = "000000800002";
+                string cvu = adicionales + random.ToString();
+                var res =_context.Cuentas.Any(x=>x.Cvu==cvu);
+                if (res==false)
                 {
-                    IdUsuario = usuario.IdUsuario,
-                    TipoCuenta = "Pesos",
-                    Cvu = cvu,
-                    Alias = usuario.Nombre + "." + usuario.Apellido,
-                    Saldo = "0",
+                    cuenta.IdUsuario = id;
+                    cuenta.TipoCuenta = "Pesos";
+                    cuenta.Cvu = cvu;
+                    cuenta.Alias = usuario.Nombre.ToUpper() + usuario.Apellido.ToUpper() + ".PIPAY";
+                    cuenta.Saldo = "0";
+                    await _cuentaservice.CrearCuenta(cuenta);
+                    est = 1;
 
-                };
+                }
+            } while (est==0);
 
-                await _cuentaservice.CrearCuenta(cuentanueva);
-                return usuario;
-            }
-            else
-            {
-                var resultcvu = await _context.Cuentas.OrderByDescending(x => x.Cvu).FirstOrDefaultAsync();
-                var sumacvu = resultcvu.Cvu + 1;
-                Cuenta cuenta = new Cuenta
-                {
-                    IdUsuario = usuario.IdUsuario,
-                    TipoCuenta = "Pesos",
-                    Cvu = sumacvu,
-                    Alias = usuario.Nombre + "." + usuario.Apellido,
-                    Saldo = "0",
-
-                };
-                await _cuentaservice.CrearCuenta(cuenta);
-                return usuario;
-            }
+            return _mapper.Map<UsuarioModel>(usuariomap);
+           
             
             
         }

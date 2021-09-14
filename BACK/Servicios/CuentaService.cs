@@ -1,5 +1,7 @@
-﻿using PWFinal.Entidades;
+﻿using AutoMapper;
+using PILpw.Entitis;
 using PWFinal.Interfaz;
+using PWFinal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +11,21 @@ namespace PWFinal.Servicios
 {
     public class CuentaService:ICuentaService
     {
-        private readonly dbFinalContext _context;
+        private readonly dev_pwContext _context;
+        private readonly IMapper _mapper;
 
-        public CuentaService(dbFinalContext context)
+        public CuentaService(dev_pwContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public async Task<Cuenta> CrearCuenta(Cuenta cuenta)
+        public async Task<CuentaModel> CrearCuenta(CuentaModel cuenta)
         {
-            await _context.Cuentas.AddAsync(cuenta);
+            var entity = _mapper.Map<Cuenta>(cuenta);
+            await _context.AddAsync(entity);
             await _context.SaveChangesAsync();
-            return cuenta;
+            return _mapper.Map<CuentaModel>(entity);
         }
     }
 }

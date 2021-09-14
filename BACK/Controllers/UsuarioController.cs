@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PILpw.Entitis;
 using PipayWalletFinal.Interfaz;
 using PipayWalletFinal.Models;
-using PWFinal.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,9 @@ namespace PipayWalletFinal.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly dbFinalContext _context;
+        private readonly dev_pwContext _context;
         private readonly IUsuarioService _usuarioService;
-        public UsuarioController(IUsuarioService usuarioService, dbFinalContext context)
+        public UsuarioController(IUsuarioService usuarioService, dev_pwContext context)
         {
             _context = context;
             _usuarioService = usuarioService;
@@ -32,7 +32,7 @@ namespace PipayWalletFinal.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Post(Usuario usuario)
+        public async Task<IActionResult> Post(UsuarioModel usuario)
         {
             return Ok(await _usuarioService.Guardar(usuario));
         }

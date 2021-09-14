@@ -1,4 +1,5 @@
-﻿using PWFinal.Entidades;
+﻿
+using PWFinal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,6 @@ namespace PWFinal.Interfaz
 {
     public interface ICuentaService
     {
-        Task<Cuenta> CrearCuenta(Cuenta cuenta);
+        Task<CuentaModel> CrearCuenta(CuentaModel cuenta);
     }
 }

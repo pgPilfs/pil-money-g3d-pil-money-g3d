@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace PipayWalletFinal.Models
+#nullable disable
+
+namespace PILpw.Entitis
 {
-    public class UsuarioModel
+    public partial class Usuario
     {
+        public Usuario()
+        {
+            Contactos = new HashSet<Contacto>();
+        }
+
         public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public string Apelldio { get; set; }
         public int? Dni { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
@@ -20,6 +25,6 @@ namespace PipayWalletFinal.Models
         public string Pais { get; set; }
         public string Password { get; set; }
 
-
+        public virtual ICollection<Contacto> Contactos { get; set; }
     }
 }

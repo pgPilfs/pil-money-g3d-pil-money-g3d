@@ -1,5 +1,4 @@
 ﻿using PipayWalletFinal.Models;
-using PWFinal.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ namespace PipayWalletFinal.Interfaz
 {
     public interface IUsuarioService
     {
-        Task<Usuario> Guardar(Usuario usuario);
+        Task<UsuarioModel> Guardar(UsuarioModel usuario);
 
     }
 }
