@@ -8,7 +8,7 @@ import {
  Validators
 } from '@angular/forms';
 import { data } from 'jquery';
-import { RegistroService } from '../registro.service';
+import { RegistroService } from '../Services/registro.service';
 import { Usuario } from '../usuario';
 
 @Component({
@@ -32,43 +32,20 @@ export class RegistroComponent implements OnInit {
 
   registerform():void{
     this.registroForm= this.fb.group({
-      nombreusuario: new FormControl(''),
-      nombre: new FormControl(''),
-      apellido: new FormControl(''),
-      dni: new FormControl(''),
-      telefono: new FormControl(''),
-      email: new FormControl(''),
-      calle: new FormControl(''),
-      ciudad: new FormControl(''),
-      provincia: new FormControl(''),
-      pais: new FormControl(''),
-      password: new FormControl('')
+      nombreusuario: new FormControl('',Validators.required),
+      nombre: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
+      apellido: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
+      dni: new FormControl('',[Validators.required, Validators.pattern("[0-9]{8}")]),
+      telefono: new FormControl('',[Validators.required, Validators.pattern("[0-9]{10}")]),
+      email: new FormControl('',[Validators.required, Validators.email]),
+      calle: new FormControl('',Validators.required),
+      ciudad: new FormControl('',Validators.required),
+      provincia: new FormControl('',Validators.required),
+      pais: new FormControl('',Validators.required),
+      password: new FormControl('',[Validators.required,Validators.pattern(/^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}$/)])
     });
   }
   
- 
-  
-
-//   initializeForm(): void {
-//     this.registroForm = this.fb.group({
-//         name: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
-//         surname:['', [Validators.required,Validators.pattern('^[a-zA-Z]+$') ]],
-//         email:new FormControl('', [Validators.required, Validators.email]),
-//         phoneNumber: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
-//         phoneNumber2:['', [Validators.required, Validators.pattern("[0-9]{10}")]],
-//         address: ['', Validators.required],
-//         address2: ['', Validators.required],
-//         city: ['', Validators.required],
-//         provincia: ['', Validators.required],
-//         termsYcond: [false, Validators.required],
-//         password:['', [
-//           Validators.required,
-//           // Validators.pattern(/^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}$/)
-//         ]]
-    
-//     });
-
-// }
 
 onSubmit(){
   // console.log(this.registroForm.value)

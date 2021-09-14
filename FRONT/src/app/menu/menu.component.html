@@ -63,8 +63,8 @@
       <div class="profile-details">
         <img src="./../../assets/img/descarga.jpg" alt="profileImg">
         <div class="name_job">
-          <div class="name">Nombre</div>
-          <div class="job">Apellido</div>
+          <div class="name" *ngIf="usuario">{{element.nombre}}</div>
+          <div class="job" *ngIf="usuario">{{element.apellido}}</div>
         </div>
       </div>
       <a routerLink=""><i class='bx bx-log-out' id="log_out" ></i></a>

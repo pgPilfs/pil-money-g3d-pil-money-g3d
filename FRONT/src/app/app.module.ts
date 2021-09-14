@@ -29,7 +29,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { TransferenciaContactoComponent } from './transferencia-contacto/transferencia-contacto.component';
 import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propia/transferencia-cuenta-propia.component';
 import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
-import { RegistroService } from './registro.service';
+import { RegistroService } from './Services/registro.service';
 import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
