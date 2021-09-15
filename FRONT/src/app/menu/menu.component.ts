@@ -9,16 +9,16 @@ import {ScriptServiceService} from './../Services/script-service.service'
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  usuario?:Usuario;
+  public usuario:any;
   constructor(private _CargarScript:ScriptServiceService,private datousuario:DatosUsuarioService) { 
     _CargarScript.Carga(["script"]);
   }
 
   ngOnInit(): void {
-    this.datousuario.ObtenerDatos(1).subscribe(
+    this.datousuario.ObtenerDatos(2).subscribe(
       data=> {
         console.log(data);
-        this.usuario?.nombre=data['Movimientos'];
+        this.usuario=data;
       }
     );
 

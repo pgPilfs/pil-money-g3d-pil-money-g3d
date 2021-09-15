@@ -16,6 +16,8 @@ export class DatosUsuarioService {
 
 
 ObtenerDatos(id:number){
-return this.http.get<Usuario>(this.baseURL+"/"+id.toString());
+    
+  const idu= id.toString();
+return this.http.get<any>(this.baseURL+"?id="+idu);
 }
 }

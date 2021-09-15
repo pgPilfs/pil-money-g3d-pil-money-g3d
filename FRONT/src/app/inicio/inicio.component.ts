@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosUsuarioService } from '../Services/datos-usuario.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datousuario:DatosUsuarioService) { }
 
   ngOnInit(): void {
+    this.datousuario.ObtenerDatos(2).subscribe(
+      data=> {
+        console.log(data);
+        this.usuario=data;
+      }
+    );
   }
 
 }
