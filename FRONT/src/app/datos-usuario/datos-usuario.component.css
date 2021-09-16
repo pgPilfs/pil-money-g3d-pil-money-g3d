@@ -50,9 +50,10 @@ h4 {
 label {
     margin-bottom: 0;
     font-size: 14px;
-    font-weight: 500;
-    color: #777;
-    padding-left: 3px
+    font-weight: 700;
+    color: #591E4A;
+    padding-left: 3px;
+
 }
 
 .form-control {
@@ -60,9 +61,10 @@ label {
 }
 
 input[placeholder] {
-    font-weight: 500
+    font-weight: 500;
+    padding: 3px;
 }
-
+::placeholder { color: #D1D2D2; }
 .form-control:focus {
     box-shadow: none;
     border: 1.5px solid #0779e4
@@ -83,7 +85,8 @@ select:focus {
 
 .button {
     background-color: #591E4A;
-    color: white
+    color: white;
+    padding: 5px;
 }
 
 .button:hover {
@@ -131,15 +134,19 @@ select:focus {
     font-size: 24px;
     overflow: hidden;
     transition: 0.2s;
+    
 }
 .btn-neon:hover{
     background: #a1578e;
-    box-shadow: 0 0 10px #a1578e, 0 0 40px #a1578e, 0 0 80px #a1578e;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #a1578e, 0 0 10px #a1578e, 0 0 30px #a1578e;
     transition-delay: 1s;
  }
 .btn-neon span{
     position: absolute;
     display: block;
+    
+    border-radius: 12px;
 }
 #span1{
     top: 0;
@@ -187,4 +194,5 @@ select:focus {
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.75s;
+    
 }

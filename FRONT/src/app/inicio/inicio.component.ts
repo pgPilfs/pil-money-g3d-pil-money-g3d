@@ -7,11 +7,11 @@ import { DatosUsuarioService } from '../Services/datos-usuario.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-
+  public usuario:any;
   constructor(private datousuario:DatosUsuarioService) { }
 
   ngOnInit(): void {
-    this.datousuario.ObtenerDatos(2).subscribe(
+    this.datousuario.obtenercuenta(2).subscribe(
       data=> {
         console.log(data);
         this.usuario=data;
