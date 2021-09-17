@@ -8,6 +8,7 @@ import { DatosUsuarioService } from '../Services/datos-usuario.service';
 })
 export class InicioComponent implements OnInit {
   public usuario:any;
+  public datosusuario:any;
   constructor(private datousuario:DatosUsuarioService) { }
 
   ngOnInit(): void {
@@ -15,6 +16,13 @@ export class InicioComponent implements OnInit {
       data=> {
         console.log(data);
         this.usuario=data;
+      }
+    );
+
+    this.datousuario.ObtenerDatos(2).subscribe(
+      datos=> {
+        console.log(datos);
+        this.datosusuario=datos;
       }
     );
   }

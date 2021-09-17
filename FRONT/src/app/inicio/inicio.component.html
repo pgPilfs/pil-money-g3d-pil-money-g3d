@@ -2,7 +2,45 @@
     <h1 class="tit-inicio">Inicio</h1>
     <div class="ctas text">
         <p class="ppal">Tu cuenta principal</p>
-        <div class="cta-ppal">
+        <div class="card cta-ppal">
+            <div class="face front-face">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="card-type">Cuenta Pesos</div>
+                    <div class="bank-name">PIPAY WALLET</div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between pt-2"> <img src="https://img.icons8.com/officel/2x/sim-card-chip.png" alt="chip" class="emv-chip">
+                    
+                </div>
+                <div class="d-flex justify-content-between flex-column card-details pt-2">
+                    <div class="card-number">{{usuario.cvu}}</div>
+                    <div class="d-flex align-items-center expiry py-2">
+                        <div class="d-flex flex-column text-uppercase">
+                            <div>SALDO</div>
+                        </div>
+                        <div class="ps-3"> <span class="month">${{usuario.saldo}},00</span> </div>
+                    </div>
+                    <div class="card-holder pt-2 text-uppercase">{{datosusuario.nombreUsuario}}</div>
+                    
+                </div>
+                <div class="card-holder pt-2 text-uppercase">{{usuario.alias}}</div>
+                <div class="master d-flex justify-content-end"> <img src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-marcus-samuelsson-group-2.png" alt=""> </div>
+            </div>
+            <div class="face back-face">
+                <div class="black-bar mt-4"></div>
+                <div class="authorize text-uppercase ps-3 pt-3">Authorized signature-not valid unless signed</div>
+                <div class="d-flex position-relative">
+                    <div class="white-bar ms-3"></div>
+                    <div class="cvv d-flex justify-content-center">900</div>
+                </div>
+                <div class="mx-3 mt-3 back-text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit iusto inventore nostrum dolor nobis amet magni maiores quod fuga officiis tenetur autem adipisci, nulla laboriosam doloremque sunt laudantium eos libero ea atque eum quia maxime ad. Cumque aliquid corrupti, possimus odio sint consequatur? Iste id consectetur, culpa hic quas eaque? </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- <div class="cta-ppal">
             <div class="contenido">
                 <div class="logo-ppal">
                     <p class="nombre-ppal">CA$</p>
@@ -12,7 +50,7 @@
                 <p class="caja-ppal">Caja Ahorro Pesos</p>
                 <a routerLink="/paginaprincipal/detalles" class="datos">Ver detalle</a>
             </div>
-        </div>
+        </div> -->
         <p class="otras-ctas">Tus otras cuentas</p>
         <div class="cta-dolares">
             <div class="logo-dol">
