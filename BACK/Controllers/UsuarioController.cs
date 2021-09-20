@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PILpw.Entitis;
 using PipayWalletFinal.Interfaz;
 using PipayWalletFinal.Models;
@@ -23,9 +24,9 @@ namespace PipayWalletFinal.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async  Task<IActionResult> Get(int id)
         {
-            var usuarios = _context.Usuarios.ToList();
+            var usuarios = await _context.Usuarios.Where(x => x.IdUsuario == id).FirstOrDefaultAsync();
             return Ok(usuarios);
 
         }

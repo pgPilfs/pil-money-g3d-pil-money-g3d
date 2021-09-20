@@ -50,7 +50,7 @@ namespace PipayWalletFinal.Servicios
                     cuenta.IdUsuario = id;
                     cuenta.TipoCuenta = "Pesos";
                     cuenta.Cvu = cvu;
-                    cuenta.Alias = usuario.Nombre.ToUpper() + usuario.Apellido.ToUpper() + ".PIPAY";
+                    cuenta.Alias = usuario.Nombre.ToUpper() + usuario.Apelldio.ToUpper() + ".PIPAY";
                     cuenta.Saldo = "0";
                     await _cuentaservice.CrearCuenta(cuenta);
                     est = 1;
