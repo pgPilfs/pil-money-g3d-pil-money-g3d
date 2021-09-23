@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PILpw.Interfaz;
+using PILpw.Servicios;
 using PipayWalletFinal.Interfaz;
 using PipayWalletFinal.Servicios;
 using PWFinal.Interfaz;
@@ -35,6 +37,7 @@ namespace PILpw
         {
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<ICuentaService, CuentaService>();
+            services.AddTransient<ITipoOperacionService, TipoOperacionService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

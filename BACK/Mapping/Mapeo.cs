@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using PILpw.Entitis;
+using PILpw.Models;
 using PipayWalletFinal.Models;
 using PWFinal.Models;
 using System;
@@ -21,6 +22,9 @@ namespace PWFinal.Mapping
 
             CreateMap<UsuarioModel, Usuario>();
             CreateMap<Usuario, UsuarioModel>();
+
+            CreateMap<TipoOperacionModel, TipoOperacion>();
+            CreateMap<TipoOperacion, TipoOperacionModel>();
         }
 
 
