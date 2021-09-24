@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatosUsuarioService } from '../Services/datos-usuario.service';
 
 @Component({
@@ -8,22 +8,38 @@ import { DatosUsuarioService } from '../Services/datos-usuario.service';
   styleUrls: ['./datos-usuario.component.css']
 })
 export class DatosUsuarioComponent implements OnInit {
-  public usuario:any;
+  usuario!:any;
   usuarioForm!: FormGroup;
-  constructor(private datousuario:DatosUsuarioService) { }
+  constructor(private datousuario:DatosUsuarioService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.getData();
+    this.usuarioForm = this.fb.group({
+      Nombre: [null, Validators.pattern('^[a-zA-Z]+$')],
+      Apelldio: [null, Validators.pattern('^[a-zA-Z]+$')],
+      Email: [null, ],
+      Pais:[],
+      Telefono:[],
+      Provincia:[],
+      Ciudad:[],
+      Calle:[],
+      Dni:[]
+    })
+  }
+
+  getData(){
     this.datousuario.ObtenerDatos(2).subscribe(
       data=> {
         console.log(data);
-        this.usuario=data;
+        return this.usuario=data;
       }
     );
   }
 
-  onSubmit(){
+  modificarUsuario(){
     this.datousuario.modifiedUser(this.usuarioForm.value, 2).subscribe(data=>{
       console.log("Modificado")
+      console.log(data)
     }, err =>{
   
       console.log(err);

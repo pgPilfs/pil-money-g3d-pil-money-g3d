@@ -1,46 +1,65 @@
-  <div class="container-fluid inicio home-section">
-    <h1 class="tit-inicio">Inicio</h1>
-    <div class="ctas text">
-        <p class="ppal">Tu cuenta principal</p>
-        <div class="card cta-ppal">
-            <div class="face front-face">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="card-type">Cuenta Pesos</div>
-                    <div class="bank-name">PIPAY WALLET</div>
-                </div>
-                <div class="d-flex align-items-center justify-content-between pt-2"> <img src="https://img.icons8.com/officel/2x/sim-card-chip.png" alt="chip" class="emv-chip">
-                    
-                </div>
-                <div class="d-flex justify-content-between flex-column card-details pt-2">
-                    <div class="card-number">{{usuario.cvu}}</div>
-                    <div class="d-flex align-items-center expiry py-2">
-                        <div class="d-flex flex-column text-uppercase">
-                            <div>SALDO</div>
-                        </div>
-                        <div class="ps-3"> <span class="month">${{usuario.saldo}},00</span> </div>
-                    </div>
-                    <div class="card-holder pt-2 text-uppercase">{{datosusuario.nombreUsuario}}</div>
-                    
-                </div>
-                <div class="card-holder pt-2 text-uppercase">{{usuario.alias}}</div>
-                <div class="master d-flex justify-content-end"> <img src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-marcus-samuelsson-group-2.png" alt=""> </div>
-            </div>
-            <div class="face back-face">
-                <div class="black-bar mt-4"></div>
-                <div class="authorize text-uppercase ps-3 pt-3">Authorized signature-not valid unless signed</div>
-                <div class="d-flex position-relative">
-                    <div class="white-bar ms-3"></div>
-                    <div class="cvv d-flex justify-content-center">900</div>
-                </div>
-                <div class="mx-3 mt-3 back-text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit iusto inventore nostrum dolor nobis amet magni maiores quod fuga officiis tenetur autem adipisci, nulla laboriosam doloremque sunt laudantium eos libero ea atque eum quia maxime ad. Cumque aliquid corrupti, possimus odio sint consequatur? Iste id consectetur, culpa hic quas eaque? </div>
-            </div>
+<div class="container-fluid inicio home-section">
+  <h1 class="tit-inicio">Inicio</h1>
+  <div class="ctas text">
+    <p class="ppal">Tu cuenta principal</p>
+    <div class="card cta-ppal">
+      <div class="face front-face">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="card-type">Cuenta Pesos</div>
+          <div class="bank-name">PIPAY WALLET</div>
         </div>
+        <div class="d-flex align-items-center justify-content-between pt-2">
+          <img
+            src="https://img.icons8.com/officel/2x/sim-card-chip.png"
+            alt="chip"
+            class="emv-chip"
+          />
+        </div>
+        <div
+          class="d-flex justify-content-between flex-column card-details pt-2"
+        >
+          <div class="card-number">{{ usuario.cvu }}</div>
+          <div class="d-flex align-items-center expiry py-2">
+            <div class="d-flex flex-column text-uppercase">
+              <div>SALDO</div>
+            </div>
+            <div class="ps-3">
+              <span class="month">${{ usuario.saldo }},00</span>
+            </div>
+          </div>
+          <div class="card-holder pt-2 text-uppercase">
+            {{ datosusuario.nombreUsuario }}
+          </div>
+        </div>
+        <div class="card-holder pt-2 text-uppercase">{{ usuario.alias }}</div>
+        <div class="master d-flex justify-content-end">
+          <img
+            src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-marcus-samuelsson-group-2.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="face back-face">
+        <div class="black-bar mt-4"></div>
+        <div class="authorize text-uppercase ps-3 pt-3">
+          Authorized signature-not valid unless signed
+        </div>
+        <div class="d-flex position-relative">
+          <div class="white-bar ms-3"></div>
+          <div class="cvv d-flex justify-content-center">900</div>
+        </div>
+        <div class="mx-3 mt-3 back-text">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit iusto
+          inventore nostrum dolor nobis amet magni maiores quod fuga officiis
+          tenetur autem adipisci, nulla laboriosam doloremque sunt laudantium
+          eos libero ea atque eum quia maxime ad. Cumque aliquid corrupti,
+          possimus odio sint consequatur? Iste id consectetur, culpa hic quas
+          eaque?
+        </div>
+      </div>
+    </div>
 
-
-
-
-
-        <!-- <div class="cta-ppal">
+    <!-- <div class="cta-ppal">
             <div class="contenido">
                 <div class="logo-ppal">
                     <p class="nombre-ppal">CA$</p>
@@ -51,63 +70,65 @@
                 <a routerLink="/paginaprincipal/detalles" class="datos">Ver detalle</a>
             </div>
         </div> -->
-        <p class="otras-ctas">Tus otras cuentas</p>
-        <div class="cta-dolares">
-            <div class="logo-dol">
-                <p class="nombre-dol">U$D</p>
-            </div>
-            <p class="money-dol">U$D 365,68</p>
-            <p class="caja-dol">Caja Ahorro Dolares</p>
-            <a class="datos-dol" routerLink="/paginaprincipal/detalles">Ver detalle</a>
-            <br>
-        </div>
+    <p class="otras-ctas">Tus otras cuentas</p>
+    <div class="cta-dolares">
+      <div class="logo-dol">
+        <p class="nombre-dol">U$D</p>
+      </div>
+      <p class="money-dol">U$D 365,68</p>
+      <p class="caja-dol">Caja Ahorro Dolares</p>
+      <a class="datos-dol" routerLink="/paginaprincipal/detalles"
+        >Ver detalle</a
+      >
+      <br />
+    </div>
 
-        <div class="cta-ctu">
-            <div class="logo-ctu">
-                <p class="nombre-ctu">CTU</p>
-            </div>
-            <p class="money-ctu">CTU 65</p>
-            <p class="caja-ctu">Caja Ahorro Criptomoneda</p>
-            <a href="" class="datos-ctu">Ver detalle</a>
-            <br>
-        </div>
+    <div class="cta-ctu">
+      <div class="logo-ctu">
+        <p class="nombre-ctu">CTU</p>
+      </div>
+      <p class="money-ctu">CTU 65</p>
+      <p class="caja-ctu">Caja Ahorro Criptomoneda</p>
+      <a href="" class="datos-ctu">Ver detalle</a>
+      <br />
     </div>
-    <div class="list-mov text">
-     <select name="mov" id="mov" class="bg-light" class="btn-mov">
-            <option value="egreso" selected>Egresos de dinero</option>
-            <option value="ingreso">Ingreso de dinero</option>
-            <option value="todos">Todos los movimientos</option>
-        </select>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Descipcion</th>
-                    <th>Monto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>12/07/2021</td>
-                    <td>Extraccion Cajero</td>
-                    <td>-$2.000,00</td>
-                </tr>
-                <tr>
-                    <td>12/07/2021</td>
-                    <td>Extraccion Cajero</td>
-                    <td>-$2.000,00</td>
-                </tr>
-                <tr>
-                    <td>12/07/2021</td>
-                    <td>Extraccion Cajero</td>
-                    <td>-$2.000,00</td>
-                </tr>
-                <tr>
-                    <td>12/07/2021</td>
-                    <td>Extraccion Cajero</td>
-                    <td>-$2.000,00</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  </div>
+  <div class="list-mov text">
+    <select name="mov" id="mov" class="bg-light" class="btn-mov">
+      <option value="egreso" selected>Egresos de dinero</option>
+      <option value="ingreso">Ingreso de dinero</option>
+      <option value="todos">Todos los movimientos</option>
+    </select>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Descipcion</th>
+          <th>Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12/07/2021</td>
+          <td>Extraccion Cajero</td>
+          <td>-$2.000,00</td>
+        </tr>
+        <tr>
+          <td>12/07/2021</td>
+          <td>Extraccion Cajero</td>
+          <td>-$2.000,00</td>
+        </tr>
+        <tr>
+          <td>12/07/2021</td>
+          <td>Extraccion Cajero</td>
+          <td>-$2.000,00</td>
+        </tr>
+        <tr>
+          <td>12/07/2021</td>
+          <td>Extraccion Cajero</td>
+          <td>-$2.000,00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

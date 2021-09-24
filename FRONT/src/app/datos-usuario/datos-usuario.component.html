@@ -16,14 +16,14 @@
     </div>
   </div>
   <div class="py-2">
-    <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="usuarioForm">
       <div class="row py-2">
         <div class="col-md-5" style="margin-right: 30px">
           <label for="firstname">Nombre</label>
           <input
             type="text"
             class="bg-light form-control"
-            placeholder="{{ usuario.nombre }}"
+            formControlName="Nombre"
           />
         </div>
         <div class="col-md-5 pt-md-0 pt-3">
@@ -31,7 +31,7 @@
           <input
             type="text"
             class="bg-light form-control"
-            placeholder="{{ usuario.apelldio }}"
+            formControlName="Apelldio"
           />
         </div>
       </div>
@@ -41,7 +41,7 @@
           <input
             type="text"
             class="bg-light form-control"
-            placeholder="{{ usuario.email }}"
+            formControlName="Email"
           />
         </div>
         <div class="col-md-5 pt-md-0 pt-3">
@@ -49,7 +49,7 @@
           <input
             type="tel"
             class="bg-light form-control"
-            placeholder="+54 9 {{ usuario.telefono }}"
+            formControlName="Telefono"
           />
         </div>
       </div>
@@ -60,7 +60,7 @@
             <input
               type="text"
               class="bg-light form-control"
-              placeholder="{{ usuario.pais }}"
+              formControlName="Pais"
             />
           </div>
           <div class="col-md-5">
@@ -68,7 +68,7 @@
             <input
               type="text"
               class="bg-light form-control"
-              placeholder="{{ usuario.provincia }}"
+              formControlName="Provincia"
             />
           </div>
         </div>
@@ -78,7 +78,7 @@
             <input
               type="text"
               class="bg-light form-control"
-              placeholder="{{ usuario.ciudad }}"
+              formControlName="Ciudad"
             />
           </div>
           <div class="col-md-5 pt-md-0 pt-3">
@@ -86,7 +86,7 @@
             <input
               type="tel"
               class="bg-light form-control"
-              placeholder="{{ usuario.calle }}"
+              formControlName="Calle"
             />
           </div>
         </div>
@@ -98,17 +98,18 @@
               <input
                 type="text"
                 class="bg-light form-control"
-                placeholder="{{ usuario.dni }}"
+                formControlName="Dni"
               />
             </div>
           </div>
-          <a href="#" class="btn-neon" style="margin-top: 30px">
+          <!-- <a href="#" class="btn-neon" style="margin-top: 30px">
             <span id="span1"></span>
             <span id="span2"></span>
             <span id="span3"></span>
             <span id="span4"></span>
             GUARDAR CAMBIOS
-          </a>
+          </a> -->
+          <button (click)="modificarUsuario()">GUARDAR CAMBIOS</button>
         </div>
       </div>
     </form>
