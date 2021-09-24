@@ -9,6 +9,6 @@ namespace PipayWalletFinal.Interfaz
     public interface IUsuarioService
     {
         Task<UsuarioModel> Guardar(UsuarioModel usuario);
-
+        Task<UsuarioModel> Editar(UsuarioModel usuario, int id);
     }
 }

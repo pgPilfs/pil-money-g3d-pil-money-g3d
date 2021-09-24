@@ -37,5 +37,11 @@ namespace PipayWalletFinal.Controllers
         {
             return Ok(await _usuarioService.Guardar(usuario));
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(UsuarioModel usuario, int id)
+        {
+            return Ok(await _usuarioService.Editar(usuario, id));
+        }
     }
 }

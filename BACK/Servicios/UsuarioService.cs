@@ -50,7 +50,7 @@ namespace PipayWalletFinal.Servicios
                     cuenta.IdUsuario = id;
                     cuenta.TipoCuenta = "Pesos";
                     cuenta.Cvu = cvu;
-                    cuenta.Alias = usuario.Nombre.ToUpper() + usuario.Apelldio.ToUpper() + ".PIPAY";
+                    //cuenta.Alias = usuario.Nombre.ToUpper() + usuario.Apelldio.ToUpper() + ".PIPAY";
                     cuenta.Saldo = "0";
                     await _cuentaservice.CrearCuenta(cuenta);
                     est = 1;
@@ -59,9 +59,20 @@ namespace PipayWalletFinal.Servicios
             } while (est==0);
 
             return _mapper.Map<UsuarioModel>(usuariomap);
+            
+        }
+
+        public async Task<UsuarioModel> Editar(UsuarioModel usuario, int id)
+        {
+            var entity = await _context.Usuarios.Where(x => x.IdUsuario == id).FirstOrDefaultAsync();
+            entity = _mapper.Map(usuario, entity);
            
-            
-            
+
+            _context.Usuarios.Update(entity);
+            await _context.SaveChangesAsync();
+
+            return _mapper.Map<UsuarioModel>(usuario);
+
         }
     }
 
