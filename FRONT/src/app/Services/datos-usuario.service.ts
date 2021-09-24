@@ -27,4 +27,8 @@ obtenercuenta(id:number):Observable<any>{
   const idu= id.toString();
   return this.http.get<any>(this.urlcuenta+"?id="+idu);
 }
+
+modifiedUser(userObj:any, id:number){
+  return this.http.put(this.baseURL+"?id="+id,userObj);
+}
 }

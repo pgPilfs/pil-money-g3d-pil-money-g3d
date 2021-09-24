@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { DatosUsuarioService } from '../Services/datos-usuario.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { DatosUsuarioService } from '../Services/datos-usuario.service';
 })
 export class DatosUsuarioComponent implements OnInit {
   public usuario:any;
+  usuarioForm!: FormGroup;
   constructor(private datousuario:DatosUsuarioService) { }
 
   ngOnInit(): void {
@@ -17,6 +19,16 @@ export class DatosUsuarioComponent implements OnInit {
         this.usuario=data;
       }
     );
+  }
+
+  onSubmit(){
+    this.datousuario.modifiedUser(this.usuarioForm.value, 2).subscribe(data=>{
+      console.log("Modificado")
+    }, err =>{
+  
+      console.log(err);
+    
+    })
   }
 
 }
