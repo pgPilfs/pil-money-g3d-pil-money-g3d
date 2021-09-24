@@ -64,7 +64,9 @@ namespace PipayWalletFinal.Servicios
 
         public async Task<UsuarioModel> Editar(UsuarioModel usuario, int id)
         {
+            usuario.IdUsuario = id;
             var entity = await _context.Usuarios.Where(x => x.IdUsuario == id).FirstOrDefaultAsync();
+            
             entity = _mapper.Map(usuario, entity);
            
 
