@@ -1,6 +1,6 @@
-﻿using AutoMapper;
+﻿using PWFinal.Interfaz;
+using AutoMapper;
 using PILpw.Entitis;
-using PWFinal.Interfaz;
 using PWFinal.Models;
 using System;
 using System.Collections.Generic;

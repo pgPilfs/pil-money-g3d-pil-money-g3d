@@ -21,7 +21,7 @@ namespace PILpw.Servicios
         public async Task<TipoOperacionModel> Guardar(TipoOperacionModel tipoOperacion)
         {
             var tipo = _mapper.Map<TipoOperacion>(tipoOperacion);
-            await _context.TipoOperacions.AddAsync(tipo);
+            await _context.Operacione.AddAsync(tipo);
             await _context.SaveChangesAsync();
             return _mapper.Map<TipoOperacionModel>(tipo);
         }

@@ -23,8 +23,18 @@ namespace PWFinal.Mapping
             CreateMap<UsuarioModel, Usuario>();
             CreateMap<Usuario, UsuarioModel>();
 
+
+            CreateMap<Contacto, ContactoModel>();
+            CreateMap<ContactoModel, Contacto>();
+
+
             CreateMap<TipoOperacionModel, TipoOperacion>();
             CreateMap<TipoOperacion, TipoOperacionModel>();
+
+
+
+            CreateMap<Operacione, OperacioneModel>();
+            CreateMap<OperacioneModel, Operacione>();
         }
 
 

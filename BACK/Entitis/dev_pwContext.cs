@@ -20,7 +20,7 @@ namespace PILpw.Entitis
         public virtual DbSet<Contacto> Contactos { get; set; }
         public virtual DbSet<Cuenta> Cuentas { get; set; }
         public virtual DbSet<Operacione> Operaciones { get; set; }
-        public virtual DbSet<TipoOperacion> TipoOperacions { get; set; }
+        public virtual DbSet<TipoOperacion> Operacione { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

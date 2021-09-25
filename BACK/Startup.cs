@@ -38,6 +38,9 @@ namespace PILpw
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<ICuentaService, CuentaService>();
             services.AddTransient<ITipoOperacionService, TipoOperacionService>();
+            services.AddTransient<IContactoService, ContactoService>();
+            services.AddTransient<IOperacioneService, OperacioneService>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
