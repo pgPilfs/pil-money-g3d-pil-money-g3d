@@ -15,15 +15,17 @@ export class DatosUsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.getData();
     this.usuarioForm = this.fb.group({
-      Nombre: [null, Validators.pattern('^[a-zA-Z]+$')],
-      Apelldio: [null, Validators.pattern('^[a-zA-Z]+$')],
-      Email: [null, ],
+      Nombre: [],
+      Apelldio: [],
+      Email: [ ],
       Pais:[],
       Telefono:[],
       Provincia:[],
       Ciudad:[],
       Calle:[],
-      Dni:[]
+      Dni:[],
+      NombreUsuario:[],
+      Password:[]
     })
   }
 
@@ -31,7 +33,7 @@ export class DatosUsuarioComponent implements OnInit {
     this.datousuario.ObtenerDatos(2).subscribe(
       data=> {
         console.log(data);
-        return this.usuario=data;
+       this.usuario=data;
       }
     );
   }

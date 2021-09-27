@@ -93,7 +93,7 @@
 
         <div class="py-2">
           <div class="row py-2">
-            <div class="col-md-6">
+            <div class="col-md-5" style="margin-right: 30px">
               <label for="email">Dni</label>
               <input
                 type="text"
@@ -101,15 +101,27 @@
                 formControlName="Dni"
               />
             </div>
+            <div class="col-md-5">
+              <label for="email">Contraseña</label>
+              <input
+                type="text"
+                class="bg-light form-control"
+                formControlName="Password"
+              />
+            </div>
           </div>
-          <!-- <a href="#" class="btn-neon" style="margin-top: 30px">
+
+          <button
+            (click)="modificarUsuario()"
+            class="btn-neon"
+            style="margin-top: 30px"
+          >
             <span id="span1"></span>
             <span id="span2"></span>
             <span id="span3"></span>
             <span id="span4"></span>
             GUARDAR CAMBIOS
-          </a> -->
-          <button (click)="modificarUsuario()">GUARDAR CAMBIOS</button>
+          </button>
         </div>
       </div>
     </form>
