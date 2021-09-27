@@ -16,14 +16,14 @@
     </div>
   </div>
   <div class="py-2">
-    <form [formGroup]="usuarioForm">
+    <form [formGroup]="usuarioForm" (ngSubmit)="modificarUsuario()">
       <div class="row py-2">
         <div class="col-md-5" style="margin-right: 30px">
           <label for="firstname">Nombre</label>
           <input
             type="text"
             class="bg-light form-control"
-            formControlName="Nombre"
+            formControlName="nombre"
           />
         </div>
         <div class="col-md-5 pt-md-0 pt-3">
@@ -31,7 +31,7 @@
           <input
             type="text"
             class="bg-light form-control"
-            formControlName="Apelldio"
+            formControlName="apelldio"
           />
         </div>
       </div>
@@ -41,7 +41,7 @@
           <input
             type="text"
             class="bg-light form-control"
-            formControlName="Email"
+            formControlName="email"
           />
         </div>
         <div class="col-md-5 pt-md-0 pt-3">
@@ -49,7 +49,7 @@
           <input
             type="tel"
             class="bg-light form-control"
-            formControlName="Telefono"
+            formControlName="telefono"
           />
         </div>
       </div>
@@ -60,7 +60,7 @@
             <input
               type="text"
               class="bg-light form-control"
-              formControlName="Pais"
+              formControlName="pais"
             />
           </div>
           <div class="col-md-5">
@@ -68,7 +68,7 @@
             <input
               type="text"
               class="bg-light form-control"
-              formControlName="Provincia"
+              formControlName="provincia"
             />
           </div>
         </div>
@@ -78,7 +78,7 @@
             <input
               type="text"
               class="bg-light form-control"
-              formControlName="Ciudad"
+              formControlName="ciudad"
             />
           </div>
           <div class="col-md-5 pt-md-0 pt-3">
@@ -86,7 +86,7 @@
             <input
               type="tel"
               class="bg-light form-control"
-              formControlName="Calle"
+              formControlName="calle"
             />
           </div>
         </div>
@@ -98,21 +98,14 @@
               <input
                 type="text"
                 class="bg-light form-control"
-                formControlName="Dni"
+                formControlName="dni"
               />
             </div>
-            <div class="col-md-5">
-              <label for="email">Contraseña</label>
-              <input
-                type="text"
-                class="bg-light form-control"
-                formControlName="Password"
-              />
-            </div>
+           
           </div>
 
           <button
-            (click)="modificarUsuario()"
+            type="submit"
             class="btn-neon"
             style="margin-top: 30px"
           >
