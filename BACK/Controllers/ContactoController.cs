@@ -49,16 +49,22 @@ namespace PipayWalletFinal.Controllers
             {
                 return NotFound();
             }
-
-            var contacto = await _context.Contactos
-                .FirstOrDefaultAsync(m => m.IdUsuario == id);
-            if (contacto == null)
+            else
             {
-                return NotFound();
+                var contacto = await _context.Contactos
+                .FirstOrDefaultAsync(m => m.IdUsuario == id);
+                if (contacto == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                     _context.Contactos.Remove(contacto);
+                     _context.SaveChanges();
+                    return Ok();
+                }
             }
 
-            return Ok();
-            // return View(category);
         }
 
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PILpw.Entitis;
@@ -20,10 +21,12 @@ namespace PILpw.Controllers
     {
         private readonly dev_pwContext _context;
         private readonly IOperacioneService _OperacioneService;
-        public OperacioneController(IOperacioneService OperacioneService, dev_pwContext context)
+        private readonly IMapper _mapper;
+        public OperacioneController(IOperacioneService OperacioneService, dev_pwContext context, IMapper mapper)
         {
             _context = context;
             _OperacioneService = OperacioneService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -34,73 +37,33 @@ namespace PILpw.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdOperacion,IdCuenta,IdTipoOperacion,Destinatario,Monto,FechaOperacion")] Operacione operacione)
+        public async Task<IActionResult> Create(OperacioneModel operacione)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(operacione);
+                var entity = _mapper.Map<Operacione>(operacione);
+                await _context.Operaciones.AddAsync(entity);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Ok();
             }
-            //ViewData["IdCuenta"] = new SelectList(_context.Cuentas, "IdCuenta", "IdCuenta", operacione.IdCuenta);
-            //ViewData["IdOperacion"] = new SelectList(_context.TipoOperacions, "IdTipoOperacion", "IdTipoOperacion", operacione.IdOperacion);
-            //return View(operacione);
-
-            return Ok();
-        }
-
-
-        //TODO: ver EL metodo edit Luego de la tabla vuelva a estar funcional
-
-
-        // GET: Operaciones/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
+            else
             {
-                return NotFound();
+                return BadRequest();
             }
+           
 
-            var operacione = await _context.Operaciones.FindAsync(id);
-            if (operacione == null)
-            {
-                return NotFound();
-            }
-            return Ok();
+            
         }
-
- 
 
         // GET: Operaciones/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var operacione = await _context.Operaciones
-                .Include(o => o.IdCuentaNavigation)
-                .Include(o => o.IdOperacionNavigation)
-                .FirstOrDefaultAsync(m => m.IdOperacion == id);
-            if (operacione == null)
-            {
-                return NotFound();
-            }
-
-            return Ok();
-        }
-
-        // POST: Operaciones/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var operacione = await _context.Operaciones.FindAsync(id);
+            var operacione = await _context.Operaciones.Where(x=>x.IdOperacion==id).FirstOrDefaultAsync();
             _context.Operaciones.Remove(operacione);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
 
         private bool OperacioneExists(int id)
