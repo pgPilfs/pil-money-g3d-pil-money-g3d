@@ -1,14 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Erica+One&display=swap');
 a{
     text-decoration: none;
   }
+  body{
+    background-color: #FFFFFF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23FFFFFF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23f0eef1' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23e2dde2' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23d4cdd4' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23c6bdc6' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23b8adb8' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23aa9dab' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%239c8d9d' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%238f7e90' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23826f83' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23756176' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%2368526a' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%235b445d' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%234f3751' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23432a45' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23371d3a' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232b102f' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+  }
+.wrapper {
+    
+    padding: 30px 50px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 10px auto;
+    margin-left: 0px;
+    max-width: 90%;
+    background-color: white;
+    
+}
   .volver{
     font-size: 26px;
-    margin-left: 1158px;
-    margin-top: 21px;
+    
+    
   } 
   .arrow, .links_name{
-    color: black;
-  } 
+    color: white;
+  }
   .home-section {
     position: relative;
     min-height: 100vh;
@@ -19,11 +37,7 @@ a{
     z-index: 2;
   }
 .titulo{
-    position: absolute;
-    width: 586px;
-    height: 61px;
-
-top: 104px;
+    
 
 font-family: Roboto;
 font-style: normal;
@@ -37,11 +51,8 @@ color: #000000;
 }
 
 .listaCuenta{
-    position: absolute;
-width: 423px;
-height: 45px;
-top: 198px;
-left: 76px;
+    
+
 
 font-family: Roboto;
 font-style: normal;
@@ -55,49 +66,20 @@ color: #FFFFFF;
 
 }
 
-.text-quien{
-    position: absolute;
-width: 586px;
-height: 61px;
-left: 311px;
-top: 296px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 36px;
-line-height: 42px;
-display: flex;
-align-items: center;
-
-color: #000000;
-}
 
 .iputs{
-    position: absolute;
-    width: 370px;
-    height: 30px;
-    left: 300px;
-    top:400px;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 15px;
-    display: flex;
-    align-items: center;
-    
-    color: #000000;
+    width: 494px;
+    left: 76px;
+    top: 299px;
+    background: #FFFFFF;
 }
 
 
 .label-dinero{
-    position: absolute;
-    width: 586px;
-    height: 61px;
     
-    top: 558px;
+width: 586px;
+height: 61px;
+top: 558px;
 
 font-family: Roboto;
 font-style: normal;
@@ -110,7 +92,7 @@ align-items: center;
 color: #000000;
 }
 .imput-dinero{
-    position: absolute;
+    
 width: 130px;
 height: 74px;
 left: 76px;
@@ -128,7 +110,6 @@ color: #000000;
 }
 
 .concepto{
-    position: absolute;
 width: 183px;
 height: 61px;
 top: 709px;
@@ -145,17 +126,12 @@ color: #000000;
 
 }
 .listaConcepto{
-    position: absolute;
 width: 145px;
 height: 42px;
-left: 76px;
-top: 776px;
-
 
 }
 
 .label-mensaje{
-    position: absolute;
 width: 324px;
 height: 74px;
 left: 628px;
@@ -173,7 +149,6 @@ color: #000000;
 
 }
 .imput-mensaje{
-    position: absolute;
 width: 400px;
 height: 31px;
 left: 628px;
@@ -191,15 +166,90 @@ align-items: center;
 
 }
 .btn-transferir{
-    position: absolute;
 width: 268px;
 height: 46px;
-left: 886px;
+left: 1026px;
 top: 850px;
 bottom: 20px;
-
-
 background: #591E4A;
+}
+
+.label{
+    margin-bottom:15px;
+    position:relative;
+    border-bottom:1px solid #591E4A;
+}
+.input{
+    width:100%;
+    padding:10px 0px;
+    margin-top:20px;
+    border:none;
+    outline:none;
+}
+.input::placeholder{
+    opacity:0;
+}
+.span-txt{
+    position:absolute;
+    top:0;
+    left:0;
+    transform:translateY(30px);
+    font-size:1em;
+    transition-duration:300ms;
+}
+
+.label:focus-within > span,
+.input:not(:placeholder-shown) + span{
+    color:rgb(158, 156, 158);
+    transform:translateY(0px);
+}
+
+
+
+.titulo-sup {
+    font-family: 'Erica One', fantasy;
+    font-size: 70px;
+    color: #FFF;
+    line-height: 100px;
+    text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC,
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 transparent,
+                 0 7px 0 transparent,
+                 0 8px 0 transparent,
+                 0 9px 0 transparent,
+                 0 10px 10px rgba(0, 0, 0, .6);
+  }
+
+  .btn-color {
+    border-radius: 50px;
+    color: #fff;
+    background-color: #330033;
+    padding: 15px;
+    cursor: pointer;
+    border: none !important;
+    margin-top: 40px
+}
+
+.btn-color:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #330033, #6d046ddc)
+}
+
+.btn-white {
+    border-radius: 50px;
+    color: #fff;
+    background-color: #330033;
+    padding: 8px 40px;
+    cursor: pointer;
+    border: 2px solid #D500F9 !important
+}
+
+.btn-white:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #330033, #6d046ddc)
 }
 
 .cta-dolares{    

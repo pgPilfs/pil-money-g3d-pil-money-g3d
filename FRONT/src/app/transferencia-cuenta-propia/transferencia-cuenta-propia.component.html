@@ -1,67 +1,95 @@
-<div class="volver">
-    <a routerLink="/paginaprincipal/transferencia">
-        <i class='bx bx-arrow-back arrow'></i>
-        <span class="links_name">Volver</span>
-    </a>
-</div>
-<div class="container-fluid home-section">
-<span class="titulo"> Transferir desde </span>
-<div class="dropdown listaCuenta">
-    <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
-        <option value="pesos" selected>CA $ N° 4017421-1 - $50.000,00</option>
-        <option value="dolares" selected>CA $ N° 4017421-2 - U$D 500</option>
-        <option value="cripto" selected>CA $ N° 4017421-3 - CTU 165</option>
-    </select>
-</div>
-
-<div class="iputs ">
+<body>
+    
    
-    <div class="cta-dolares">
-        <div class="logo-dol">
-            <p class="nombre-dol">U$D</p>
+    <div class="container-fluid home-section">
+        
+            <div class="volver row">
+                <div>
+                    <a routerLink="/paginaprincipal/transferencia">
+                    <i class='bx bx-arrow-back arrow'></i>
+                    <span class="links_name">Volver</span>
+                    </a>
+                </div>
+                <span class="titulo-sup"> Transferencia a una cuenta propia </span>
+            </div>
+        
+        <!-- seleccion de transferencia -->
+        <div class="wrapper bg-white mt-sm-5">
+            <span class="titulo border-bottom" style="margin-bottom: 10px;"> Transferir desde </span>
+            <div class="dropdown listaCuenta">
+                <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
+                    <option value="pesos" selected>CA $ N° 4017421-1 - $50.000,00</option>
+                    <option value="dolares" selected>CA $ N° 4017421-2 - U$D 500</option>
+                    <option value="cripto" selected>CA $ N° 4017421-3 - CTU 165</option>
+                </select>
+            </div>
+            <div class="row" style="margin-top: 30px;margin-left: 50px;">
+                <div class="cta-dolares" style="float: left;">
+                    <div class="logo-dol">
+                        <p class="nombre-dol">U$D</p>
+                    </div>
+                    <p class="money-dol">U$D 365,68</p>
+                    <p class="caja-dol">Caja Ahorro Dolares</p>
+                </div>
+                <div class="cta-dolares" style="margin-left: 10px;float: right;" >
+                    <div class="logo-dol">
+                        <p class="nombre-dol">CTU</p>
+                    </div>
+                    <p class="money-dol">CTU 65</p>
+                    <p class="caja-dol">Caja Ahorro Criptomoneda</p>
+                </div>
+                
+                
+            </div>
+           
         </div>
-        <p class="money-dol">U$D 365,68</p>
-        <p class="caja-dol">Caja Ahorro Dolares</p>
-    </div>
-    <div class="cta-dolares" style="margin-left: 10px;">
-        <div class="logo-dol">
-            <p class="nombre-dol">CTU</p>
+      
+            
+        
+        <!-- Dinero -->
+        <div class="wrapper bg-white mt-sm-5">
+            <label class=" border-bottom titulo" style="margin-bottom: 10px;">¿Cuánto dinero querés enviar?</label>
+            <div class="imput-dinero">
+                <label class="label" for="dinero">
+                    <span class="span-txt">$0.00</span>
+                    <input  class="input" type="number" id="dinero" placeholder="$0.00">
+                    
+                </label>
+            </div>
         </div>
-        <p class="money-dol">CTU 65</p>
-        <p class="caja-dol">Caja Ahorro Criptomoneda</p>
+    <!-- concepto -->
+        <div class="wrapper bg-white mt-sm-5">
+            <label class=" border-bottom titulo" style="margin-bottom: 10px;">Concepto</label>
+           
+            <div class="dropdown listaCuenta">
+                <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
+                    <option value="varios" selected>Varios</option>
+                    <option value="alquiler" selected>Alquileres</option>
+                    <option value="cuota" selected>Cuota</option>
+                    <option value="expensas" selected>Expensas</option>
+                    <option value="factura" selected>Factura</option>
+                    <option value="prestamo" selected>Prestamo</option>
+                </select>
+            </div>
+            
+        </div>
+        <!-- mensaje -->
+        <div class="wrapper bg-white mt-sm-5">
+            <label class=" border-bottom titulo" style="margin-bottom: 30px;">
+                Mensaje (opcional)
+            </label>
+            <div class="imput-mensaje">
+                <label class="label" for="mensaje">
+                    <span class="span-txt">Mensaje</span>
+                    <input  class="input" type="text" id="mensaje" placeholder="Mensaje">
+                    
+                </label>
+            </div>
+        </div>
+        
+         <button class="btn-block btn-color"
+            routerLink="/paginaprincipal/inicio" style="float: right;margin-right: 140px;margin-bottom: 20px;width: 200px;">Transferir</button>
+        
     </div>
-  
-   
-</div>
-
-<label class="label-dinero">¿Cuánto dinero querés enviar?</label>
-<div class="imput-dinero">
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>$0.00</mat-label>
-        <input matInput placeholder="" value="">
-    </mat-form-field>
-</div>   
-<label class="concepto">Concepto</label>
-<div class="dropdown listaConcepto">
-    <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
-        <option value="varios" selected>Varios</option>
-        <option value="alquiler" selected>Alquileres</option>
-        <option value="cuota" selected>Cuota</option>
-        <option value="expensas" selected>Expensas</option>
-        <option value="factura" selected>Factura</option>
-        <option value="prestamo" selected>Prestamo</option>
-    </select>
-</div>
-<label class="label-mensaje">
-    Mensaje (opcional)
-</label>
-<div class="imput-mensaje">
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Escribí un comentario</mat-label>
-        <input matInput placeholder="" value="">
-    </mat-form-field>
-</div>   
-
-<button type="button" class="btn btn-primary btn-transferir">Transferir</button>
-
-</div>
+    
+</body>
