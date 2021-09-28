@@ -6047,19 +6047,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pinte\\.nuget\\packages\\": {}
+    "C:\\Users\\hernan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pinte\\source\\repos\\PILpw\\PILpw.csproj",
+      "projectUniqueName": "F:\\PROYECTOS\\CURSO\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
       "projectName": "PILpw",
-      "projectPath": "C:\\Users\\pinte\\source\\repos\\PILpw\\PILpw.csproj",
-      "packagesPath": "C:\\Users\\pinte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pinte\\source\\repos\\PILpw\\obj\\",
+      "projectPath": "F:\\PROYECTOS\\CURSO\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
+      "packagesPath": "C:\\Users\\hernan\\.nuget\\packages\\",
+      "outputPath": "F:\\PROYECTOS\\CURSO\\pil-money-g3d-pil-money-g3d\\BACK\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pinte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hernan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6126,7 +6126,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
