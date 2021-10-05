@@ -26,10 +26,10 @@ namespace PipayWalletFinal.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get(int id)
         {
-            var contacto = _context.Contactos.ToList();
-            return Ok(contacto);
+            var contactos = await _context.Contactos.Where(x => x.IdContacto == id).FirstOrDefaultAsync();
+            return Ok(contactos);
         }
 
         [HttpPost]

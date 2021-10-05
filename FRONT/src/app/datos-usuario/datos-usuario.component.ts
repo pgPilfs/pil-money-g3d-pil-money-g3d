@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Toast, ToastrService } from 'ngx-toastr';
+//import { Toast, ToastrService } from 'ngx-toastr';
 import { IUser } from '../Interfaces/IUser';
 import { DatosUsuarioService } from '../Services/datos-usuario.service';
 
@@ -12,7 +12,7 @@ import { DatosUsuarioService } from '../Services/datos-usuario.service';
 export class DatosUsuarioComponent implements OnInit {
   usuario!:any;
   usuarioForm!: FormGroup;
-  constructor(private datousuario:DatosUsuarioService, private fb: FormBuilder, private toast:ToastrService) { }
+  constructor(private datousuario:DatosUsuarioService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getData();
@@ -53,10 +53,8 @@ initForm(data:any){
   modificarUsuario(){
     
     this.datousuario.modifiedUser(this.usuarioForm.value, 2).subscribe(data=>{
-      this.toast.success('Datos Modificados con exito')
       console.log(data)
     }, err =>{
-      this.toast.error(err)
       console.log(err);
     
     })
