@@ -12,14 +12,14 @@ export class InicioComponent implements OnInit {
   constructor(private datousuario:DatosUsuarioService) { }
 
   ngOnInit(): void {
-    this.datousuario.obtenercuenta(2).subscribe(
+    this.datousuario.obtenercuenta(11).subscribe(
       data=> {
         console.log(data);
         this.usuario=data;
       }
     );
 
-    this.datousuario.ObtenerDatos(2).subscribe(
+    this.datousuario.ObtenerDatos(11).subscribe(
       datos=> {
         console.log(datos);
         this.datosusuario=datos;

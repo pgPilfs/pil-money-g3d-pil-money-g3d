@@ -38,6 +38,22 @@
               id="nombreusuarioTxt"
               placeholder="Ingresa tu Nombre de Usuario"
             />
+            <small
+              *ngIf="
+                registroForm.controls['nombreusuario'].hasError('required') &&
+                registroForm.controls['nombreusuario'].touched
+              "
+              style="color: red"
+              >Por favor ingresa tu nombre</small
+            >
+            <small
+              *ngIf="
+                registroForm.controls.nombreusuario.touched &&
+                registroForm.controls.nombreusuario.errors?.pattern
+              "
+              style="color: red"
+              >Nombre no correcto</small
+            >
           </div>
           <div class="col-md-6">
             <label
@@ -52,7 +68,24 @@
               placeholder="Correo Electrónico"
               formControlName="email"
             />
+            <small
+              *ngIf="
+                registroForm.controls.email.touched &&
+                registroForm.controls.email.errors?.required
+              "
+              style="color: red"
+              >Ingresa un mail</small
+            >
+            <small
+              *ngIf="
+                registroForm.controls['email'].hasError('email') &&
+                registroForm.controls['email'].touched
+              "
+              style="color: red"
+              >Por favor ingresa un email válido</small
+            >
           </div>
+          <div class="col-md-6"></div>
         </div>
         <div class="row">
           <div class="col-md-6">
@@ -68,6 +101,23 @@
               placeholder="Contraseña"
               formControlName="password"
             />
+            <small
+              *ngIf="
+                registroForm.controls.password.touched &&
+                registroForm.controls.password.errors?.required
+              "
+              style="color: red"
+              >Ingresa una contraseña</small
+            >
+            <small
+              *ngIf="
+                registroForm.controls.password.touched &&
+                registroForm.controls.password.errors?.pattern
+              "
+              style="color: red"
+              >Debe contener numeros, letras mayúsculas y minúsculas y por lo
+              menos 8 caracteres</small
+            >
           </div>
           <div class="col-md-6">
             <label style="margin-top: 5%" id="lblDniTxt" class="form-label"
@@ -94,6 +144,22 @@
               id="nombreoTxt"
               placeholder="Ingresa tu Nombre"
             />
+            <small
+              *ngIf="
+                registroForm.controls['nombre'].hasError('required') &&
+                registroForm.controls['nombre'].touched
+              "
+              style="color: red"
+              >Por favor ingresa tu nombre</small
+            >
+            <small
+              *ngIf="
+                registroForm.controls.nombre.touched &&
+                registroForm.controls.nombre.errors?.pattern
+              "
+              style="color: red"
+              >Nombre no correcto</small
+            >
           </div>
           <div class="col-md-6">
             <label style="margin-top: 5%" id="lblapellidoTxt" class="form-label"
@@ -103,8 +169,24 @@
               class="form-control"
               type="text"
               placeholder="Ingresa tu Apelldio"
-              formControlName="apellido"
+              formControlName="apelldio"
             />
+            <small
+              *ngIf="
+                registroForm.controls['apelldio'].hasError('required') &&
+                registroForm.controls['apelldio'].touched
+              "
+              style="color: red"
+              >Por favor ingresa tu apellido</small
+            >
+            <small
+              *ngIf="
+                registroForm.controls.apelldio.touched &&
+                registroForm.controls.apelldio.errors?.pattern
+              "
+              style="color: red"
+              >Apellido no correcto</small
+            >
           </div>
         </div>
         <div class="row">
@@ -118,6 +200,22 @@
               placeholder="Ingresa tu Telefono"
               formControlName="telefono"
             />
+            <small
+              *ngIf="
+                registroForm.controls.telefono.touched &&
+                registroForm.controls.telefono.errors?.required
+              "
+              style="color: red"
+              >Dato requerido</small
+            >
+            <small
+              *ngIf="
+                registroForm.controls.telefono.touched &&
+                registroForm.controls.telefono.errors?.pattern
+              "
+              style="color: red"
+              >Numero mal inrgesado, formato 351600101</small
+            >
           </div>
           <div class="col-md-6">
             <label
@@ -146,6 +244,14 @@
               placeholder="Ingresa tu Ciudad"
               formControlName="ciudad"
             />
+            <small
+              *ngIf="
+                registroForm.controls['ciudad'].hasError('required') &&
+                registroForm.controls['ciudad'].touched
+              "
+              style="color: red"
+              >Por favor ingresa una ciudad</small
+            >
           </div>
           <div class="col-md-6">
             <label
@@ -192,6 +298,7 @@
         </div>
         <div class="col-12">
           <button
+            [disabled]="registroForm.invalid"
             style="margin-bottom: 5%"
             type="submit"
             id="btnRegistro"

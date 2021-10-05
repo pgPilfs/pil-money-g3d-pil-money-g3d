@@ -32,7 +32,7 @@ export class RegistroComponent implements OnInit {
     this.registroForm= this.fb.group({
       nombreusuario: new FormControl('',Validators.required),
       nombre: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
-      apellido: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
+      apelldio: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
       dni: new FormControl('',[Validators.required, Validators.pattern("[0-9]{8}")]),
       telefono: new FormControl('',[Validators.required, Validators.pattern("[0-9]{10}")]),
       email: new FormControl('',[Validators.required, Validators.email]),
@@ -46,13 +46,18 @@ export class RegistroComponent implements OnInit {
   
 
 onSubmit(){
-  this.userService.addUser(this.registroForm.value).subscribe(data=>{
-    console.log("Creado")
-  }, err =>{
-
-    console.log(err);
+  if(this.registroForm.valid){
+    this.userService.addUser(this.registroForm.value).subscribe(data=>{
+      console.log("Creado")
+    }, err =>{
   
-  })
+      console.log(err);
+    
+    })
+  }
+  else{
+    this.registroForm.markAllAsTouched();
+  }
 }
 
 
