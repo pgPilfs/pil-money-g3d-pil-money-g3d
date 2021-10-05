@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PILpw.Entitis;
 using PILpw.Interfaz;
 using PILpw.Models;
+using PipayWalletFinal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,17 +21,27 @@ namespace PipayWalletFinal.Controllers
     {
         private readonly dev_pwContext _context;
         private readonly IContactoService _contactoService;
-        public ContactoController(IContactoService contactoService, dev_pwContext context)
+        private readonly IMapper _mapper;
+        public ContactoController(IContactoService contactoService, dev_pwContext context, IMapper mapper)
         {
             _context = context;
             _contactoService = contactoService;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get(int id)
         {
-            var contactos = await _context.Contactos.Where(x => x.IdContacto == id).FirstOrDefaultAsync();
-            return Ok(contactos);
+            var contactos = await _context.Contactos.Where(x=>x.IdUsuario==id).ToListAsync();
+            List<UsuarioModel> contactoslist = new List<UsuarioModel>();
+            foreach (var item in contactos)
+            {
+                var items = await _context.Usuarios.Where(x => x.IdUsuario == item.IdUsuarioAgendado).FirstOrDefaultAsync();
+                var usuariomap = _mapper.Map<UsuarioModel>(items);
+                contactoslist.Add(usuariomap);
+            }
+                
+            return Ok(contactoslist);
         }
 
         [HttpPost]

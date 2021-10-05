@@ -41,7 +41,7 @@ namespace PILpw.Entitis
                 entity.HasKey(e => e.IdContacto);
 
                 entity.Property(e => e.IdContacto)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("id_contacto");
 
                 entity.Property(e => e.IdUsuario).HasColumnName("id_usuario");
