@@ -12,6 +12,7 @@ import { DatosUsuarioService } from '../Services/datos-usuario.service';
 export class DatosUsuarioComponent implements OnInit {
   usuario!:any;
   usuarioForm!: FormGroup;
+
   constructor(private datousuario:DatosUsuarioService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -19,7 +20,8 @@ export class DatosUsuarioComponent implements OnInit {
     
   }
   getData = (): void => {
-    this.datousuario.ObtenerDatos(11).subscribe(
+    const id: string = localStorage.getItem('idusuario')||'';
+    this.datousuario.ObtenerDatos(parseInt(id)).subscribe(
         (response: any) => {
             
             this.initForm(response);

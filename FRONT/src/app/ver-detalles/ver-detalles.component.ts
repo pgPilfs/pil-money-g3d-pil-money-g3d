@@ -8,10 +8,12 @@ import { DatosUsuarioService } from '../Services/datos-usuario.service';
 })
 export class VerDetallesComponent implements OnInit {
   public usuario:any;
+  public datosusuario:any;
   constructor(private datousuario:DatosUsuarioService) { }
 
   ngOnInit(): void {
-    this.datousuario.obtenercuenta(2).subscribe(
+    const id: string = localStorage.getItem('idusuario')||'';
+    this.datousuario.obtenercuenta(parseInt(id)).subscribe(
       data=> {
         console.log(data);
         this.usuario=data;

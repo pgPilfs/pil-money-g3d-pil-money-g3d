@@ -1,16 +1,23 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using PILpw.Entitis;
+using PILpw.Models;
 using PipayWalletFinal.Interfaz;
 using PipayWalletFinal.Models;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace PipayWalletFinal.Controllers
 {
+    [Authorize]
     [Route("api/usuario")]
     [ApiController]
     public class UsuarioController : ControllerBase
@@ -37,6 +44,8 @@ namespace PipayWalletFinal.Controllers
         {
             return Ok(await _usuarioService.Guardar(usuario));
         }
+
+        
 
         [HttpPut]
         public async Task<IActionResult> Put(UsuarioModel usuario, int id)

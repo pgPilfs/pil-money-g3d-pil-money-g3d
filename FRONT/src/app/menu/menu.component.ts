@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../Models/Usuario';
 import { DatosUsuarioService } from '../Services/datos-usuario.service';
-import {ScriptServiceService} from './../Services/script-service.service'
+import {ScriptServiceService} from './../Services/script-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +11,7 @@ import {ScriptServiceService} from './../Services/script-service.service'
 })
 export class MenuComponent implements OnInit {
   public usuario:any;
-  constructor(private _CargarScript:ScriptServiceService,private datousuario:DatosUsuarioService) { 
+  constructor(private _CargarScript:ScriptServiceService,private datousuario:DatosUsuarioService,private router:Router) { 
     _CargarScript.Carga(["script"]);
   }
 
@@ -24,4 +25,9 @@ export class MenuComponent implements OnInit {
 
   }
 
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['login']);
+   
+  }
 }

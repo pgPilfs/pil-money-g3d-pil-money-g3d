@@ -33,7 +33,10 @@ import { RegistroService } from './Services/registro.service';
 import { HttpClientModule} from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
-
+import { JwtModule } from '@auth0/angular-jwt';
+export function tokenGetter(){
+  return localStorage.getItem("jwt");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +71,14 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     CommonModule,// required animations module
     ToastrModule.forRoot(), 
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:44331"],
+        disallowedRoutes: []
+      }
+
+    })
   ],
   providers: [
     MatDatepickerModule,
