@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PILpw.Entitis;
 using PILpw.Interfaz;
 using PILpw.Models;
@@ -9,7 +10,8 @@ using System.Threading.Tasks;
 //ver namespace
 namespace PILpw.Controllers
 {
-   [Route("api/TipoOperacion")]
+    [Authorize]
+    [Route("api/TipoOperacion")]
     [ApiController]
     public class TipoOperacionController : ControllerBase
     {
