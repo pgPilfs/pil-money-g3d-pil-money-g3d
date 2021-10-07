@@ -12,14 +12,16 @@ import { DatosUsuarioService } from '../Services/datos-usuario.service';
 export class DatosUsuarioComponent implements OnInit {
   usuario!:any;
   usuarioForm!: FormGroup;
-  constructor(private datousuario:DatosUsuarioService, private fb: FormBuilder, private toast:ToastrService) { }
+
+  constructor(private datousuario:DatosUsuarioService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getData();
     
   }
   getData = (): void => {
-    this.datousuario.ObtenerDatos(2).subscribe(
+    const id: string = localStorage.getItem('idusuario')||'';
+    this.datousuario.ObtenerDatos(parseInt(id)).subscribe(
         (response: any) => {
             
             this.initForm(response);
@@ -52,11 +54,9 @@ initForm(data:any){
 
   modificarUsuario(){
     
-    this.datousuario.modifiedUser(this.usuarioForm.value, 2).subscribe(data=>{
-      this.toast.success('Datos Modificados con exito')
+    this.datousuario.modifiedUser(this.usuarioForm.value, 11).subscribe(data=>{
       console.log(data)
     }, err =>{
-      this.toast.error(err)
       console.log(err);
     
     })

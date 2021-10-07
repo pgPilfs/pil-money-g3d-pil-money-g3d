@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../Models/Usuario';
 import { DatosUsuarioService } from '../Services/datos-usuario.service';
-import {ScriptServiceService} from './../Services/script-service.service'
+import {ScriptServiceService} from './../Services/script-service.service';
+import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu',
@@ -10,18 +12,30 @@ import {ScriptServiceService} from './../Services/script-service.service'
 })
 export class MenuComponent implements OnInit {
   public usuario:any;
-  constructor(private _CargarScript:ScriptServiceService,private datousuario:DatosUsuarioService) { 
+  constructor(private _CargarScript:ScriptServiceService,private datousuario:DatosUsuarioService,private router:Router) { 
     _CargarScript.Carga(["script"]);
+    var headers_object = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem("jwt"));
   }
 
   ngOnInit(): void {
-    this.datousuario.ObtenerDatos(2).subscribe(
-      data=> {
-        console.log(data);
-        this.usuario=data;
-      }
-    );
+    const id: string = localStorage.getItem('idusuario')||'';
+    if(id!=''){
+      this.datousuario.ObtenerDatos(parseInt(id)).subscribe(
+        data=> {
+          console.log(data);
+          this.usuario=data;
+        }
+      );
+    }else{
+      this.router.navigateByUrl('404');
+    }
+    
 
   }
 
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['login']);
+   
+  }
 }

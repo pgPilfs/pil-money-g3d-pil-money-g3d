@@ -12,7 +12,7 @@ namespace PILpw.Interfaz
     public interface IContactoService
     {
         Task<ContactoModel> Guardar(ContactoModel contacto);
-        Task<ContactoModel> CrearContacto(ContactoModel contacto);
+        //Task<ContactoModel> CrearContacto(ContactoModel contacto);
 
         Task<ContactoModel> Eliminar(ContactoModel contacto, int id);
     }

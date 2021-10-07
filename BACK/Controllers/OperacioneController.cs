@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 //ver namespace
 namespace PILpw.Controllers
 {
+    [Authorize]
     [Route("api/operaciones")]
     [ApiController]
 
@@ -93,48 +94,22 @@ namespace PILpw.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return BadRequest();
             }
+           
 
-            var operacione = await _context.Operaciones.FindAsync(id);
-            if (operacione == null)
-            {
-                return NotFound();
-            }
-            return Ok();
+            
         }
-
- 
 
         // GET: Operaciones/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var operacione = await _context.Operaciones
-                .Include(o => o.IdCuentaNavigation)
-                .Include(o => o.IdOperacionNavigation)
-                .FirstOrDefaultAsync(m => m.IdOperacion == id);
-            if (operacione == null)
-            {
-                return NotFound();
-            }
-
-            return Ok();
-        }
-
-        // POST: Operaciones/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var operacione = await _context.Operaciones.FindAsync(id);
+            var operacione = await _context.Operaciones.Where(x=>x.IdOperacion==id).FirstOrDefaultAsync();
             _context.Operaciones.Remove(operacione);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
 
         private bool OperacioneExists(int id)

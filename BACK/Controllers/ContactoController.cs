@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PILpw.Entitis;
 using PILpw.Interfaz;
 using PILpw.Models;
+using PipayWalletFinal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace PipayWalletFinal.Controllers
 {
-
+    [Authorize]
     [Route("api/contacto")]
     [ApiController]
 
@@ -19,17 +22,27 @@ namespace PipayWalletFinal.Controllers
     {
         private readonly dev_pwContext _context;
         private readonly IContactoService _contactoService;
-        public ContactoController(IContactoService contactoService, dev_pwContext context)
+        private readonly IMapper _mapper;
+        public ContactoController(IContactoService contactoService, dev_pwContext context, IMapper mapper)
         {
             _context = context;
             _contactoService = contactoService;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get(int id)
         {
-            var contacto = _context.Contactos.ToList();
-            return Ok(contacto);
+            var contactos = await _context.Contactos.Where(x=>x.IdUsuario==id).ToListAsync();
+            List<UsuarioModel> contactoslist = new List<UsuarioModel>();
+            foreach (var item in contactos)
+            {
+                var items = await _context.Usuarios.Where(x => x.IdUsuario == item.IdUsuarioAgendado).FirstOrDefaultAsync();
+                var usuariomap = _mapper.Map<UsuarioModel>(items);
+                contactoslist.Add(usuariomap);
+            }
+                
+            return Ok(contactoslist);
         }
 
         [HttpPost]
@@ -49,16 +62,22 @@ namespace PipayWalletFinal.Controllers
             {
                 return NotFound();
             }
-
-            var contacto = await _context.Contactos
-                .FirstOrDefaultAsync(m => m.IdUsuario == id);
-            if (contacto == null)
+            else
             {
-                return NotFound();
+                var contacto = await _context.Contactos
+                .FirstOrDefaultAsync(m => m.IdUsuario == id);
+                if (contacto == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                     _context.Contactos.Remove(contacto);
+                     _context.SaveChanges();
+                    return Ok();
+                }
             }
 
-            return Ok();
-            // return View(category);
         }
 
 
