@@ -25,7 +25,7 @@ namespace PILpw.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var TipoOperacions = _context.TipoOperacions.ToList();
+            var TipoOperacions = _context.Operacione.ToList();
             return Ok(TipoOperacions);
 
         }

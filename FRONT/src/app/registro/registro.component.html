@@ -1,106 +1,208 @@
 <app-header></app-header>
 
+<div class="container-fluid" id="containerReg">
+  <div class="row">
+    <div class="col-12"><br /><br /><br /></div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p style="font-size: 200%; color: aliceblue; margin-left: 10%">
+        Digitalizamos tu dinero
+      </p>
+      <p style="font-size: 200%; color: aliceblue; margin-left: 10%">
+        Para que realices todas las operaciones que necesites.
+      </p>
 
-    <div class="container-fluid" id="containerReg">
-        <div class="row">
-            <div class="col-12"><br><br><br></div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <p style="font-size: 200%; color: aliceblue;  margin-left: 10%;">Digitalizamos tu dinero </p>
-                <p style="font-size: 200%; color: aliceblue;  margin-left: 10%">Para que realices todas las operaciones que necesites.</p>
-    
-                <img src="https://i.postimg.cc/cJPMMfM5/logo2.jpg" alt="">
-    
-            </div>
-            <div class="col-2"></div>
-            <div class="col-6">
-                <form [formGroup]='registroForm' (ngSubmit)="onSubmit()" class="row g-3 rounded" style=" margin-bottom: 10%; margin-right: 10%; color: #5b1c4b;">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblnombreusuarioTxt" class="form-label">Nombre de Usuario</label>
-                            <input type="text" formControlName="nombreusuario" class="form-control" id="nombreusuarioTxt" placeholder="Ingresa tu Nombre de Usuario">
-                        </div>
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblnombreusuarioTxt" class="form-label">Correo Electrónico</label>
-                            <input class="form-control" type="email" placeholder="Correo Electrónico" formControlName="email">
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblnombreusuarioTxt" class="form-label">Contraseña</label>
-                             <input class="form-control" type="password" placeholder="Contraseña" formControlName="password">
-                        </div>
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblDniTxt" class="form-label">Dni</label>
-                            <input class="form-control" type="number" placeholder="Dni" formControlName="dni">
-                        </div>
-                        
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblnombreTxt" class="form-label">Nombre</label>
-                            <input type="text" formControlName="nombre" class="form-control" id="nombreoTxt" placeholder="Ingresa tu Nombre">
-                        </div>
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblapellidoTxt" class="form-label">Apelldio</label>
-                             <input class="form-control" type="text" placeholder="Ingresa tu Apelldio" formControlName="apellido">
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblTelefonoTxt" class="form-label">Telefono</label>
-                            <input class="form-control" type="text" placeholder="Ingresa tu Telefono" formControlName="telefono">
-                        </div>
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblDomicilioioTxt" class="form-label">Domicilio</label>
-                            <input type="text" formControlName="calle" class="form-control" id="DomicilioTxt" placeholder="Ingresa tu Direccion">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblciudadTxt" class="form-label">Ciudad</label>
-                            <input class="form-control" type="text" placeholder="Ingresa tu Ciudad" formControlName="ciudad">
-                        </div>
-                        <div class="col-md-6">
-                            <label style="margin-top: 5%;" id="lblprovinciaTxt" class="form-label">Provincia</label>
-                            <input type="text" formControlName="provincia" class="form-control" id="provinciaTxt" placeholder="Ingresa tu Provincia">
-                        </div>
-                            
-                            
-                    </div>
-                    <div class="col-md-6">
-                        <label style="margin-top: 5%;" id="lblpaisTxt" class="form-label">Pais</label>
-                        <input class="form-control" type="text" placeholder="Ingresa tu Pais" formControlName="pais">
-                    </div>
-                    
-               
-                   
-    
-                    <div class="col-12">
-    
-                        <label class="form-label" for="customFile">Adjunta aqui una captura de tu DNI</label>
-                        <input type="file" class="form-control" id="customFile" />
-    
-                    </div>
-    
-                    <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="btnTerminos">
-                            <label class="form-check-label" for="gridCheck">
-                          Acepto los términos y condiciones
-                        </label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <button  style="margin-bottom: 5%;" type="submit" id="btnRegistro" class="btn btn-outline-success">Registrarme!</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+      <img src="https://i.postimg.cc/cJPMMfM5/logo2.jpg" alt="" />
     </div>
+    <div class="col-2"></div>
+    <div class="col-6">
+      <form
+        [formGroup]="registroForm"
+        (ngSubmit)="onSubmit()"
+        class="row g-3 rounded"
+        style="margin-bottom: 10%; margin-right: 10%; color: #5b1c4b"
+      >
+        <div class="row">
+          <div class="col-md-6">
+            <label
+              style="margin-top: 5%"
+              id="lblnombreusuarioTxt"
+              class="form-label"
+              >Nombre de Usuario</label
+            >
+            <input
+              type="text"
+              formControlName="nombreusuario"
+              class="form-control"
+              id="nombreusuarioTxt"
+              placeholder="Ingresa tu Nombre de Usuario"
+            />
+          </div>
+          <div class="col-md-6">
+            <label
+              style="margin-top: 5%"
+              id="lblnombreusuarioTxt"
+              class="form-label"
+              >Correo Electrónico</label
+            >
+            <input
+              class="form-control"
+              type="email"
+              placeholder="Correo Electrónico"
+              formControlName="email"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label
+              style="margin-top: 5%"
+              id="lblnombreusuarioTxt"
+              class="form-label"
+              >Contraseña</label
+            >
+            <input
+              class="form-control"
+              type="password"
+              placeholder="Contraseña"
+              formControlName="password"
+            />
+          </div>
+          <div class="col-md-6">
+            <label style="margin-top: 5%" id="lblDniTxt" class="form-label"
+              >Dni</label
+            >
+            <input
+              class="form-control"
+              type="number"
+              placeholder="Dni"
+              formControlName="dni"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label style="margin-top: 5%" id="lblnombreTxt" class="form-label"
+              >Nombre</label
+            >
+            <input
+              type="text"
+              formControlName="nombre"
+              class="form-control"
+              id="nombreoTxt"
+              placeholder="Ingresa tu Nombre"
+            />
+          </div>
+          <div class="col-md-6">
+            <label style="margin-top: 5%" id="lblapellidoTxt" class="form-label"
+              >Apelldio</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Ingresa tu Apelldio"
+              formControlName="apellido"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label style="margin-top: 5%" id="lblTelefonoTxt" class="form-label"
+              >Telefono</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Ingresa tu Telefono"
+              formControlName="telefono"
+            />
+          </div>
+          <div class="col-md-6">
+            <label
+              style="margin-top: 5%"
+              id="lblDomicilioioTxt"
+              class="form-label"
+              >Domicilio</label
+            >
+            <input
+              type="text"
+              formControlName="calle"
+              class="form-control"
+              id="DomicilioTxt"
+              placeholder="Ingresa tu Direccion"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label style="margin-top: 5%" id="lblciudadTxt" class="form-label"
+              >Ciudad</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Ingresa tu Ciudad"
+              formControlName="ciudad"
+            />
+          </div>
+          <div class="col-md-6">
+            <label
+              style="margin-top: 5%"
+              id="lblprovinciaTxt"
+              class="form-label"
+              >Provincia</label
+            >
+            <input
+              type="text"
+              formControlName="provincia"
+              class="form-control"
+              id="provinciaTxt"
+              placeholder="Ingresa tu Provincia"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label style="margin-top: 5%" id="lblpaisTxt" class="form-label"
+            >Pais</label
+          >
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Ingresa tu Pais"
+            formControlName="pais"
+          />
+        </div>
+
+        <div class="col-12">
+          <label class="form-label" for="customFile"
+            >Adjunta aqui una captura de tu DNI</label
+          >
+          <input type="file" class="form-control" id="customFile" />
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="btnTerminos" />
+            <label class="form-check-label" for="gridCheck">
+              Acepto los términos y condiciones
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button
+            style="margin-bottom: 5%"
+            type="submit"
+            id="btnRegistro"
+            class="btn btn-outline-success"
+          >
+            Registrarme!
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>

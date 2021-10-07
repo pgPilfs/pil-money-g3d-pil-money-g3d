@@ -1,43 +1,122 @@
 <div class="wrapper bg-white mt-sm-5">
-    
-    <h4 class="pb-4 border-bottom">Datos de Usuario</h4>
-    <div class="col-md-6"> 
-        <b style="font-size: 20px;">{{usuario.nombreUsuario}}</b>
+  <h4 class="pb-4 border-bottom">Datos de Usuario</h4>
+  <div class="col-md-6">
+    <b style="font-size: 20px">{{ usuario.nombreUsuario }}</b>
+  </div>
+  <div class="d-flex align-items-start py-3 border-bottom">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlUvSN8kFRl3ADkH6SYy3c3utUKrdNH5Z-Ew&usqp=CAU"
+      class="img"
+      alt=""
+    />
+    <div class="pl-sm-4 pl-2" class="imagen-seccion" id="img-section">
+      <b>Foto de Usuario</b>
+      <p>Solo se aceptan archivos menores a 1MB</p>
+      <button class="btn button border"><b>Upload</b></button>
     </div>
-    <div class="d-flex align-items-start py-3 border-bottom"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlUvSN8kFRl3ADkH6SYy3c3utUKrdNH5Z-Ew&usqp=CAU" class="img" alt="">
-        <div class="pl-sm-4 pl-2" class="imagen-seccion"id="img-section"> <b>Foto de Usuario</b>
-            <p>Solo se aceptan archivos menores a 1MB</p> <button class="btn button border"><b>Upload</b></button>
+  </div>
+  <div class="py-2">
+    <form [formGroup]="usuarioForm" (ngSubmit)="modificarUsuario()">
+      <div class="row py-2">
+        <div class="col-md-5" style="margin-right: 30px">
+          <label for="firstname">Nombre</label>
+          <input
+            type="text"
+            class="bg-light form-control"
+            formControlName="nombre"
+          />
         </div>
-    </div>
-    <div class="py-2" >
+        <div class="col-md-5 pt-md-0 pt-3">
+          <label for="lastname">Apellido</label>
+          <input
+            type="text"
+            class="bg-light form-control"
+            formControlName="apelldio"
+          />
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-md-5" style="margin-right: 30px">
+          <label for="email">Correo Electronico</label>
+          <input
+            type="text"
+            class="bg-light form-control"
+            formControlName="email"
+          />
+        </div>
+        <div class="col-md-5 pt-md-0 pt-3">
+          <label for="phone">Telefono Celular</label>
+          <input
+            type="tel"
+            class="bg-light form-control"
+            formControlName="telefono"
+          />
+        </div>
+      </div>
+      <div class="row py-2">
         <div class="row py-2">
-            <div class="col-md-5" style="margin-right: 30px;"> <label for="firstname">Nombre</label> <input type="text" class="bg-light form-control" placeholder="{{usuario.nombre}}" > </div>
-            <div class="col-md-5 pt-md-0 pt-3"> <label for="lastname">Apellido</label> <input type="text" class="bg-light form-control" placeholder="{{usuario.apelldio}}"> </div>
+          <div class="col-md-5" style="margin-right: 30px">
+            <label for="email">Pais</label>
+            <input
+              type="text"
+              class="bg-light form-control"
+              formControlName="pais"
+            />
+          </div>
+          <div class="col-md-5">
+            <label for="email">Provincia</label>
+            <input
+              type="text"
+              class="bg-light form-control"
+              formControlName="provincia"
+            />
+          </div>
         </div>
         <div class="row py-2">
-            <div class="col-md-5" style="margin-right: 30px;"> <label for="email">Correo Electronico</label> <input type="text" class="bg-light form-control" placeholder="{{usuario.email}}"> </div>
-            <div class="col-md-5 pt-md-0 pt-3"> <label for="phone">Telefono Celular</label> <input type="tel" class="bg-light form-control" placeholder="+54 9 {{usuario.telefono}}"> </div>
+          <div class="col-md-5" style="margin-right: 30px">
+            <label for="email">Ciudad</label>
+            <input
+              type="text"
+              class="bg-light form-control"
+              formControlName="ciudad"
+            />
+          </div>
+          <div class="col-md-5 pt-md-0 pt-3">
+            <label for="phone">Domicilio</label>
+            <input
+              type="tel"
+              class="bg-light form-control"
+              formControlName="calle"
+            />
+          </div>
         </div>
-        <div class="row py-2">
-            <div class="row py-2">
-                <div class="col-md-5" style="margin-right: 30px;"> <label for="email">Pais</label> <input type="text" class="bg-light form-control" placeholder="{{usuario.pais}}"> </div>
-                <div class="col-md-5"> <label for="email">Provincia</label> <input type="text" class="bg-light form-control" placeholder="{{usuario.provincia}}"> </div>
-            </div>
-            <div class="row py-2">
-                <div class="col-md-5" style="margin-right: 30px;"> <label for="email">Ciudad</label> <input type="text" class="bg-light form-control" placeholder="{{usuario.ciudad}}"> </div>
-                <div class="col-md-5 pt-md-0 pt-3"> <label for="phone">Domicilio</label> <input type="tel" class="bg-light form-control" placeholder="{{usuario.calle}}"> </div>
-            </div>
 
-            <div class="py-2">
-                <div class="row py-2">
-                    <div class="col-md-6"> <label for="email">Dni</label> <input type="text" class="bg-light form-control" placeholder="{{usuario.dni}}"> </div>
-                   
-                </div>
-        <a href="#" class="btn-neon" style="margin-top:30px;">
+        <div class="py-2">
+          <div class="row py-2">
+            <div class="col-md-5" style="margin-right: 30px">
+              <label for="email">Dni</label>
+              <input
+                type="text"
+                class="bg-light form-control"
+                formControlName="dni"
+              />
+            </div>
+           
+          </div>
+
+          <button
+            type="submit"
+            class="btn-neon"
+            style="margin-top: 30px"
+          >
             <span id="span1"></span>
             <span id="span2"></span>
             <span id="span3"></span>
             <span id="span4"></span>
-             GUARDAR CAMBIOS
-        </a>
+            GUARDAR CAMBIOS
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

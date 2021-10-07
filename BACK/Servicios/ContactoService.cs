@@ -1,0 +1,43 @@
+﻿using AutoMapper;
+using PILpw.Entitis;
+using PILpw.Interfaz;
+using PILpw.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace PILpw.Servicios
+{
+    public class ContactoService : IContactoService
+    {
+
+        private readonly dev_pwContext _context;
+        private readonly IMapper _mapper;
+
+        public ContactoService(dev_pwContext context, IMapper mapper)
+        {
+            _context = context;
+            _mapper = mapper;
+        }
+
+        public async Task<ContactoModel> CrearContacto(ContactoModel contacto)
+        {
+            //throw new NotImplementedException();
+            var entity = _mapper.Map<Contacto>(contacto);
+            await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<ContactoModel>(entity);
+        }
+
+        public Task<ContactoModel> Eliminar(ContactoModel contacto, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ContactoModel> Guardar(ContactoModel contacto)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

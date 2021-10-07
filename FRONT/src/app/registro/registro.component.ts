@@ -26,8 +26,6 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerform();
-    
-    // this.registroDatos();
   }
 
   registerform():void{
@@ -48,7 +46,6 @@ export class RegistroComponent implements OnInit {
   
 
 onSubmit(){
-  // console.log(this.registroForm.value)
   this.userService.addUser(this.registroForm.value).subscribe(data=>{
     console.log("Creado")
   }, err =>{

@@ -20,7 +20,7 @@ namespace PILpw.Entitis
         public virtual DbSet<Contacto> Contactos { get; set; }
         public virtual DbSet<Cuenta> Cuentas { get; set; }
         public virtual DbSet<Operacione> Operaciones { get; set; }
-        public virtual DbSet<TipoOperacion> TipoOperacions { get; set; }
+        public virtual DbSet<TipoOperacion> Operacione { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,7 +28,7 @@ namespace PILpw.Entitis
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlServer("Server=DESKTOP-2EM8Q0T;Database=dev_pw;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-B8K86GS/MSSQLSERVER02;Database=dev_pw;Trusted_Connection=True;");
             }
         }
 

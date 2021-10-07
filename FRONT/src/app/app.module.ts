@@ -31,6 +31,8 @@ import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propi
 import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
 import { RegistroService } from './Services/registro.service';
 import { HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { HttpClientModule} from '@angular/common/http';
     TransferenciaOtraCuentaComponent,
     TransferenciaContactoComponent,
     TransferenciaCuentaPropiaComponent,
-    MovPesosComponent
+    MovPesosComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,9 @@ import { HttpClientModule} from '@angular/common/http';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,// required animations module
+    ToastrModule.forRoot(), 
   ],
   providers: [
     MatDatepickerModule,
