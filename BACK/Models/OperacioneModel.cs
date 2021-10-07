@@ -12,7 +12,7 @@ namespace PILpw.Models
         public int? IdCuenta { get; set; }
         public int? IdTipoOperacion { get; set; }
         public int? Destinatario { get; set; }
-        public string Monto { get; set; }
+        public decimal Monto { get; set; }
         public string FechaOperacion { get; set; }
     }
 }

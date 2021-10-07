@@ -17,7 +17,7 @@ namespace PWFinal.Models
         public string TipoCuenta { get; set; }
         public string Cvu { get; set; }
         public string Alias { get; set; }
-        public string Saldo { get; set; }
+        public decimal Saldo { get; set; }
 
 
     }

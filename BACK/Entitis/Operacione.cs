@@ -11,7 +11,7 @@ namespace PILpw.Entitis
         public int? IdCuenta { get; set; }
         public int? IdTipoOperacion { get; set; }
         public int? Destinatario { get; set; }
-        public string Monto { get; set; }
+        public decimal Monto { get; set; }
         public string FechaOperacion { get; set; }
 
         public virtual Cuenta IdCuentaNavigation { get; set; }

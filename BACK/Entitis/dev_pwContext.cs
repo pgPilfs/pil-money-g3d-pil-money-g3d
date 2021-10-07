@@ -114,7 +114,7 @@ namespace PILpw.Entitis
 
                 entity.HasOne(d => d.IdOperacionNavigation)
                     .WithOne(p => p.Operacione)
-                    .HasForeignKey<Operacione>(d => d.IdOperacion)
+                    .HasForeignKey<Operacione>(d => d.IdTipoOperacion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Operaciones_Tipo_operacion");
             });

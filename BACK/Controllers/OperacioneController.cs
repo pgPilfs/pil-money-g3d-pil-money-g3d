@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PILpw.Entitis;
@@ -20,10 +21,12 @@ namespace PILpw.Controllers
     {
         private readonly dev_pwContext _context;
         private readonly IOperacioneService _OperacioneService;
-        public OperacioneController(IOperacioneService OperacioneService, dev_pwContext context)
+        private readonly IMapper _mapper;
+        public OperacioneController(IOperacioneService OperacioneService, dev_pwContext context, IMapper mapper )
         {
             _context = context;
             _OperacioneService = OperacioneService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -34,26 +37,57 @@ namespace PILpw.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdOperacion,IdCuenta,IdTipoOperacion,Destinatario,Monto,FechaOperacion")] Operacione operacione)
+        public async Task<IActionResult> Create( OperacioneModel operacione)
         {
+
             if (ModelState.IsValid)
             {
-                _context.Add(operacione);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            //ViewData["IdCuenta"] = new SelectList(_context.Cuentas, "IdCuenta", "IdCuenta", operacione.IdCuenta);
-            //ViewData["IdOperacion"] = new SelectList(_context.TipoOperacions, "IdTipoOperacion", "IdTipoOperacion", operacione.IdOperacion);
-            //return View(operacione);
+                if (operacione.IdTipoOperacion == 1 || operacione.IdTipoOperacion == 2)
+                {
+                    var usuario = _context.Cuentas.Where(x => x.IdCuenta == operacione.IdCuenta).FirstOrDefault();
+                    usuario.Saldo += operacione.Monto;
+                    if (usuario.Saldo > 0)
+                    {
+                        var subtotal = _mapper.Map<Cuenta>(usuario);
+                        _context.Update(subtotal);
+                        _context.SaveChanges();
+                        var entity = _mapper.Map<Operacione>(operacione);
+                        _context.Add(entity);
+                        await _context.SaveChangesAsync();
+                        return Ok();
+                    }
+                    return BadRequest("No se puede realizar la operación, saldo insuficiente");
+                }
+                else if (operacione.IdTipoOperacion == 3)
+                {
+                    var usuario = _context.Cuentas.Where(x => x.IdCuenta == operacione.IdCuenta).FirstOrDefault();
+                    var usuarioDestinatario = _context.Cuentas.Where(x => x.IdCuenta == operacione.Destinatario).FirstOrDefault();
+                    usuario.Saldo -= operacione.Monto;
+                    if (usuario.Saldo >= 0)
+                    {
+                        var subtotal = _mapper.Map<Cuenta>(usuario);
+                        _context.Update(subtotal);
+                        _context.SaveChanges();
+                        usuarioDestinatario.Saldo += operacione.Monto;
+                        var subtotaldes = _mapper.Map<Cuenta>(usuarioDestinatario);
+                        _context.Update(subtotaldes);
+                        _context.SaveChanges();
 
-            return Ok();
+                        var entity = _mapper.Map<Operacione>(operacione);
+                        _context.Add(entity);
+                        await _context.SaveChangesAsync();
+                        return Ok();
+                    }
+                    return BadRequest("No se puede realizar la operación, saldo insuficiente");
+                }
+            }
+            return BadRequest("el usuario no se cargo");
         }
 
 
         //TODO: ver EL metodo edit Luego de la tabla vuelva a estar funcional
 
-
+        /*
         // GET: Operaciones/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -106,7 +140,7 @@ namespace PILpw.Controllers
         private bool OperacioneExists(int id)
         {
             return _context.Operaciones.Any(e => e.IdOperacion == id);
-        }
+        }*/
     }
 
 }

@@ -17,7 +17,7 @@ namespace PILpw.Entitis
         public string TipoCuenta { get; set; }
         public string Cvu { get; set; }
         public string Alias { get; set; }
-        public string Saldo { get; set; }
+        public decimal Saldo { get; set; }
 
         public virtual ICollection<Operacione> Operaciones { get; set; }
     }
