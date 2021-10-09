@@ -49,33 +49,20 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Fecha</th>
-                    <th>Descipcion</th>
-                    <th>Monto</th>
+                  <th>Fecha</th>
+                  <th>Operacion</th>
+                  <th>Monto</th>
+                  <th>Destinatario</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>12/07/2021</td>
-                    <td>Extraccion Cajero</td>
-                    <td>-$2.000,00</td>
+              </thead>
+              <tbody>
+                <tr *ngFor="let t of inmu">
+                  <td>{{ t.fecha }}</td>
+                  <td>{{ t.operacion }}</td>
+                  <td>{{ t.monto }}</td>
+                  <td>{{ t.destinatario }}</td>
                 </tr>
-                <tr>
-                    <td>12/07/2021</td>
-                    <td>Extraccion Cajero</td>
-                    <td>-$2.000,00</td>
-                </tr>
-                <tr>
-                    <td>12/07/2021</td>
-                    <td>Extraccion Cajero</td>
-                    <td>-$2.000,00</td>
-                </tr>
-                <tr>
-                    <td>12/07/2021</td>
-                    <td>Extraccion Cajero</td>
-                    <td>-$2.000,00</td>
-                </tr>
-            </tbody>
+              </tbody>
         </table>
     </div>
 </div>

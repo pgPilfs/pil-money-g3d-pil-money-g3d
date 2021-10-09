@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { MovimientosService } from '../Services/movimientos.service';
+
 
 @Component({
   selector: 'app-mov-pesos',
@@ -10,52 +13,27 @@ export class MovPesosComponent implements OnInit {
   seccionIngreso = false;
   seccionRetiro = false;
   form: any = {};
-  operacionForm: FormGroup;
+  operacionForm!: FormGroup;
+  
+ saldo:boolean = false ;
 
+  constructor(private mov : MovimientosService, private fb: FormBuilder,private toastr: ToastrService) { 
+   
+    
 
-  constructor() { 
-    this.operacionForm = new FormGroup({
-      numeroTarjetaD: new FormControl('',[
-        Validators.required,
-        Validators.pattern('^[0-9]$'),
-        Validators.minLength(16),
-        Validators.maxLength(16)
-      ]),
-      fechaD: new FormControl('', [Validators.required]),
-      montoD: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[0-9]$'),
-        Validators.min(100)
-      ]),
-      numeroCVVD: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[0-9]$'),
-        Validators.minLength(3),
-        Validators.maxLength(3)
-      ]),
-
-      numeroTarjeta: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[0-9]$'),
-        Validators.minLength(16),
-        Validators.maxLength(16)
-      ]),
-      fecha: new FormControl('', [Validators.required]),
-      monto: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[0-9]$'),
-        Validators.min(100)
-      ]),
-      numeroCVV: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[0-9]$'),
-        Validators.minLength(3),
-        Validators.maxLength(3)
-      ])
-    });
+    
   }
 
   ngOnInit(): void {
+    const idcuenta = localStorage.getItem("idcuenta")||'';
+    const idc = parseInt(idcuenta)
+    this.operacionForm = this.fb.group({
+      idCuenta: new FormControl(idc),
+      idTipoOperacion: new FormControl(''),
+      destinatario: new FormControl(''),
+      monto: new FormControl(''),
+      fechaOperacion: new FormControl(''),
+    });
   }
 
   habilitarIngreso(): void {
@@ -68,6 +46,39 @@ export class MovPesosComponent implements OnInit {
     this.seccionIngreso = false;
   }
 
-  ingresar() {}
-  retiro() {}
+  ingresar() {
+    this.operacionForm.controls['idTipoOperacion'].setValue(2);
+    this.operacionForm.controls['destinatario'].setValue(0);
+    console.log(this.operacionForm.value)
+    this.mov.Operaciones(this.operacionForm.value).subscribe(res=>{
+
+      this.toastr.success('Carga Realizada');
+
+    },err=>{
+      this.toastr.error(err);
+    });
+
+  }
+  retiro() {
+    
+    
+    this.operacionForm.controls['idTipoOperacion'].setValue(1);
+    this.operacionForm.controls['destinatario'].setValue(0);
+    this.mov.Operaciones(this.operacionForm.value).subscribe(res=>{
+
+      this.toastr.success('Dinero Retirado');
+
+    },err=>{
+      
+        this.saldo=true
+      
+      
+    }
+    
+    );
+
+
+    
+
+  }
 }

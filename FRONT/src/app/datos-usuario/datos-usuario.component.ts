@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Toast, ToastrService } from 'ngx-toastr';
@@ -13,7 +14,11 @@ export class DatosUsuarioComponent implements OnInit {
   usuario!:any;
   usuarioForm!: FormGroup;
 
-  constructor(private datousuario:DatosUsuarioService, private fb: FormBuilder) { }
+  constructor(private datousuario:DatosUsuarioService, private fb: FormBuilder,private toastr: ToastrService) { 
+    var headers_object = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem("jwt"));
+
+
+  }
 
   ngOnInit(): void {
     this.getData();
@@ -53,12 +58,11 @@ initForm(data:any){
 }
 
   modificarUsuario(){
-    
-    this.datousuario.modifiedUser(this.usuarioForm.value, 11).subscribe(data=>{
-      console.log(data)
+    const id = localStorage.getItem('idusuario')||'';
+    this.datousuario.modifiedUser(this.usuarioForm.value,parseInt(id)).subscribe(data=>{
+      this.toastr.success('Usuario Crado');
     }, err =>{
-      console.log(err);
-    
+      this.toastr.error(err);
     })
   }
 

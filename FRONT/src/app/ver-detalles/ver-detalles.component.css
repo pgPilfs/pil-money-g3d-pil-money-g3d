@@ -50,7 +50,7 @@ background-size: cover;
     position: absolute;
 width: 379px;
 height: 81px;
-left: 670px;
+left:500px;
 top: 96px;
 
 font-family: Roboto;
@@ -66,7 +66,7 @@ color: #ffffff;
     position: absolute;
 width: 283px;
 height: 36px;
-left: 387px;
+left: 200px;
 top: 222px;
 
 font-family: Roboto;
@@ -86,7 +86,7 @@ color: #ffffff;
     position: absolute;
 width: 283px;
 height: 30px;
-left: 1049px;
+left: 800px;
 top: 220px;
 
 font-family: Roboto;

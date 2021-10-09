@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 //ver namespace
 namespace PILpw.Controllers
 {
-    [Authorize]
+    
     [Route("api/operaciones")]
     [ApiController]
 
@@ -31,10 +32,41 @@ namespace PILpw.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(int? idcuenta)
         {
+            
+            List<MovimientosModels> contactoslist = new List<MovimientosModels>();
+            if (idcuenta.HasValue)
+            {
+                var operacion = _context.Operaciones.Where(x => x.IdCuenta == idcuenta).ToList();
+                
+                foreach (var item in operacion)
+                {
+                    MovimientosModels movimientos = new MovimientosModels();
+                    var nomebreop = _context.Operacione.Where(x => x.IdTipoOperacion == item.IdTipoOperacion).FirstOrDefault();
+                    var destina = _context.Cuentas.Where(x => x.IdCuenta == item.Destinatario).FirstOrDefault();
+                    movimientos.idOperacion = item.IdOperacion;
+                    movimientos.idCuenta = item.IdCuenta;
+                    movimientos.monto = item.Monto;
+                    movimientos.fecha = item.FechaOperacion;
+                    movimientos.operacion = nomebreop.NombreOperacion;
+                    if (destina == null)
+                    {
+                        movimientos.destinatario = "";
+                    }
+                    else
+                    {
+                        movimientos.destinatario = destina.Alias;
+                       
+                    }
+
+                    contactoslist.Add(movimientos);
+                }
+                return Ok(contactoslist);
+            }
             var Operaciones = _context.Operaciones.ToList();
             return Ok(Operaciones);
+            
         }
 
         [HttpPost]
@@ -46,18 +78,33 @@ namespace PILpw.Controllers
                 if (operacione.IdTipoOperacion == 1 || operacione.IdTipoOperacion == 2)
                 {
                     var usuario = _context.Cuentas.Where(x => x.IdCuenta == operacione.IdCuenta).FirstOrDefault();
-                    usuario.Saldo += operacione.Monto;
-                    if (usuario.Saldo > 0)
+                    if(operacione.IdTipoOperacion == 1)
+                    {
+                        usuario.Saldo -= operacione.Monto;
+                    }
+                    else
+                    {
+                        usuario.Saldo += operacione.Monto;
+                    }
+                    
+                    
+                    if (usuario.Saldo >= 0)
                     {
                         var subtotal = _mapper.Map<Cuenta>(usuario);
                         _context.Update(subtotal);
                         _context.SaveChanges();
                         var entity = _mapper.Map<Operacione>(operacione);
+                        if(operacione.IdTipoOperacion == 1)
+                        {
+                            entity.Monto = entity.Monto * -1;
+                        }
+                        
+                        entity.FechaOperacion = DateTime.Now.ToString("dd/MM/yyyy");
                         _context.Add(entity);
                         await _context.SaveChangesAsync();
                         return Ok();
                     }
-                    return BadRequest("No se puede realizar la operación, saldo insuficiente");
+                    return StatusCode(500,"No se puede realizar la operación, saldo insuficiente");
                 }
                 else if (operacione.IdTipoOperacion == 3)
                 {
@@ -75,6 +122,8 @@ namespace PILpw.Controllers
                         _context.SaveChanges();
 
                         var entity = _mapper.Map<Operacione>(operacione);
+                        entity.FechaOperacion = DateTime.Now.ToString("dd/MM/yyyy");
+                        entity.Monto = entity.Monto * -1;
                         _context.Add(entity);
                         await _context.SaveChangesAsync();
                         return Ok();
@@ -86,36 +135,7 @@ namespace PILpw.Controllers
         }
 
 
-        //TODO: ver EL metodo edit Luego de la tabla vuelva a estar funcional
-
-        /*
-        // GET: Operaciones/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return BadRequest();
-            }
-           
-
-            
-        }
-
-        // GET: Operaciones/Delete/5
         
-        [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var operacione = await _context.Operaciones.Where(x=>x.IdOperacion==id).FirstOrDefaultAsync();
-            _context.Operaciones.Remove(operacione);
-            await _context.SaveChangesAsync();
-            return Ok();
-        }
-
-        private bool OperacioneExists(int id)
-        {
-            return _context.Operaciones.Any(e => e.IdOperacion == id);
-        }*/
     }
 
 }

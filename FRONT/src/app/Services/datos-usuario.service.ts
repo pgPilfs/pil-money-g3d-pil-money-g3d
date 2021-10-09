@@ -1,14 +1,13 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Usuario } from '../Models/Usuario';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class DatosUsuarioService {
   readonly baseURL='https://localhost:44331/api/usuario';
-  readonly urlcuenta='https://localhost:44331/api/cuenta'
+  readonly urlcuenta='https://localhost:44331/api/cuenta';
   constructor(private http:HttpClient) {
 
 

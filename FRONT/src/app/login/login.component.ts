@@ -30,8 +30,10 @@ import { Router } from '@angular/router';
         console.log(response);
         const token = (<any> response).token;
         const idusuario = (<any> response).id;
+        const idcuenta = (<any> response).idcuenta;
         localStorage.setItem("jwt",token);
         localStorage.setItem("idusuario",idusuario);
+        localStorage.setItem("idcuenta",idusuario);
         this.router.navigate(['paginaprincipal/inicio']);
       },err =>{
 

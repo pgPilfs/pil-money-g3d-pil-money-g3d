@@ -2,6 +2,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DatosUsuarioService } from '../Services/datos-usuario.service';
 import { Router } from '@angular/router';
+import { MovimientosService } from '../Services/movimientos.service';
 
 @Component({
   selector: 'app-inicio',
@@ -11,7 +12,8 @@ import { Router } from '@angular/router';
 export class InicioComponent implements OnInit {
   public usuario:any;
   public datosusuario:any;
-  constructor(private datousuario:DatosUsuarioService, private router:Router) { 
+  public inmu: any;
+  constructor(private datousuario:DatosUsuarioService, private router:Router, private mov:MovimientosService) { 
     var headers_object = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem("jwt"));
   }
 
@@ -21,6 +23,7 @@ export class InicioComponent implements OnInit {
       this.datousuario.obtenercuenta(parseInt(id)).subscribe(
         data=> {
           this.usuario=data;
+          
         },err=>{
          
         }
@@ -31,8 +34,11 @@ export class InicioComponent implements OnInit {
           this.datosusuario=datos;
         }
       );
-    
-     
+      const idcuenta: string = localStorage.getItem('idcuenta')||'';
+      this.mov.ObtenerMovimientos(parseInt(idcuenta)).subscribe(mov=>{
+
+        this.inmu = mov; 
+      });
     
    
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../Models/Usuario';
 import { DatosUsuarioService } from '../Services/datos-usuario.service';
 import {ScriptServiceService} from './../Services/script-service.service';
 import { Router } from '@angular/router';

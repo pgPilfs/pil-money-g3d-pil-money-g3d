@@ -31,6 +31,7 @@ namespace PILpw.Controllers
         public async Task<IActionResult> Login(LoginModel login)
         {
             var nombreusuario = await _context.Usuarios.Where(x => x.NombreUsuario == login.NombreUsuario).FirstOrDefaultAsync();
+            var cuenta = await _context.Cuentas.Where(x => x.IdUsuario == nombreusuario.IdUsuario).FirstOrDefaultAsync();
             var pass = await _context.Usuarios.Where(x => x.Password == login.Password).FirstOrDefaultAsync();
 
             if (nombreusuario != null && pass != null)
@@ -45,7 +46,7 @@ namespace PILpw.Controllers
                     signingCredentials: signingCredentials
                     );
                 var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-                return Ok(new { Token = tokenString, Id = nombreusuario.IdUsuario });
+                return Ok(new { Token = tokenString, Id = nombreusuario.IdUsuario , idcuenta = cuenta.IdCuenta});
             }
             return BadRequest();
 

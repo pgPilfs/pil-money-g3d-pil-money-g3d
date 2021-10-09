@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 //ver namespace
 namespace PILpw.Controllers
 {
-    [Authorize]
+    
     [Route("api/TipoOperacion")]
     [ApiController]
     public class TipoOperacionController : ControllerBase
