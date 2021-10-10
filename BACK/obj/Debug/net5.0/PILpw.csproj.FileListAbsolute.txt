@@ -87,7 +87,6 @@ C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5
 C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -250,3 +249,4 @@ F:\GitRepositories\pil-money-g3d-pil-money-g3d\BACK\obj\Debug\net5.0\PILpw.Razor
 F:\GitRepositories\pil-money-g3d-pil-money-g3d\BACK\obj\Debug\net5.0\PILpw.csproj.CopyComplete
 F:\GitRepositories\pil-money-g3d-pil-money-g3d\BACK\obj\Debug\net5.0\PILpw.genruntimeconfig.cache
 E:\Pil\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\sjuarez_simtlix\Desktop\pil-money-g3d-pil-money-g3d\BACK\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

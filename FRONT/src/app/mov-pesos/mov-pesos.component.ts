@@ -36,16 +36,6 @@ export class MovPesosComponent implements OnInit {
     });
   }
 
-  habilitarIngreso(): void {
-    this.seccionIngreso = true;
-    this.seccionRetiro = false;
-  }
-
-  habilitarRetiro(): void {
-    this.seccionRetiro = true;
-    this.seccionIngreso = false;
-  }
-
   ingresar() {
     this.operacionForm.controls['idTipoOperacion'].setValue(2);
     this.operacionForm.controls['destinatario'].setValue(0);

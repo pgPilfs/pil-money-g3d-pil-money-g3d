@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\PROYECTOS\\CURSO\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj": {}
+    "C:\\Users\\sjuarez_simtlix\\Desktop\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj": {}
   },
   "projects": {
-    "F:\\PROYECTOS\\CURSO\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj": {
+    "C:\\Users\\sjuarez_simtlix\\Desktop\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\PROYECTOS\\CURSO\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
+        "projectUniqueName": "C:\\Users\\sjuarez_simtlix\\Desktop\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
         "projectName": "PILpw",
-        "projectPath": "F:\\PROYECTOS\\CURSO\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
-        "packagesPath": "C:\\Users\\hernan\\.nuget\\packages\\",
-        "outputPath": "F:\\PROYECTOS\\CURSO\\pil-money-g3d-pil-money-g3d\\BACK\\obj\\",
+        "projectPath": "C:\\Users\\sjuarez_simtlix\\Desktop\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sjuarez_simtlix\\Desktop\\pil-money-g3d-pil-money-g3d\\BACK\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\hernan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

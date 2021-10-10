@@ -21,15 +21,6 @@ namespace PILpw.Servicios
             _mapper = mapper;
         }
 
-       /* public async Task<ContactoModel> CrearContacto(ContactoModel contacto)
-        {
-            //throw new NotImplementedException();
-            var entity = _mapper.Map<Contacto>(contacto);
-            await _context.AddAsync(entity);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<ContactoModel>(entity);
-        }*/
-
         public Task<ContactoModel> Eliminar(ContactoModel contacto, int id)
         {
             throw new NotImplementedException();
