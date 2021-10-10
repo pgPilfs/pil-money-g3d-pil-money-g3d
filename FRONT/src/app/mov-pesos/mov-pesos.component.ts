@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -18,7 +19,7 @@ export class MovPesosComponent implements OnInit {
  saldo:boolean = false ;
 
   constructor(private mov : MovimientosService, private fb: FormBuilder,private toastr: ToastrService) { 
-   
+    var headers_object = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem("jwt"));
     
 
     

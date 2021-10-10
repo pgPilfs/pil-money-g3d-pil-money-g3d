@@ -13,4 +13,7 @@ export class ContactoService {
     const idu= id.toString();
     return this.http.get<any>(this.urlcontact+"?id="+idu);
   }
+  AgregarContacto(object:any,alias:string){
+    return this.http.post<any>(this.urlcontact+"?alias="+alias,object);
+  }
 }

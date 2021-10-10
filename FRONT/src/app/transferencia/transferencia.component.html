@@ -1,5 +1,6 @@
 <div class="container-fluid transfer home-section">
   <h2 class="tit-transfer text">Transferencias</h2>
+
   <div class="transferir text">
     <p class="tit-donde">¿A dónde querés transferir?</p>
     <a routerLink="/paginaprincipal/transferenciaotra">
@@ -31,6 +32,22 @@
     </a>
   </div>
 
+
+  <div class="text">
+    <p class="tit-contacts">Agregar contacto</p>
+    <form [formGroup]="contactoadd" (ngSubmit)="agregarContacto()">
+      <div *ngIf="contactoerr" class="alert alert-danger">Contacto ya existente o No encontrado</div>
+      <div class="col-md-6">
+        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required" formControlName="alias"> <span>Alias</span> </div>
+    </div>
+      <button type="submit" class="btn btn-transferir" style="margin-left: 10px;">Agregar Contacto</button>
+    </form>
+    
+    
+
+  </div>
+
+
   <div class="contacts text">
     <p class="tit-contacts">A uno de mis contactos</p>
     <div class="container contact-list">
@@ -46,7 +63,8 @@
           <button
             type="button"
             class="btn btn-transferir"
-            routerLink="/paginaprincipal/transferenciacontacto"
+            routelink ="paginaprincipal/transferenciacontacto"
+            (click) = "transferencia(i.idUsuario)"
           >
             Transferir
           </button>

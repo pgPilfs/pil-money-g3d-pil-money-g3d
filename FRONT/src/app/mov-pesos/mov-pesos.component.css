@@ -391,7 +391,7 @@ a{
     outline: 0;
     box-shadow: none;
     border-radius: 0px;
-    border-bottom: 2px solid blue !important
+    border-bottom: 2px solid #591E4A !important
 }
 
 .inputbox {
@@ -412,7 +412,7 @@ a{
     top: 13px;
     right: 8px;
     transition: 0.5s;
-    color: #3F51B5
+    color: #591E4A
 }
 
 input::-webkit-outer-spin-button,
@@ -432,11 +432,11 @@ input::-webkit-inner-spin-button {
 }
 
 .card-blue {
-    background-color: #492bc4
+    background-color: #591E4A
 }
 
 .hightlight {
-    background-color: #5737d9;
+    background-color: #591E4A;
     padding: 10px;
     border-radius: 10px;
     margin-top: 15px;

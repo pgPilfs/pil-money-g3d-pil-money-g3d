@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 //ver namespace
 namespace PILpw.Controllers
 {
-    
+    [Authorize]
     [Route("api/operaciones")]
     [ApiController]
 

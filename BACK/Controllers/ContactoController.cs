@@ -46,9 +46,14 @@ namespace PipayWalletFinal.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(ContactoModel contacto)
+        public async Task<IActionResult> Post(ContactoModel contacto, string alias)
         {
-            return Ok(await _contactoService.Guardar(contacto));
+            var post = await _contactoService.Guardar(contacto, alias);
+            if (post!=null)
+            {
+                return Ok(post);
+            }
+            return BadRequest("Contacto ya existente o No encontrado");
         }
 
 
@@ -56,16 +61,16 @@ namespace PipayWalletFinal.Controllers
 
         //TODO: ver el return de ok si funciona bien..
         [HttpDelete]
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete([FromBody]int? idusuario, [FromQuery]int idcontacto)
         {
-            if (id == null)
+            if (idusuario == null)
             {
                 return NotFound();
             }
             else
             {
-                var contacto = await _context.Contactos
-                .FirstOrDefaultAsync(m => m.IdUsuario == id);
+                var contacto = _context.Contactos.Where(x => x.IdUsuario == idusuario)
+                .Where(e => e.IdUsuarioAgendado == idcontacto).FirstOrDefault();
                 if (contacto == null)
                 {
                     return NotFound();

@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace PipayWalletFinal.Controllers
 {
-    [Authorize]
+    
     [Route("api/usuario")]
     [ApiController]
     public class UsuarioController : ControllerBase
@@ -29,7 +29,7 @@ namespace PipayWalletFinal.Controllers
             _context = context;
             _usuarioService = usuarioService;
         }
-
+        [Authorize]
         [HttpGet]
         public async  Task<IActionResult> Get(int id)
         {
@@ -46,7 +46,7 @@ namespace PipayWalletFinal.Controllers
         }
 
         
-
+        [Authorize]
         [HttpPut]
         public async Task<IActionResult> Put(UsuarioModel usuario, int id)
         {
