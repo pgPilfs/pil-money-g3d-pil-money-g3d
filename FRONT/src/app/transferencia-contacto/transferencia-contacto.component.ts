@@ -5,6 +5,8 @@ import { MovimientosService } from '../Services/movimientos.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { DatosUsuarioService } from '../Services/datos-usuario.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-transferencia-contacto',
@@ -16,8 +18,9 @@ export class TransferenciaContactoComponent implements OnInit {
   @Input() idcontacto:number =0; 
   operacionForm!: FormGroup;
   contactoForm!: FormGroup;
+  content:any;
   public datos: any;
-  constructor(private router:Router,private mov : MovimientosService,private fb: FormBuilder,private toastr: ToastrService,private datousuario:DatosUsuarioService,) { 
+  constructor(private router:Router,private mov : MovimientosService,private fb: FormBuilder,private toastr: ToastrService,private datousuario:DatosUsuarioService,private modalService: NgbModal) { 
     var headers_object = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem("jwt"));
     const idcuenta = localStorage.getItem("idcuenta")||'';
     const idc = parseInt(idcuenta)
@@ -40,12 +43,13 @@ export class TransferenciaContactoComponent implements OnInit {
     this.getData();
     this.getDatau();
   }
-transferir(){
+transferir(content:any){
   
   this.mov.Operaciones(this.operacionForm.value).subscribe(res=>{
 
     this.toastr.success('Trasferecnia Realizada');
     localStorage.removeItem("idcontacto");
+    this.openVerticallyCentered(content)
   },err=>{
     this.toastr.error(err);
   });
@@ -92,7 +96,9 @@ getDatau = (): void => {
       () => {}
    );
 }
-
+openVerticallyCentered(content:any) {
+  this.modalService.open(content, { centered: true });
+}
 
     
 

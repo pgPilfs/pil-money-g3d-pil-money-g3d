@@ -8,6 +8,7 @@ import {
  Validators
 } from '@angular/forms';
 import { data } from 'jquery';
+import { ToastrService } from 'ngx-toastr';
 import { RegistroService } from '../Services/registro.service';
 import { Usuario } from '../usuario';
 
@@ -21,7 +22,8 @@ export class RegistroComponent implements OnInit {
   usuario!:Usuario;
   constructor(
     private fb: FormBuilder,
-    private userService:RegistroService
+    private userService:RegistroService,
+    private toastr: ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -48,10 +50,10 @@ export class RegistroComponent implements OnInit {
 onSubmit(){
   if(this.registroForm.valid){
     this.userService.addUser(this.registroForm.value).subscribe(data=>{
-      console.log("Creado")
+      this.toastr.success('Usuario Creado');
     }, err =>{
   
-      console.log(err);
+      this.toastr.error(err);
     
     })
   }

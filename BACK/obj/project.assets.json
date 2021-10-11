@@ -5621,24 +5621,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\pinte\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sjuarez_simtlix\\Desktop\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
+      "projectUniqueName": "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
       "projectName": "PILpw",
-      "projectPath": "C:\\Users\\sjuarez_simtlix\\Desktop\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sjuarez_simtlix\\Desktop\\pil-money-g3d-pil-money-g3d\\BACK\\obj\\",
+      "projectPath": "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
+      "packagesPath": "C:\\Users\\pinte\\.nuget\\packages\\",
+      "outputPath": "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\pinte\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5709,7 +5704,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

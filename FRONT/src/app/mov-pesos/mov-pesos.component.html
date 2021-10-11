@@ -9,7 +9,7 @@
               <span class="links_name">Volver</span>
               </a>
           </div>
-          <span class="titulo-sup"> Transferencia a un contacto </span>
+          <span class="titulo-sup"> Ingresar/Retirar Dinero </span>
         </div>
         <div class="row">
           <div class="col">
@@ -44,7 +44,7 @@
          <div class="ingreso" class="collapse" id="collapseIngresar" >
           <div class="row">
             <div class="col-md-8">
-              <form [formGroup]="operacionForm" (ngSubmit)="ingresar()" class="row g-3 rounded" style="margin-bottom: 10%; margin-right: 10%; color: #5b1c4b">
+              <form [formGroup]="operacionForm" (ngSubmit)="ingresar(content)" class="row g-3 rounded" style="margin-bottom: 10%; margin-right: 10%; color: #5b1c4b">
                 <div class="wrapper bg-white mt-sm-5">
                   <h6 class="text-uppercase">Ingresar Dinero</h6>
                   
@@ -102,7 +102,7 @@
         <div class="ingreso" class="collapse" id="collapseRetirar" >
           <div class="row">
             <div class="col-md-8">
-              <form [formGroup]="operacionForm" (ngSubmit)="retiro()" class="row g-3 rounded" style="margin-bottom: 10%; margin-right: 10%; color: #5b1c4b">
+              <form [formGroup]="operacionForm" (ngSubmit)="retiro(retiromodel)" class="row g-3 rounded" style="margin-bottom: 10%; margin-right: 10%; color: #5b1c4b">
                 <div class="wrapper bg-white mt-sm-5">
                   <h6 class="text-uppercase">Retirar Dinero</h6>
                   
@@ -159,8 +159,92 @@
          
         </div>
       </div>
+      //ingreso
+      <ng-template #content let-modal>
+        
+         
+              <div class="modal-content rounded-0 p-4" style="align-items: center;border-radius: 30px;background-color: transparent;">
+                  <div class='top'>
+                    <div class="success-checkmark">
+                      <div class="check-icon">
+                        <span class="icon-line line-tip"></span>
+                        <span class="icon-line line-long"></span>
+                        <div class="icon-circle"></div>
+                        <div class="icon-fix"></div>
+                      </div>
+                    </div>
+                      <div class="headr">Ingreso de Dinero Realizado</div>
+                  </div>
+                  
+                  <div class="modal-body">
+                    <div class="">
+                      <div class="text-center" style="float: left;">
+                        <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/inicio" (click)="modal.close()"> 
+                          <a routerLink="/paginaprincipal/inicio">
+                            <i class="fas fa-home" style="color:white"></i>
+                          </a>
+                        </button><br>
+                        <span class="links_name">Inicio</span>
+                      </div>
+                      <div class="text-center" style="float: right;margin-left: 30px;" >
+                        <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/mov-pesos" (click)="modal.close()"> 
+                          <a routerLink="/paginaprincipal/inicio">
+                            <i class="fas fa-hand-holding-usd" style="color: white;"></i>
+                          </a>
+                        </button><br>
+                        <span class="links_name">Otra operacion</span>
+                      </div>
+                    </div>
+                   
+                  </div>
+                   
+              </div>
+          
       
+      </ng-template>
+      //retiro
+      <ng-template #retiromodel let-modal>
+        
+         
+        <div class="modal-content rounded-0 p-4" style="align-items: center;border-radius: 30px;background-color: transparent;">
+            <div class='top'>
+              <div class="success-checkmark">
+                <div class="check-icon">
+                  <span class="icon-line line-tip"></span>
+                  <span class="icon-line line-long"></span>
+                  <div class="icon-circle"></div>
+                  <div class="icon-fix"></div>
+                </div>
+              </div>
+                <div class="headr">Retiro de Dinero Realizado</div>
+            </div>
+            
+            <div class="modal-body">
+              <div class="">
+                <div class="text-center" style="float: left;">
+                  <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/inicio" (click)="modal.close()"> 
+                    <a routerLink="/paginaprincipal/inicio">
+                      <i class="fas fa-home" style="color:white"></i>
+                    </a>
+                  </button><br>
+                  <span class="links_name">Inicio</span>
+                </div>
+                <div class="text-center" style="float: right;margin-left: 30px;" >
+                  <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/mov-pesos" (click)="modal.close()"> 
+                    <a routerLink="/paginaprincipal/inicio">
+                      <i class="fas fa-hand-holding-usd" style="color: white;"></i>
+                    </a>
+                  </button><br>
+                  <span class="links_name">Otra operacion</span>
+                </div>
+              </div>
+             
+            </div>
+             
+        </div>
     
+
+</ng-template>
   
   
 </body>

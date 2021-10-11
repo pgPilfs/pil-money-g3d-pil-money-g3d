@@ -35,6 +35,7 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtModule } from '@auth0/angular-jwt';
 import { PageNotComponent } from './page-not/page-not.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 export function tokenGetter(){
   return localStorage.getItem("jwt");
 }
@@ -80,7 +81,9 @@ export function tokenGetter(){
         disallowedRoutes: []
       }
 
-    })
+    }),
+    NgbModule,
+    
   ],
   providers: [
     MatDatepickerModule,

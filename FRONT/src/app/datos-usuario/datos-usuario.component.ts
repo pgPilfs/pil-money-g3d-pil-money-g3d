@@ -60,7 +60,7 @@ initForm(data:any){
   modificarUsuario(){
     const id = localStorage.getItem('idusuario')||'';
     this.datousuario.modifiedUser(this.usuarioForm.value,parseInt(id)).subscribe(data=>{
-      this.toastr.success('Usuario Crado');
+      this.toastr.success('Datos Actualizados');
     }, err =>{
       this.toastr.error(err);
     })

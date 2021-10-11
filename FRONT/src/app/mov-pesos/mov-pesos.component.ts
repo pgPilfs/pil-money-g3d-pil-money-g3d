@@ -1,6 +1,7 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { MovimientosService } from '../Services/movimientos.service';
 
@@ -15,10 +16,12 @@ export class MovPesosComponent implements OnInit {
   seccionRetiro = false;
   form: any = {};
   operacionForm!: FormGroup;
-  
+  closeResult: string='';
+  content:any;
+  retiromodel:any;
  saldo:boolean = false ;
 
-  constructor(private mov : MovimientosService, private fb: FormBuilder,private toastr: ToastrService) { 
+  constructor(private mov : MovimientosService, private fb: FormBuilder,private toastr: ToastrService,private modalService: NgbModal) { 
     var headers_object = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem("jwt"));
     
 
@@ -37,20 +40,20 @@ export class MovPesosComponent implements OnInit {
     });
   }
 
-  ingresar() {
+  ingresar(content:any) {
     this.operacionForm.controls['idTipoOperacion'].setValue(2);
     this.operacionForm.controls['destinatario'].setValue(0);
     console.log(this.operacionForm.value)
     this.mov.Operaciones(this.operacionForm.value).subscribe(res=>{
 
       this.toastr.success('Carga Realizada');
-
+      this.openVerticallyCentered(content);
     },err=>{
       this.toastr.error(err);
     });
 
   }
-  retiro() {
+  retiro(retiromodel:any) {
     
     
     this.operacionForm.controls['idTipoOperacion'].setValue(1);
@@ -58,7 +61,7 @@ export class MovPesosComponent implements OnInit {
     this.mov.Operaciones(this.operacionForm.value).subscribe(res=>{
 
       this.toastr.success('Dinero Retirado');
-
+      this.openVerticallyCentered(retiromodel);
     },err=>{
       
         this.saldo=true
@@ -71,5 +74,8 @@ export class MovPesosComponent implements OnInit {
 
     
 
+  }
+  openVerticallyCentered(content:any) {
+    this.modalService.open(content, { centered: true });
   }
 }

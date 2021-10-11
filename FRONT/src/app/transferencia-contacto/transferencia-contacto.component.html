@@ -50,7 +50,7 @@
         </div>
     </form>   
     
-    <form [formGroup]="operacionForm" (ngSubmit)="transferir()" >
+    <form [formGroup]="operacionForm" (ngSubmit)="transferir(content)" >
     
         <!-- Dinero -->
         <div class="wrapper bg-white mt-sm-5">
@@ -97,3 +97,45 @@
     </div>
     
 </body>
+<ng-template #content let-modal>
+        
+         
+    <div class="modal-content rounded-0 p-4" style="align-items: center;border-radius: 30px;background-color: transparent;">
+        <div class='top'>
+          <div class="success-checkmark">
+            <div class="check-icon">
+              <span class="icon-line line-tip"></span>
+              <span class="icon-line line-long"></span>
+              <div class="icon-circle"></div>
+              <div class="icon-fix"></div>
+            </div>
+          </div>
+            <div class="headr">Ingreso de Dinero Realizado</div>
+        </div>
+        
+        <div class="modal-body">
+          <div class="">
+            <div class="text-center" style="float: left;">
+              <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/inicio" (click)="modal.close()"> 
+                <a routerLink="/paginaprincipal/inicio">
+                  <i class="fas fa-home" style="color:white"></i>
+                </a>
+              </button><br>
+              <span class="links_name text-dark">Inicio</span>
+            </div>
+            <div class="text-center" style="float: right;margin-left: 30px;" >
+              <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/mov-pesos" (click)="modal.close()"> 
+                <a routerLink="/paginaprincipal/inicio">
+                  <i class="fas fa-hand-holding-usd" style="color: white;"></i>
+                </a>
+              </button><br>
+              <span class="links_name text-dark" >Otra operacion</span>
+            </div>
+          </div>
+         
+        </div>
+         
+    </div>
+
+
+</ng-template>
