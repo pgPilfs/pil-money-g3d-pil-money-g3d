@@ -11,18 +11,19 @@
                                     alt="logo2" />
                             </div>
                             <h3 class="mb-5 text-center heading">Pipay Wallet</h3>
-                            <h6 class="msg-info">Ingrese su cuenta</h6>
-                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                            <h3 class="msg-info">Ingrese su cuenta</h3>
+                            <div *ngIf="invalidLogin" class="alert alert-danger">Usuario o contraseña invalido</div>
+
+                            
+                            <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
                                 <div class="form-group">
-                                    <label class="form-control-label text-muted">Usuario</label>
-                                    <input type="email" class="form-control" formControlName="email"
-                                        placeholder="Enter email">
+                                    <label class="form-control-label text-muted">Nombre Usuario</label>
+                                    <input type="text" class="form-control" formControlName="nombreusuario"
+                                        placeholder="Nombre Usuario">
                                     <small class="form-text text-muted"
-                                        *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required"
-                                        style="color:red">Por favor, ingrese el email</small>
-                                    <small class="form-text text-muted"
-                                        *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email"
-                                        style="color:red">Email mal ingresado</small>
+                                        *ngIf="loginForm.controls.nombreusuario.touched && loginForm.controls.nombreusuario.errors?.required"
+                                        style="color:red">Por favor, ingrese el nombre de usuario</small>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label text-muted">Contraseña</label>
@@ -33,7 +34,7 @@
                                         style="color:red">Por favor, ingrese contraseña</small>
                                 </div>
                                 <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color"
-                                        routerLink="/paginaprincipal/inicio">Iniciar Sesión</button> </div>
+                                        >Iniciar Sesión</button> </div>
                                 <div class="row justify-content-center my-2"> <a href="#"><small
                                             class="text-muted">Olvidaste tu Contraseña?</small></a> </div>
                             </form>

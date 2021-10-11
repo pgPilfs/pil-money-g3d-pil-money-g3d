@@ -1,95 +1,76 @@
-
 <div class="container-fluid transfer home-section">
-    <h2 class="tit-transfer text">Transferencias</h2>
-    <div class="transferir text">
-        <p class="tit-donde">¿A dónde querés transferir?</p>
-        <a routerLink="/paginaprincipal/transferenciaotra">
-        <div class="otra-cuenta">
-            <div class="log-otra-cuenta">
-                <div><img class="bank" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ4MC4wMDIgNDgwLjAwMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNDcyLjAwMSw0MDAuMDAyaC0xNnYtOGMtMC4wNDItMTAuMTM0LTYuNDQ1LTE5LjE1LTE2LTIyLjUyOFYyMDYuNTNjOS41NTUtMy4zNzgsMTUuOTU4LTEyLjM5NCwxNi0yMi41Mjh2LTggICAgYzEzLjI1NSwwLDI0LTEwLjc0NSwyNC0yNHMtMTAuNzQ1LTI0LTI0LTI0aC01LjczNkwyNDQuMTkzLDEuMTg2Yy0yLjU3MS0xLjU4Mi01LjgxMy0xLjU4Mi04LjM4NCwwTDI5LjczNywxMjguMDAyaC01LjczNiAgICBjLTEzLjI1NSwwLTI0LDEwLjc0NS0yNCwyNHMxMC43NDUsMjQsMjQsMjR2OGMwLjA0MiwxMC4xMzQsNi40NDUsMTkuMTUsMTYsMjIuNTI4djE2Mi45NDRjLTkuNTU1LDMuMzc4LTE1Ljk1OCwxMi4zOTQtMTYsMjIuNTI4ICAgIHY4aC0xNmMtNC40MTgsMC04LDMuNTgyLTgsOHY2NGMwLDQuNDE4LDMuNTgyLDgsOCw4aDQ2NGM0LjQxOCwwLDgtMy41ODIsOC04di02NCAgICBDNDgwLjAwMSw0MDMuNTg0LDQ3Ni40MTksNDAwLjAwMiw0NzIuMDAxLDQwMC4wMDJ6IE00NDAuMDAxLDE4NC4wMDJjMCw0LjQxOC0zLjU4Miw4LTgsOGgtMzJjLTQuNDE4LDAtOC0zLjU4Mi04LTh2LThoNDhWMTg0LjAwMiAgICB6IE00MzIuMDAxLDM4NC4wMDJjNC40MTgsMCw4LDMuNTgyLDgsOHY4aC00OHYtOGMwLTQuNDE4LDMuNTgyLTgsOC04SDQzMi4wMDF6IE00MDguMDAxLDM2OC4wMDJ2LTE2MGgxNnYxNjBINDA4LjAwMXogICAgIE0yNC4wMDEsMTYwLjAwMmMtNC40MTgsMC04LTMuNTgyLTgtOHMzLjU4Mi04LDgtOGg1NnYtMTZINjAuMjY1TDI0MC4wMDEsMTcuMzk0bDE3OS43MzYsMTEwLjYwOEgxMjguMDAxdjE2aDMyOCAgICBjNC40MTgsMCw4LDMuNTgyLDgsOHMtMy41ODIsOC04LDhIMjQuMDAxeiBNMTg0LjAwMSwzNjkuNDc0VjIwNi41M2M5LjU1NS0zLjM3OCwxNS45NTgtMTIuMzk0LDE2LTIyLjUyOHYtOGg4MHY4ICAgIGMwLjA0MiwxMC4xMzQsNi40NDUsMTkuMTUsMTYsMjIuNTI4djE2Mi45NDRjLTkuNTU1LDMuMzc4LTE1Ljk1OCwxMi4zOTQtMTYsMjIuNTI4djhoLTgwdi04ICAgIEMxOTkuOTU5LDM4MS44NjgsMTkzLjU1NiwzNzIuODUyLDE4NC4wMDEsMzY5LjQ3NHogTTE3Ni4wMDEsMzg0LjAwMmM0LjQxOCwwLDgsMy41ODIsOCw4djhoLTQ4di04YzAtNC40MTgsMy41ODItOCw4LThIMTc2LjAwMXogICAgIE0xNTIuMDAxLDM2OC4wMDJ2LTE2MGgxNnYxNjBIMTUyLjAwMXogTTE3Ni4wMDEsMTkyLjAwMmgtMzJjLTQuNDE4LDAtOC0zLjU4Mi04LTh2LThoNDh2OCAgICBDMTg0LjAwMSwxODguNDIxLDE4MC40MTksMTkyLjAwMiwxNzYuMDAxLDE5Mi4wMDJ6IE0yOTYuMDAxLDM5Mi4wMDJjMC00LjQxOCwzLjU4Mi04LDgtOGgzMmM0LjQxOCwwLDgsMy41ODIsOCw4djhoLTQ4VjM5Mi4wMDJ6ICAgICBNMzEyLjAwMSwzNjguMDAydi0xNjBoMTZ2MTYwSDMxMi4wMDF6IE0zMzYuMDAxLDE5Mi4wMDJoLTMyYy00LjQxOCwwLTgtMy41ODItOC04di04aDQ4djggICAgQzM0NC4wMDEsMTg4LjQyMSwzNDAuNDE5LDE5Mi4wMDIsMzM2LjAwMSwxOTIuMDAyeiBNNDguMDAxLDE5Mi4wMDJjLTQuNDE4LDAtOC0zLjU4Mi04LTh2LThoNDh2OGMwLDQuNDE4LTMuNTgyLDgtOCw4SDQ4LjAwMXogICAgIE03Mi4wMDEsMjA4LjAwMnYxNjBoLTE2di0xNjBINzIuMDAxeiBNNDAuMDAxLDM5Mi4wMDJjMC00LjQxOCwzLjU4Mi04LDgtOGgzMmM0LjQxOCwwLDgsMy41ODIsOCw4djhoLTQ4VjM5Mi4wMDJ6ICAgICBNMTA0LjAwMSw0NjQuMDAyaC04OHYtNDhoODhWNDY0LjAwMnogTTg4LjAwMSwzNjkuNDc0VjIwNi41M2M5LjU1NS0zLjM3OCwxNS45NTgtMTIuMzk0LDE2LTIyLjUyOHYtOGgxNnY4ICAgIGMwLjA0MiwxMC4xMzQsNi40NDUsMTkuMTUsMTYsMjIuNTI4djE2Mi45NDRjLTkuNTU1LDMuMzc4LTE1Ljk1OCwxMi4zOTQtMTYsMjIuNTI4djhoLTE2di04ICAgIEMxMDMuOTU5LDM4MS44NjgsOTcuNTU2LDM3Mi44NTIsODguMDAxLDM2OS40NzR6IE0zNjAuMDAxLDQ2NC4wMDJoLTI0MHYtMTZoMTkydi0xNmgtMTkydi0xNmgyNDBWNDY0LjAwMnogTTM0NC4wMDEsMzY5LjQ3NCAgICBWMjA2LjUzYzkuNTU1LTMuMzc4LDE1Ljk1OC0xMi4zOTQsMTYtMjIuNTI4di04aDE2djhjMC4wNDIsMTAuMTM0LDYuNDQ1LDE5LjE1LDE2LDIyLjUyOHYxNjIuOTQ0ICAgIGMtOS41NTUsMy4zNzgtMTUuOTU4LDEyLjM5NC0xNiwyMi41Mjh2OGgtMTZ2LThDMzU5Ljk1OSwzODEuODY4LDM1My41NTYsMzcyLjg1MiwzNDQuMDAxLDM2OS40NzR6IE00NjQuMDAxLDQ2NC4wMDJoLTg4di00OGg4OCAgICBWNDY0LjAwMnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHJlY3QgeD0iMzI4LjAwMSIgeT0iNDMyLjAwMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3JlY3Q+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxyZWN0IHg9Ijk2LjAwMSIgeT0iMTI4LjAwMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3JlY3Q+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0yNDAuMDAxLDQ4LjAwMmMtMTcuNjczLDAtMzIsMTQuMzI3LTMyLDMyczE0LjMyNywzMiwzMiwzMmMxNy42NzMsMCwzMi0xNC4zMjcsMzItMzJTMjU3LjY3NCw0OC4wMDIsMjQwLjAwMSw0OC4wMDJ6ICAgICBNMjQwLjAwMSw5Ni4wMDJjLTguODM3LDAtMTYtNy4xNjMtMTYtMTZzNy4xNjMtMTYsMTYtMTZzMTYsNy4xNjMsMTYsMTZTMjQ4LjgzOCw5Ni4wMDIsMjQwLjAwMSw5Ni4wMDJ6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==" /></div>
-                <p class="txt-otra-cuenta">
-                    A otra cuenta con Alias, CBU o CVU
-                </p>
-            </div>
+  <h2 class="tit-transfer text">Transferencias</h2>
+
+  <div class="transferir text">
+    <p class="tit-donde">¿A dónde querés transferir?</p>
+    <a routerLink="/paginaprincipal/transferenciaotra">
+      <div class="otra-cuenta">
+        <div class="log-otra-cuenta">
+          <div>
+            <img
+              class="bank"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ4MC4wMDIgNDgwLjAwMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNDcyLjAwMSw0MDAuMDAyaC0xNnYtOGMtMC4wNDItMTAuMTM0LTYuNDQ1LTE5LjE1LTE2LTIyLjUyOFYyMDYuNTNjOS41NTUtMy4zNzgsMTUuOTU4LTEyLjM5NCwxNi0yMi41Mjh2LTggICAgYzEzLjI1NSwwLDI0LTEwLjc0NSwyNC0yNHMtMTAuNzQ1LTI0LTI0LTI0aC01LjczNkwyNDQuMTkzLDEuMTg2Yy0yLjU3MS0xLjU4Mi01LjgxMy0xLjU4Mi04LjM4NCwwTDI5LjczNywxMjguMDAyaC01LjczNiAgICBjLTEzLjI1NSwwLTI0LDEwLjc0NS0yNCwyNHMxMC43NDUsMjQsMjQsMjR2OGMwLjA0MiwxMC4xMzQsNi40NDUsMTkuMTUsMTYsMjIuNTI4djE2Mi45NDRjLTkuNTU1LDMuMzc4LTE1Ljk1OCwxMi4zOTQtMTYsMjIuNTI4ICAgIHY4aC0xNmMtNC40MTgsMC04LDMuNTgyLTgsOHY2NGMwLDQuNDE4LDMuNTgyLDgsOCw4aDQ2NGM0LjQxOCwwLDgtMy41ODIsOC04di02NCAgICBDNDgwLjAwMSw0MDMuNTg0LDQ3Ni40MTksNDAwLjAwMiw0NzIuMDAxLDQwMC4wMDJ6IE00NDAuMDAxLDE4NC4wMDJjMCw0LjQxOC0zLjU4Miw4LTgsOGgtMzJjLTQuNDE4LDAtOC0zLjU4Mi04LTh2LThoNDhWMTg0LjAwMiAgICB6IE00MzIuMDAxLDM4NC4wMDJjNC40MTgsMCw4LDMuNTgyLDgsOHY4aC00OHYtOGMwLTQuNDE4LDMuNTgyLTgsOC04SDQzMi4wMDF6IE00MDguMDAxLDM2OC4wMDJ2LTE2MGgxNnYxNjBINDA4LjAwMXogICAgIE0yNC4wMDEsMTYwLjAwMmMtNC40MTgsMC04LTMuNTgyLTgtOHMzLjU4Mi04LDgtOGg1NnYtMTZINjAuMjY1TDI0MC4wMDEsMTcuMzk0bDE3OS43MzYsMTEwLjYwOEgxMjguMDAxdjE2aDMyOCAgICBjNC40MTgsMCw4LDMuNTgyLDgsOHMtMy41ODIsOC04LDhIMjQuMDAxeiBNMTg0LjAwMSwzNjkuNDc0VjIwNi41M2M5LjU1NS0zLjM3OCwxNS45NTgtMTIuMzk0LDE2LTIyLjUyOHYtOGg4MHY4ICAgIGMwLjA0MiwxMC4xMzQsNi40NDUsMTkuMTUsMTYsMjIuNTI4djE2Mi45NDRjLTkuNTU1LDMuMzc4LTE1Ljk1OCwxMi4zOTQtMTYsMjIuNTI4djhoLTgwdi04ICAgIEMxOTkuOTU5LDM4MS44NjgsMTkzLjU1NiwzNzIuODUyLDE4NC4wMDEsMzY5LjQ3NHogTTE3Ni4wMDEsMzg0LjAwMmM0LjQxOCwwLDgsMy41ODIsOCw4djhoLTQ4di04YzAtNC40MTgsMy41ODItOCw4LThIMTc2LjAwMXogICAgIE0xNTIuMDAxLDM2OC4wMDJ2LTE2MGgxNnYxNjBIMTUyLjAwMXogTTE3Ni4wMDEsMTkyLjAwMmgtMzJjLTQuNDE4LDAtOC0zLjU4Mi04LTh2LThoNDh2OCAgICBDMTg0LjAwMSwxODguNDIxLDE4MC40MTksMTkyLjAwMiwxNzYuMDAxLDE5Mi4wMDJ6IE0yOTYuMDAxLDM5Mi4wMDJjMC00LjQxOCwzLjU4Mi04LDgtOGgzMmM0LjQxOCwwLDgsMy41ODIsOCw4djhoLTQ4VjM5Mi4wMDJ6ICAgICBNMzEyLjAwMSwzNjguMDAydi0xNjBoMTZ2MTYwSDMxMi4wMDF6IE0zMzYuMDAxLDE5Mi4wMDJoLTMyYy00LjQxOCwwLTgtMy41ODItOC04di04aDQ4djggICAgQzM0NC4wMDEsMTg4LjQyMSwzNDAuNDE5LDE5Mi4wMDIsMzM2LjAwMSwxOTIuMDAyeiBNNDguMDAxLDE5Mi4wMDJjLTQuNDE4LDAtOC0zLjU4Mi04LTh2LThoNDh2OGMwLDQuNDE4LTMuNTgyLDgtOCw4SDQ4LjAwMXogICAgIE03Mi4wMDEsMjA4LjAwMnYxNjBoLTE2di0xNjBINzIuMDAxeiBNNDAuMDAxLDM5Mi4wMDJjMC00LjQxOCwzLjU4Mi04LDgtOGgzMmM0LjQxOCwwLDgsMy41ODIsOCw4djhoLTQ4VjM5Mi4wMDJ6ICAgICBNMTA0LjAwMSw0NjQuMDAyaC04OHYtNDhoODhWNDY0LjAwMnogTTg4LjAwMSwzNjkuNDc0VjIwNi41M2M5LjU1NS0zLjM3OCwxNS45NTgtMTIuMzk0LDE2LTIyLjUyOHYtOGgxNnY4ICAgIGMwLjA0MiwxMC4xMzQsNi40NDUsMTkuMTUsMTYsMjIuNTI4djE2Mi45NDRjLTkuNTU1LDMuMzc4LTE1Ljk1OCwxMi4zOTQtMTYsMjIuNTI4djhoLTE2di04ICAgIEMxMDMuOTU5LDM4MS44NjgsOTcuNTU2LDM3Mi44NTIsODguMDAxLDM2OS40NzR6IE0zNjAuMDAxLDQ2NC4wMDJoLTI0MHYtMTZoMTkydi0xNmgtMTkydi0xNmgyNDBWNDY0LjAwMnogTTM0NC4wMDEsMzY5LjQ3NCAgICBWMjA2LjUzYzkuNTU1LTMuMzc4LDE1Ljk1OC0xMi4zOTQsMTYtMjIuNTI4di04aDE2djhjMC4wNDIsMTAuMTM0LDYuNDQ1LDE5LjE1LDE2LDIyLjUyOHYxNjIuOTQ0ICAgIGMtOS41NTUsMy4zNzgtMTUuOTU4LDEyLjM5NC0xNiwyMi41Mjh2OGgtMTZ2LThDMzU5Ljk1OSwzODEuODY4LDM1My41NTYsMzcyLjg1MiwzNDQuMDAxLDM2OS40NzR6IE00NjQuMDAxLDQ2NC4wMDJoLTg4di00OGg4OCAgICBWNDY0LjAwMnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHJlY3QgeD0iMzI4LjAwMSIgeT0iNDMyLjAwMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3JlY3Q+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxyZWN0IHg9Ijk2LjAwMSIgeT0iMTI4LjAwMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3JlY3Q+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0yNDAuMDAxLDQ4LjAwMmMtMTcuNjczLDAtMzIsMTQuMzI3LTMyLDMyczE0LjMyNywzMiwzMiwzMmMxNy42NzMsMCwzMi0xNC4zMjcsMzItMzJTMjU3LjY3NCw0OC4wMDIsMjQwLjAwMSw0OC4wMDJ6ICAgICBNMjQwLjAwMSw5Ni4wMDJjLTguODM3LDAtMTYtNy4xNjMtMTYtMTZzNy4xNjMtMTYsMTYtMTZzMTYsNy4xNjMsMTYsMTZTMjQ4LjgzOCw5Ni4wMDIsMjQwLjAwMSw5Ni4wMDJ6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg=="
+            />
+          </div>
+          <p class="txt-otra-cuenta">A otra cuenta con Alias, CBU o CVU</p>
         </div>
+      </div>
     </a>
 
-        <a routerLink="/paginaprincipal/transferenciacuentapropia">
-        <div class="mis-cuentas">
-            <div class="log-mis-cuentas">
-                <div><img class="arrow" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMi4wMTYgNTEyLjAxNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNDk2LjAwOCw3OS45OTdoLTM2OHYtNDhjMC02LjQ2NC0zLjkwNC0xMi4zMi05Ljg4OC0xNC43ODRzLTEyLjgzMi0xLjA4OC0xNy40NCwzLjQ1NmwtOTYsOTYgICAgYy02LjI0LDYuMjQtNi4yNCwxNi4zODQsMCwyMi42MjRsOTYsOTZjNC42MDgsNC41NzYsMTEuNDU2LDUuOTUyLDE3LjQ0LDMuNDg4czkuODg4LTguMzIsOS44ODgtMTQuNzg0di00OGgzNjggICAgYzguODMyLDAsMTYtNy4xNjgsMTYtMTZ2LTY0QzUxMi4wMDgsODcuMTMzLDUwNC44NCw3OS45OTcsNDk2LjAwOCw3OS45OTd6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik01MDcuMzM2LDM3Mi43MDFsLTk2LTk2LjAzMmMtNC41NzYtNC41NzYtMTEuNDU2LTUuOTUyLTE3LjQ0LTMuNDU2Yy01Ljk4NCwyLjQ5Ni05Ljg4OCw4LjMyLTkuODg4LDE0Ljc4NHY0OGgtMzY4ICAgIGMtOC44MzIsMC0xNiw3LjE2OC0xNiwxNnY2NGMwLDguODMyLDcuMTY4LDE2LDE2LDE2aDM2OHY0OGMwLDYuNDY0LDMuOTA0LDEyLjMyLDkuODg4LDE0Ljc4NCAgICBjNS45ODQsMi40OTYsMTIuODY0LDEuMTIsMTcuNDQtMy40NTZsOTYtOTZDNTEzLjU3NiwzODkuMDg1LDUxMy41NzYsMzc4Ljk0MSw1MDcuMzM2LDM3Mi43MDF6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==" /></div>
-                <p class="txt-mis-cuentas">
-                    A una de mis cuentas Pipay
-                </p>
-            </div>
+    <a routerLink="/paginaprincipal/transferenciacuentapropia">
+      <div class="mis-cuentas">
+        <div class="log-mis-cuentas">
+          <div>
+            <img
+              class="arrow"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMi4wMTYgNTEyLjAxNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNDk2LjAwOCw3OS45OTdoLTM2OHYtNDhjMC02LjQ2NC0zLjkwNC0xMi4zMi05Ljg4OC0xNC43ODRzLTEyLjgzMi0xLjA4OC0xNy40NCwzLjQ1NmwtOTYsOTYgICAgYy02LjI0LDYuMjQtNi4yNCwxNi4zODQsMCwyMi42MjRsOTYsOTZjNC42MDgsNC41NzYsMTEuNDU2LDUuOTUyLDE3LjQ0LDMuNDg4czkuODg4LTguMzIsOS44ODgtMTQuNzg0di00OGgzNjggICAgYzguODMyLDAsMTYtNy4xNjgsMTYtMTZ2LTY0QzUxMi4wMDgsODcuMTMzLDUwNC44NCw3OS45OTcsNDk2LjAwOCw3OS45OTd6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik01MDcuMzM2LDM3Mi43MDFsLTk2LTk2LjAzMmMtNC41NzYtNC41NzYtMTEuNDU2LTUuOTUyLTE3LjQ0LTMuNDU2Yy01Ljk4NCwyLjQ5Ni05Ljg4OCw4LjMyLTkuODg4LDE0Ljc4NHY0OGgtMzY4ICAgIGMtOC44MzIsMC0xNiw3LjE2OC0xNiwxNnY2NGMwLDguODMyLDcuMTY4LDE2LDE2LDE2aDM2OHY0OGMwLDYuNDY0LDMuOTA0LDEyLjMyLDkuODg4LDE0Ljc4NCAgICBjNS45ODQsMi40OTYsMTIuODY0LDEuMTIsMTcuNDQtMy40NTZsOTYtOTZDNTEzLjU3NiwzODkuMDg1LDUxMy41NzYsMzc4Ljk0MSw1MDcuMzM2LDM3Mi43MDF6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg=="
+            />
+          </div>
+          <p class="txt-mis-cuentas">A una de mis cuentas Pipay</p>
         </div>
+      </div>
     </a>
-    </div>
+  </div>
 
-    <div class="contacts text">
-        <p class="tit-contacts">A uno de mis contactos</p>
-        <div class="container contact-list">
-        <div class="row">
-            <div class="col">
-                <p>
-                    Mama <br>
-                    De la Cruz, Maria <br>
-                    Banco Galicia
-                </p>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-transferir" routerLink="/paginaprincipal/transferenciacontacto">Transferir</button>
-            </div>
-        </div>
-        <hr class="line">
-        <div class="row">
-            <div class="col">
-                <p>
-                    Mama <br>
-                    De la Cruz, Maria <br>
-                    Banco Galicia
-                </p>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-transferir" routerLink="/paginaprincipal/transferenciacontacto">Transferir</button>
-            </div>
-        </div>
-        <hr class="line">
-        <div class="row">
-            <div class="col">
-                <p>
-                    Mama <br>
-                    De la Cruz, Maria <br>
-                    Banco Galicia
-                </p>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-transferir" routerLink="/paginaprincipal/transferenciacontacto">Transferir</button>            </div>
-        </div>
-        <hr class="line">
-        <div class="row">
-            <div class="col">
-                <p>
-                    Mama <br>
-                    De la Cruz, Maria <br>
-                    Banco Galicia
-                </p>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-transferir" routerLink="/paginaprincipal/transferenciacontacto">Transferir</button>            </div>
-        </div>
-        <hr class="line">
-        <div class="row">
-            <div class="col">
-                <p>
-                    Mama <br>
-                    De la Cruz, Maria <br>
-                    Banco Galicia
-                </p>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-transferir" routerLink="/paginaprincipal/transferenciacontacto">Transferir</button>            </div>
-        </div>
+
+  <div class="text">
+    <p class="tit-contacts">Agregar contacto</p>
+    <form [formGroup]="contactoadd" (ngSubmit)="agregarContacto()">
+      <div *ngIf="contactoerr" class="alert alert-danger">Contacto ya existente o No encontrado</div>
+      <div class="col-md-6">
+        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required" formControlName="alias"> <span>Alias</span> </div>
     </div>
+      <button type="submit" class="btn btn-transferir" style="margin-left: 10px;">Agregar Contacto</button>
+    </form>
+    
+    
+
+  </div>
+
+
+  <div class="contacts text">
+    <p class="tit-contacts">A uno de mis contactos</p>
+    <div class="container contact-list">
+      <div class="row" *ngFor="let i of item">
+        <div class="col">
+          <p>
+            {{ i.nombreUsuario }} <br />
+            {{ i.nombre }} <br />
+            {{ i.telefono }}
+          </p>
+        </div>
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-transferir"
+            routelink ="paginaprincipal/transferenciacontacto"
+            (click) = "transferencia(i.idUsuario)"
+          >
+            Transferir
+          </button>
+        </div>
+        <hr class="line" />
+      </div>
     </div>
+  </div>
 </div>

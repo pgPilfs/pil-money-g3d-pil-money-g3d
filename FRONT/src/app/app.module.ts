@@ -29,7 +29,16 @@ import {MatRadioModule} from '@angular/material/radio';
 import { TransferenciaContactoComponent } from './transferencia-contacto/transferencia-contacto.component';
 import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propia/transferencia-cuenta-propia.component';
 import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
-
+import { RegistroService } from './Services/registro.service';
+import { HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { JwtModule } from '@auth0/angular-jwt';
+import { PageNotComponent } from './page-not/page-not.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+export function tokenGetter(){
+  return localStorage.getItem("jwt");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +55,9 @@ import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
     TransferenciaOtraCuentaComponent,
     TransferenciaContactoComponent,
     TransferenciaCuentaPropiaComponent,
-    MovPesosComponent
+    MovPesosComponent,
+    PageNotComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -59,12 +70,26 @@ import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
     MatNativeDateModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule,
+    CommonModule,// required animations module
+    ToastrModule.forRoot(), 
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:44331"],
+        disallowedRoutes: []
+      }
+
+    }),
+    NgbModule,
+    
   ],
   providers: [
     MatDatepickerModule,
     MatNativeDateModule,
-    MatRadioModule
+    MatRadioModule,
+    RegistroService
   ],
  
   bootstrap: [AppComponent]

@@ -1,211 +1,254 @@
-<div class="volver">
-<a routerLink="/paginaprincipal/inicio">
-    <i class='bx bx-arrow-back arrow'></i>
-    <span class="links_name">Volver</span>
-</a>
-</div>
-<div class="container-fluid home-section">
-    <h2 class="font-weigth-bold tit-op text-center">Seleccione la operación que desea realizar</h2>
-    <div class="row">
-        <div class="col">
-            <button type="button" (click)="habilitarIngreso()" class="btn btn-op btn-ingresar">
-                Ingresar dinero
+<body>
+    
+      <!-- seleccion de transferencia -->
+      <div class="container-fluid home-section">
+        <div class="volver row" style="margin-left: 0;">
+          <div>
+              <a routerLink="/paginaprincipal/transferencia">
+              <i class='bx bx-arrow-back arrow'></i>
+              <span class="links_name">Volver</span>
+              </a>
+          </div>
+          <span class="titulo-sup"> Ingresar/Retirar Dinero </span>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-op btn-ingresar"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseIngresar"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+              
+              
+            >
+              Ingresar dinero
             </button>
-        </div>
-        <div class="col">
-            <button type="button" (click)="habilitarRetiro()" class="btn btn-op btn-retirar">
-                Retirar dinero
+          </div>
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-op btn-retirar"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseRetirar"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              Retirar dinero
             </button>
+          </div>
         </div>
-    </div>
-
-    <!-- Ingresar dinero -->
-    <div class="ingreso" *ngIf="seccionIngreso">
-        <h4 class="text-center text-uppercase py-2 retirar-din">Ingresar de dinero en mi cuenta</h4>
-        <div>
-            <form style="margin-inline: 25%" (ngSubmit)="ingresar()">
-                <div [formGroup]="operacionForm" class="form-group" novalidate>
-                    <label for="numeroTarjeta">Ingrese el numero de la tarjeta:</label>
-                    <input type="text" class="form-control" formControlName="numeroTarjetaD" name="numeroTarjetaD"
-                        [(ngModel)]="form.numeroTarjetaD" required autocomplete="off" />
-                    <small class="small1" *ngIf="
-                          operacionForm.controls.numeroTarjetaD.touched &&
-                          operacionForm.controls.numeroTarjetaD.errors?.required
-                        ">Por favor, ingrese el <strong>número de la tarjeta</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                          operacionForm.controls.numeroTarjetaD.touched &&
-                          operacionForm.controls.numeroTarjetaD.errors?.pattern
-                        ">Por favor, ingrese solo <strong>números</strong> <br /></small>
-
-                    <small class="small1" *ngIf="
-                          operacionForm.controls.numeroTarjetaD.touched &&
-                          operacionForm.controls.numeroTarjetaD.errors?.maxlength
-                        ">El número máximo es de solo <strong>16 digitos</strong> <br />
-                    </small>
-
-                    <small class="small1" *ngIf="
-                          operacionForm.controls.numeroTarjetaD.touched &&
-                          operacionForm.controls.numeroTarjetaD.errors?.minlength
-                        ">El número mínimo es de solo <strong>16 digitos</strong><br /></small>
+      
+        <!-- Ingresar dinero -->
+         <div class="ingreso" class="collapse" id="collapseIngresar" >
+          <div class="row">
+            <div class="col-md-8">
+              <form [formGroup]="operacionForm" (ngSubmit)="ingresar(content)" class="row g-3 rounded" style="margin-bottom: 10%; margin-right: 10%; color: #5b1c4b">
+                <div class="wrapper bg-white mt-sm-5">
+                  <h6 class="text-uppercase">Ingresar Dinero</h6>
+                  
+                  <div class="inputbox mt-3"> <input type="text" name="name" class="form-control" required="required"> <span>Nombre de Titular</span> </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="inputbox mt-3 mr-2"> <input type="numbet" name="name" class="form-control" required="required"> <i class="fa fa-credit-card"></i> <span>Número de la tarjeta</span> </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="d-flex flex-row">
+                              <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required"> <span>Expira</span> </div>
+                              <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required"> <span>CVV</span> </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mt-4 mb-4">
+                      <h6 class="text-uppercase">Dirección</h6>
+                      <div class="row mt-3">
+                          <div class="col-md-6">
+                              <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Calle</span> </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Ciudad</span> </div>
+                          </div>
+                      </div>
+                      <div class="row mt-2">
+                          <div class="col-md-6">
+                              <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Provinacia</span> </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required"> <span>Codigo Postal</span> </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mt-4 mb-4">
+                    <h6 class="text-uppercase">Monto a Ingresar</h6>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required" formControlName="monto"><i class="fas fa-money-bill-wave"></i>  <span>Monto</span> </div>
+                        </div>
+                        
+                    </div>
+                    
                 </div>
-                <div [formGroup]="operacionForm" class="form-group" novalidate>
-                    <label for="numeroCVVD">Ingrese el codigo CVV :</label>
-                    <input type="text" class="form-control" formControlName="numeroCVVD" name="numeroCVVD"
-                        [(ngModel)]="form.numeroCVVD" required autocomplete="off" />
+              </div>
+              <div class="mt-4 mb-4 d-flex justify-content-between"> <span></span> <button class="btn btn-success px-3" type="submit">Confirmar</button> </div>
+               
+              </form>
+            </div>
+           
+          </div>
+         </div>
+      
+        <!-- Retirar dinero -->
+        <div class="ingreso" class="collapse" id="collapseRetirar" >
+          <div class="row">
+            <div class="col-md-8">
+              <form [formGroup]="operacionForm" (ngSubmit)="retiro(retiromodel)" class="row g-3 rounded" style="margin-bottom: 10%; margin-right: 10%; color: #5b1c4b">
+                <div class="wrapper bg-white mt-sm-5">
+                  <h6 class="text-uppercase">Retirar Dinero</h6>
+                  
+                  <div class="inputbox mt-3"> <input type="text" name="name" class="form-control" required="required"> <span>Nombre de Titular</span> </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="inputbox mt-3 mr-2"> <input type="numbet" name="name" class="form-control" required="required"> <i class="fa fa-credit-card"></i> <span>Número de la tarjeta</span> </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="d-flex flex-row">
+                              <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required"> <span>Expira</span> </div>
+                              <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required"> <span>CVV</span> </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mt-4 mb-4">
+                      <h6 class="text-uppercase">Dirección</h6>
+                      <div class="row mt-3">
+                          <div class="col-md-6">
+                              <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Calle</span> </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Ciudad</span> </div>
+                          </div>
+                      </div>
+                      <div class="row mt-2">
+                          <div class="col-md-6">
+                              <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Provinacia</span> </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required"> <span>Codigo Postal</span> </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mt-4 mb-4">
+                    <h6 class="text-uppercase">Monto a Ingresar</h6>
+                    <div *ngIf="saldo" class="alert alert-danger">No se puede realizar la operación, saldo insuficiente</div>
 
-                    <small class="small1" *ngIf="
-                        operacionForm.controls.numeroCVVD.touched &&
-                        operacionForm.controls.numeroCVVD.errors?.required
-                      ">Por favor, ingrese el <strong>Codigo CVV</strong><br /></small>
-                    <small class="small1" *ngIf="
-                        operacionForm.controls.numeroCVVD.touched &&
-                        operacionForm.controls.numeroCVVD.errors?.pattern
-                      ">Por favor, ingrese solo <strong>numeros</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                        operacionForm.controls.numeroCVVD.touched &&
-                        operacionForm.controls.numeroCVVD.errors?.maxlength
-                      ">El número máximo es de solo <strong>3 digitos</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                        operacionForm.controls.numeroCVVD.touched &&
-                        operacionForm.controls.numeroCVVD.errors?.minlength
-                      ">El número mínimo es de solo <strong>3 digitos</strong><br /></small>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required" formControlName="monto"><i class="fas fa-money-bill-wave"></i>  <span>Monto</span> </div>
+                        </div>
+                        
+                    </div>
+                    
                 </div>
-                <div [formGroup]="operacionForm" class="form-group" novalidate>
-                    <label for="fecha">Ingrese la fecha de vencimiento de su tarjeta :</label>
-                    <input type="date" class="form-control" formControlName="fechaD" name="fechaD"
-                        [ngModel]="form.fechaD" required autocomplete="off" />
-                    <small class="small1" *ngIf="
-                        operacionForm.controls.fechaD.touched &&
-                        operacionForm.controls.fechaD.errors?.required
-                      ">Por favor, ingrese la <strong>Fecha</strong><br /></small>
-                </div>
-                <div [formGroup]="operacionForm" class="form-group" novalidate>
-                    <label for="monto">Ingrese el monto que desea Ingresar:</label>
-                    <input type="text" class="form-control" formControlName="montoD" name="montoD"
-                        [(ngModel)]="form.montoD" required autocomplete="off" />
-                    <small class="small1" *ngIf="
-                        operacionForm.controls.montoD.touched &&
-                        operacionForm.controls.montoD.errors?.required
-                      ">Por favor, ingrese su <strong>monto</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                        operacionForm.controls.montoD.touched &&
-                        operacionForm.controls.montoD.errors?.pattern
-                      ">Por favor, ingrese solo <strong>numeros</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                        operacionForm.controls.montoD.touched &&
-                        operacionForm.controls.montoD.errors?.min
-                      ">Por favor, ingrese un monto igual o superior a
-                        <strong>100</strong><br /></small>
-                </div>
-
-                <div class="form-group" style="text-align: right; margin-top: 30px">
-                    <button type="submit" class="btn btn-confirmar">
-                        Confirmar
-                    </button>
-                </div>
-            </form>
+              </div>
+              <div class="mt-4 mb-4 d-flex justify-content-between"> <span></span> <button class="btn btn-success px-3" type="submit">Confirmar</button> </div>
+               
+              </form>
+            </div>
+           
+          </div>
+         
         </div>
-    </div>
-
-    <!-- Retirar dinero -->
-    <div *ngIf="seccionRetiro" class="ingreso">
-        <h4 class="text-center text-uppercase py-2 retirar-din">
-            Retirar dinero de mi cuenta
-        </h4>
-
-        <div>
-            <form style="margin-inline: 25%" (ngSubmit)="retiro()">
-                <div [formGroup]="operacionForm" class="form-group" novalidate>
-                    <label for="numeroTarjeta">Ingrese el número de la tarjeta :</label>
-                    <input type="text" class="form-control" formControlName="numeroTarjeta" name="numeroTarjeta"
-                        [(ngModel)]="form.numeroTarjeta" required autocomplete="off" />
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.numeroTarjeta.touched &&
-                    operacionForm.controls.numeroTarjeta.errors?.required
-                  ">Por favor, ingrese el <strong>número de tarjeta</strong></small>
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.numeroTarjeta.touched &&
-                    operacionForm.controls.numeroTarjeta.errors?.pattern
-                  ">Por favor, ingrese solo <strong>números</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.numeroTarjeta.touched &&
-                    operacionForm.controls.numeroTarjeta.errors?.maxlength
-                  ">El número máximo es de solo <strong>16 dígitos</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.numeroTarjeta.touched &&
-                    operacionForm.controls.numeroTarjeta.errors?.minlength
-                  ">El número mínimo es de solo <strong>16 dígitos</strong><br /></small>
+      </div>
+      //ingreso
+      <ng-template #content let-modal>
+        
+         
+              <div class="modal-content rounded-0 p-4" style="align-items: center;border-radius: 30px;background-color: transparent;">
+                  <div class='top'>
+                    <div class="success-checkmark">
+                      <div class="check-icon">
+                        <span class="icon-line line-tip"></span>
+                        <span class="icon-line line-long"></span>
+                        <div class="icon-circle"></div>
+                        <div class="icon-fix"></div>
+                      </div>
+                    </div>
+                      <div class="headr">Ingreso de Dinero Realizado</div>
+                  </div>
+                  
+                  <div class="modal-body">
+                    <div class="">
+                      <div class="text-center" style="float: left;">
+                        <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/inicio" (click)="modal.close()"> 
+                          <a routerLink="/paginaprincipal/inicio">
+                            <i class="fas fa-home" style="color:white"></i>
+                          </a>
+                        </button><br>
+                        <span class="links_name">Inicio</span>
+                      </div>
+                      <div class="text-center" style="float: right;margin-left: 30px;" >
+                        <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/mov-pesos" (click)="modal.close()"> 
+                          <a routerLink="/paginaprincipal/inicio">
+                            <i class="fas fa-hand-holding-usd" style="color: white;"></i>
+                          </a>
+                        </button><br>
+                        <span class="links_name">Otra operacion</span>
+                      </div>
+                    </div>
+                   
+                  </div>
+                   
+              </div>
+          
+      
+      </ng-template>
+      //retiro
+      <ng-template #retiromodel let-modal>
+        
+         
+        <div class="modal-content rounded-0 p-4" style="align-items: center;border-radius: 30px;background-color: transparent;">
+            <div class='top'>
+              <div class="success-checkmark">
+                <div class="check-icon">
+                  <span class="icon-line line-tip"></span>
+                  <span class="icon-line line-long"></span>
+                  <div class="icon-circle"></div>
+                  <div class="icon-fix"></div>
                 </div>
-                <div [formGroup]="operacionForm" class="form-group" novalidate>
-                    <label for="numeroCVV">Ingrese el código CVU :</label>
-                    <input type="text" class="form-control" formControlName="numeroCVV" name="numeroCVV"
-                        [(ngModel)]="form.numeroCVV" required autocomplete="off" />
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.numeroCVV.touched &&
-                    operacionForm.controls.numeroCVV.errors?.required
-                  ">Por favor, ingrese el <strong>Código CVU</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.numeroCVV.touched &&
-                    operacionForm.controls.numeroCVV.errors?.pattern
-                  ">Por favor, ingrese solo <strong>números</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.numeroCVV.touched &&
-                    operacionForm.controls.numeroCVV.errors?.maxlength
-                  ">El número máximo es de solo <strong>3 dígitos</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.numeroCVV.touched &&
-                    operacionForm.controls.numeroCVV.errors?.minlength
-                  ">El número mínimo es de solo <strong>3 dígitos</strong><br /></small>
+              </div>
+                <div class="headr">Retiro de Dinero Realizado</div>
+            </div>
+            
+            <div class="modal-body">
+              <div class="">
+                <div class="text-center" style="float: left;">
+                  <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/inicio" (click)="modal.close()"> 
+                    <a routerLink="/paginaprincipal/inicio">
+                      <i class="fas fa-home" style="color:white"></i>
+                    </a>
+                  </button><br>
+                  <span class="links_name">Inicio</span>
                 </div>
-                <div [formGroup]="operacionForm" class="form-group" novalidate>
-                    <label for="fecha">Ingrese la fecha de vencimiento :</label>
-                    <input type="date" formControlName="fecha" class="form-control" name="fecha"
-                        [(ngModel)]="form.fecha" required autocomplete="off" />
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.fecha.touched &&
-                    operacionForm.controls.fecha.errors?.required
-                  ">Por favor, ingrese la <strong>fecha</strong><br /></small>
+                <div class="text-center" style="float: right;margin-left: 30px;" >
+                  <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/mov-pesos" (click)="modal.close()"> 
+                    <a routerLink="/paginaprincipal/inicio">
+                      <i class="fas fa-hand-holding-usd" style="color: white;"></i>
+                    </a>
+                  </button><br>
+                  <span class="links_name">Otra operacion</span>
                 </div>
-
-                <div [formGroup]="operacionForm" class="form-group" novalidate>
-                    <label for="monto">Ingrese el monto que desea retirar:</label>
-                    <input type="text" formControlName="monto" class="form-control" name="monto"
-                        [(ngModel)]="form.monto" required autocomplete="off" />
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.monto.touched &&
-                    operacionForm.controls.monto.errors?.required
-                  ">Por favor, ingrese su <strong>monto</strong><br /></small>
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.monto.touched &&
-                    operacionForm.controls.monto.errors?.pattern
-                  ">Por favor, ingrese solo <strong>números</strong></small>
-
-                    <small class="small1" *ngIf="
-                    operacionForm.controls.monto.touched &&
-                    operacionForm.controls.monto.errors?.min
-                  ">Por favor, ingrese un monto igual o superior a
-                        <strong>100</strong><br /></small>
-                </div>
-
-                <div class="form-group" style="text-align: right; margin-top: 30px">
-                    <button type="submit" class="btn btn-confirmar">
-                        Confirmar
-                    </button>
-                </div>
-            </form>
+              </div>
+             
+            </div>
+             
         </div>
-    </div>
-</div>
+    
+
+</ng-template>
+  
+  
+</body>
+
+
+
+  

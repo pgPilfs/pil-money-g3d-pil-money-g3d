@@ -1,64 +1,141 @@
-<div class="volver">
-    <a routerLink="/paginaprincipal/transferencia">
-        <i class='bx bx-arrow-back arrow'></i>
-        <span class="links_name">Volver</span>
-    </a>
-</div>
-<div class="container-fluid home-section">
-    <span class="titulo"> Transferir desde </span>
-    <div class="dropdown listaCuenta">
-        <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
-            <option value="pesos" selected>CA $ N° 4017421-1 - $50.000,00</option>
-            <option value="dolares" selected>CA $ N° 4017421-2 - U$D 500</option>
-            <option value="cripto" selected>CA $ N° 4017421-3 - CTU 165</option>
-        </select>
+<body>
+    
+    
+         
+    <div class="container-fluid home-section">
+        
+            <div class="volver row">
+                <div>
+                    <a routerLink="/paginaprincipal/transferencia">
+                    <i class='bx bx-arrow-back arrow'></i>
+                    <span class="links_name">Volver</span>
+                    </a>
+                </div>
+                <span class="titulo-sup"> Transferencia a un contacto </span>
+            </div>
+    <form [formGroup]="contactoForm" >      
+        <!-- seleccion de transferencia -->
+        <div class="wrapper bg-white mt-sm-5">
+            <span class="titulo border-bottom" style="margin-bottom: 10px;"> Transferir desde </span>
+            
+            <div class="dropdown listaCuenta">
+                <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
+                    <option value="pesos" selected><span> $ CVU {{datos.cvu}} - $ {{datos.saldo}} </span></option>
+                    
+                </select>
+            </div>
+            
+            <div class="iputs row">
+               
+                    <div class="col-md-6">
+                        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required" formControlName="alias"> <span>Alias</span> </div>
+                    </div>
+                   
+               
+               
+                    <div class="col-md-6">
+                        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required" formControlName="cvu"> <span>CVU</span> </div>
+                    </div>
+                   
+                
+                
+                    <div class="col-md-6">
+                        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required" formControlName="banco"> <span>Banco</span> </div>
+                    </div>
+                   
+                
+                
+            </div>
+           
+        </div>
+    </form>   
+    
+    <form [formGroup]="operacionForm" (ngSubmit)="transferir(content)" >
+    
+        <!-- Dinero -->
+        <div class="wrapper bg-white mt-sm-5">
+            <label class=" border-bottom titulo" style="margin-bottom: 10px;">¿Cuánto dinero querés enviar?</label>
+            <div class="imput-dinero">
+                <div class="col-md-6">
+                    <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required" formControlName="monto"> <span>Monto</span> </div>
+                </div>
+               
+            </div>
+        </div>
+    
+    <!-- concepto -->
+        <div class="wrapper bg-white mt-sm-5">
+            <label class=" border-bottom titulo" style="margin-bottom: 10px;">Concepto</label>
+           
+            <div class="dropdown listaCuenta">
+                <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
+                    <option value="varios" selected>Varios</option>
+                    <option value="alquiler" selected>Alquileres</option>
+                    <option value="cuota" selected>Cuota</option>
+                    <option value="expensas" selected>Expensas</option>
+                    <option value="factura" selected>Factura</option>
+                    <option value="prestamo" selected>Prestamo</option>
+                </select>
+            </div>
+            
+        </div>
+        <!-- mensaje -->
+        <div class="wrapper bg-white mt-sm-5">
+            <label class=" border-bottom titulo" style="margin-bottom: 30px;">
+                Mensaje (opcional)
+            </label>
+            <div class="imput-mensaje">
+                <div class="col-md-6">
+                    <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required" > <span>Mensaje</span> </div>
+                </div>
+            </div>
+        </div>
+        
+         <button class="btn-block btn-color"
+            type="submit" style="float: right;margin-right: 140px;margin-bottom: 20px;width: 200px;">Transferir</button>
+    </form>    
+    </div>
+    
+</body>
+<ng-template #content let-modal>
+        
+         
+    <div class="modal-content rounded-0 p-4" style="align-items: center;border-radius: 30px;background-color: transparent;">
+        <div class='top'>
+          <div class="success-checkmark">
+            <div class="check-icon">
+              <span class="icon-line line-tip"></span>
+              <span class="icon-line line-long"></span>
+              <div class="icon-circle"></div>
+              <div class="icon-fix"></div>
+            </div>
+          </div>
+            <div class="headr">Ingreso de Dinero Realizado</div>
+        </div>
+        
+        <div class="modal-body">
+          <div class="">
+            <div class="text-center" style="float: left;">
+              <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/inicio" (click)="modal.close()"> 
+                <a routerLink="/paginaprincipal/inicio">
+                  <i class="fas fa-home" style="color:white"></i>
+                </a>
+              </button><br>
+              <span class="links_name text-dark">Inicio</span>
+            </div>
+            <div class="text-center" style="float: right;margin-left: 30px;" >
+              <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/mov-pesos" (click)="modal.close()"> 
+                <a routerLink="/paginaprincipal/inicio">
+                  <i class="fas fa-hand-holding-usd" style="color: white;"></i>
+                </a>
+              </button><br>
+              <span class="links_name text-dark" >Otra operacion</span>
+            </div>
+          </div>
+         
+        </div>
+         
     </div>
 
-    <div class="iputs row">
 
-        <mat-form-field class="example-full-width " appearance="fill">
-            <mat-label>Nombre</mat-label>
-            <input matInput placeholder="" value="">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>El CBUoCVU</mat-label>
-            <input matInput placeholder="" value="">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Banco de esa persona</mat-label>
-            <input matInput placeholder="" value="">
-        </mat-form-field>
-
-
-    </div>
-
-    <label class="label-dinero">¿Cuánto dinero querés enviar?</label>
-    <div class="imput-dinero">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>$0.00</mat-label>
-            <input matInput placeholder="" value="">
-        </mat-form-field>
-    </div>
-    <label class="concepto">Concepto</label>
-    <div class="dropdown listaConcepto">
-        <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
-            <option value="varios" selected>Varios</option>
-            <option value="alquiler" selected>Alquileres</option>
-            <option value="cuota" selected>Cuota</option>
-            <option value="expensas" selected>Expensas</option>
-            <option value="factura" selected>Factura</option>
-            <option value="prestamo" selected>Prestamo</option>
-        </select>
-    </div>
-    <label class="label-mensaje">
-        Mensaje (opcional)
-    </label>
-    <div class="imput-mensaje">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Escribí un comentario</mat-label>
-            <input matInput placeholder="" value="">
-        </mat-form-field>
-    </div>
-
-    <button type="button" class="btn btn-primary btn-transferir">Transferir</button>
-</div>
+</ng-template>

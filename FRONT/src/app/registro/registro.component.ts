@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
@@ -6,7 +7,10 @@ import {
  FormControl,
  Validators
 } from '@angular/forms';
-
+import { data } from 'jquery';
+import { ToastrService } from 'ngx-toastr';
+import { RegistroService } from '../Services/registro.service';
+import { Usuario } from '../usuario';
 
 @Component({
   selector: 'app-registro',
@@ -15,33 +19,49 @@ import {
 })
 export class RegistroComponent implements OnInit {
   registroForm!: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  usuario!:Usuario;
+  constructor(
+    private fb: FormBuilder,
+    private userService:RegistroService,
+    private toastr: ToastrService
+    ) { }
 
   ngOnInit(): void {
-    this.initializeForm();
+    this.registerform();
   }
-  initializeForm(): void {
-    this.registroForm = this.fb.group({
-        name: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
-        surname:['', [Validators.required,Validators.pattern('^[a-zA-Z]+$') ]],
-        email:new FormControl('', [Validators.required, Validators.email]),
-        phoneNumber: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
-        phoneNumber2:['', [Validators.required, Validators.pattern("[0-9]{10}")]],
-        address: ['', Validators.required],
-        address2: ['', Validators.required],
-        city: ['', Validators.required],
-        provincia: ['', Validators.required],
-        termsYcond: [false, Validators.required],
-        password:['', [
-          Validators.required,
-          Validators.pattern(/^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}$/)
-        ]]
-    
+
+  registerform():void{
+    this.registroForm= this.fb.group({
+      nombreusuario: new FormControl('',Validators.required),
+      nombre: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
+      apelldio: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
+      dni: new FormControl('',[Validators.required, Validators.pattern("[0-9]{8}")]),
+      telefono: new FormControl('',[Validators.required, Validators.pattern("[0-9]{10}")]),
+      email: new FormControl('',[Validators.required, Validators.email]),
+      calle: new FormControl('',Validators.required),
+      ciudad: new FormControl('',Validators.required),
+      provincia: new FormControl('',Validators.required),
+      pais: new FormControl('',Validators.required),
+      password: new FormControl('',[Validators.required,Validators.pattern(/^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}$/)])
     });
+  }
+  
 
+onSubmit(){
+  if(this.registroForm.valid){
+    this.userService.addUser(this.registroForm.value).subscribe(data=>{
+      this.toastr.success('Usuario Creado');
+    }, err =>{
+  
+      this.toastr.error(err);
+    
+    })
+  }
+  else{
+    this.registroForm.markAllAsTouched();
+  }
 }
 
-onSubmit(): void{
-  console.log(this.registroForm);
-}
+
+
 }

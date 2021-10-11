@@ -13,13 +13,14 @@ import { TransferenciaContactoComponent } from './transferencia-contacto/transfe
 import { TransferenciaCuentaPropiaComponent } from './transferencia-cuenta-propia/transferencia-cuenta-propia.component';
 import { MovPesosComponent } from './mov-pesos/mov-pesos.component';
 import { DatosUsuarioComponent } from './datos-usuario/datos-usuario.component';
+import { PageNotComponent } from './page-not/page-not.component';
 
 const routes: Routes = [
   {path: '', component:LandingComponent},
   {path: 'registro', component:RegistroComponent},
   {path: 'login', component:LoginComponent},
  
-  
+  {path: '404', component:PageNotComponent},
   {path: 'paginaprincipal', component:MenuComponent,children:[
     {path: 'transferencia', component:TransferenciaComponent},
     {path: 'detalles', component:VerDetallesComponent},

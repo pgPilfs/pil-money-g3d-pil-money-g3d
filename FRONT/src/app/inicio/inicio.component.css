@@ -33,6 +33,7 @@ top: 199px;
 border: 1px solid #591E4A;
 box-sizing: border-box;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 15px;
 }
 
 .logo-ppal{
@@ -268,4 +269,194 @@ text-align: center;
     width: calc(100% - 78px);
     transition: all 0.5s ease;
     z-index: 2;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: #1c1c25;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    overflow: hidden
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+body::before {
+    position: absolute;
+    z-index: 1;
+    bottom: -20px;
+    right: -150px;
+    content: '';
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(#23a6d5, #23d5ab)
+}
+
+body::after {
+    position: absolute;
+    z-index: 2;
+    top: -250px;
+    left: -50px;
+    content: '';
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(#f00, #f0f)
+}
+
+.card {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    max-width: 500px;
+    min-width: 450px;
+    height: 300px;
+    max-height: 500px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    background: inherit;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border: none
+}
+
+.card .face {
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background: rgba(89, 30, 74, 1);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    backface-visibility: hidden
+}
+
+.card .face.front-face {
+    padding: 20px 30px;
+    position: absolute
+}
+
+.card .face.front-face .bank-name {
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 500
+}
+
+.card .face.front-face .emv-chip {
+    width: 80px
+}
+
+.card .face.front-face .wifi {
+    transform: rotate(90deg)
+}
+
+.card .face.front-face .card-number {
+    font-weight: 500;
+    letter-spacing: 6px;
+    font-size: 1.12rem;
+    text-shadow: 0 2px 1px #000500;
+    font-family: 'Orbitron', sans-serif
+}
+
+.card .face.front-face .card-details {
+    height: 100px
+}
+
+.card .face.front-face .card-details .expiry .text-uppercase {
+    font-size: 0.85rem;
+    line-height: 0.9rem
+}
+
+.card .face.front-face .card-details .expiry .month,
+.card .face.front-face .card-details .expiry .year {
+    font-size: 1.2rem;
+    font-family: 'Orbitron', sans-serif
+}
+
+.card .face.front-face .card-details .card-holder {
+    font-size: 1.1rem;
+    letter-spacing: 2px
+}
+
+.card .face.front-face .master img {
+    position: absolute;
+    bottom: 20px;
+    width: 100px;
+    height: 60px;
+    object-fit: contain
+}
+
+.card:hover .face.front-face {
+    transform: rotateY(180deg)
+}
+
+.card .face.back-face {
+    position: absolute;
+    z-index: 1000;
+    background: rgba(89, 30, 74, 1);
+    transform: rotateY(180deg)
+}
+
+.card:hover .face.back-face {
+    transform: rotateY(360deg)
+}
+
+.card .face.back-face .black-bar {
+    width: 100%;
+    height: 50px;
+    background-color: #111
+}
+
+.card .face.back-face .authorize {
+    font-size: 0.8rem;
+    letter-spacing: 2px
+}
+
+.card .face.back-face .white-bar {
+    width: 75%;
+    height: 35px;
+    margin-top: 10px;
+    background-color: #fff
+}
+
+.card .face.back-face .cvv {
+    position: absolute;
+    right: 65px;
+    letter-spacing: 3px;
+    top: 13px;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    color: #222;
+    font-weight: 600
+}
+
+.card .face.back-face .back-text {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    font-weight: normal;
+    color: #eee;
+    pointer-events: none
 }
