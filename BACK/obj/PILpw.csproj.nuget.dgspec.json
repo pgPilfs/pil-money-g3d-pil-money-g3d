@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj": {}
+    "E:\\PILFINAL\\BACK\\PILpw.csproj": {}
   },
   "projects": {
-    "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj": {
+    "E:\\PILFINAL\\BACK\\PILpw.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
+        "projectUniqueName": "E:\\PILFINAL\\BACK\\PILpw.csproj",
         "projectName": "PILpw",
-        "projectPath": "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
+        "projectPath": "E:\\PILFINAL\\BACK\\PILpw.csproj",
         "packagesPath": "C:\\Users\\pinte\\.nuget\\packages\\",
-        "outputPath": "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\obj\\",
+        "outputPath": "E:\\PILFINAL\\BACK\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pinte\\AppData\\Roaming\\NuGet\\NuGet.Config",

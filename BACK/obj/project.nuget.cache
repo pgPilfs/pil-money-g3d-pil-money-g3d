@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z/K7Jy4r+oQx2ygL5wcMuZi4oniqjt8l0qVoSJ0Q1EwiDgAoiwqsTOxjCBbb1nfh7q6mPnUJffKXVSy83Kb2KQ==",
+  "dgSpecHash": "0S1TZqiTlENDRnYuxC/xbdMZz8RmNsYynjKoz58FO/au+/wzgD/iBJehRjb6bn9SuYmm1rFsDhnnzrlCw1eodg==",
   "success": true,
-  "projectFilePath": "E:\\Pil\\pil-money-g3d-pil-money-g3d\\BACK\\PILpw.csproj",
+  "projectFilePath": "E:\\PILFINAL\\BACK\\PILpw.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pinte\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\pinte\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
