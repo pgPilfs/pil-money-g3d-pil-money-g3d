@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 //ver namespace
 namespace PILpw.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/operaciones")]
     [ApiController]
 
@@ -70,67 +70,95 @@ namespace PILpw.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create( OperacioneModel operacione)
+        public async Task<IActionResult> Create( OperacioneModel operacione, string? cvu)
         {
-
-            if (ModelState.IsValid)
+            if (cvu is null)
             {
-                if (operacione.IdTipoOperacion == 1 || operacione.IdTipoOperacion == 2)
+                if (ModelState.IsValid)
                 {
-                    var usuario = _context.Cuentas.Where(x => x.IdCuenta == operacione.IdCuenta).FirstOrDefault();
-                    if(operacione.IdTipoOperacion == 1)
+                    if (operacione.IdTipoOperacion == 1 || operacione.IdTipoOperacion == 2)
                     {
-                        usuario.Saldo -= operacione.Monto;
-                    }
-                    else
-                    {
-                        usuario.Saldo += operacione.Monto;
-                    }
-                    
-                    
-                    if (usuario.Saldo >= 0)
-                    {
-                        var subtotal = _mapper.Map<Cuenta>(usuario);
-                        _context.Update(subtotal);
-                        _context.SaveChanges();
-                        var entity = _mapper.Map<Operacione>(operacione);
-                        if(operacione.IdTipoOperacion == 1)
+                        var usuario = _context.Cuentas.Where(x => x.IdCuenta == operacione.IdCuenta).FirstOrDefault();
+                        if (operacione.IdTipoOperacion == 1)
                         {
-                            entity.Monto = entity.Monto * -1;
+                            usuario.Saldo -= operacione.Monto;
                         }
-                        
-                        entity.FechaOperacion = DateTime.Now.ToString("dd/MM/yyyy");
-                        _context.Add(entity);
-                        await _context.SaveChangesAsync();
-                        return Ok();
-                    }
-                    return StatusCode(500,"No se puede realizar la operación, saldo insuficiente");
-                }
-                else if (operacione.IdTipoOperacion == 3)
-                {
-                    var usuario = _context.Cuentas.Where(x => x.IdCuenta == operacione.IdCuenta).FirstOrDefault();
-                    var usuarioDestinatario = _context.Cuentas.Where(x => x.IdCuenta == operacione.Destinatario).FirstOrDefault();
-                    usuario.Saldo -= operacione.Monto;
-                    if (usuario.Saldo >= 0)
-                    {
-                        var subtotal = _mapper.Map<Cuenta>(usuario);
-                        _context.Update(subtotal);
-                        _context.SaveChanges();
-                        usuarioDestinatario.Saldo += operacione.Monto;
-                        var subtotaldes = _mapper.Map<Cuenta>(usuarioDestinatario);
-                        _context.Update(subtotaldes);
-                        _context.SaveChanges();
+                        else
+                        {
+                            usuario.Saldo += operacione.Monto;
+                        }
 
-                        var entity = _mapper.Map<Operacione>(operacione);
-                        entity.FechaOperacion = DateTime.Now.ToString("dd/MM/yyyy");
-                        entity.Monto = entity.Monto * -1;
-                        _context.Add(entity);
-                        await _context.SaveChangesAsync();
-                        return Ok();
+
+                        if (usuario.Saldo >= 0)
+                        {
+                            var subtotal = _mapper.Map<Cuenta>(usuario);
+                            _context.Update(subtotal);
+                            _context.SaveChanges();
+                            var entity = _mapper.Map<Operacione>(operacione);
+                            if (operacione.IdTipoOperacion == 1)
+                            {
+                                entity.Monto = entity.Monto * -1;
+                            }
+
+                            entity.FechaOperacion = DateTime.Now.ToString("dd/MM/yyyy");
+                            _context.Add(entity);
+                            await _context.SaveChangesAsync();
+                            return Ok();
+                        }
+                        return StatusCode(500, "No se puede realizar la operación, saldo insuficiente");
                     }
-                    return BadRequest("No se puede realizar la operación, saldo insuficiente");
+                    else if (operacione.IdTipoOperacion == 3)
+                    {
+                        var usuario = _context.Cuentas.Where(x => x.IdCuenta == operacione.IdCuenta).FirstOrDefault();
+                        var usuarioDestinatario = _context.Cuentas.Where(x => x.IdCuenta == operacione.Destinatario).FirstOrDefault();
+                        usuario.Saldo -= operacione.Monto;
+                        if (usuario.Saldo >= 0)
+                        {
+                            var subtotal = _mapper.Map<Cuenta>(usuario);
+                            _context.Update(subtotal);
+                            _context.SaveChanges();
+                            usuarioDestinatario.Saldo += operacione.Monto;
+                            var subtotaldes = _mapper.Map<Cuenta>(usuarioDestinatario);
+                            _context.Update(subtotaldes);
+                            _context.SaveChanges();
+
+                            var entity = _mapper.Map<Operacione>(operacione);
+                            entity.FechaOperacion = DateTime.Now.ToString("dd/MM/yyyy");
+                            entity.Monto = entity.Monto * -1;
+                            _context.Add(entity);
+                            await _context.SaveChangesAsync();
+                            return Ok();
+                        }
+                        return BadRequest("No se puede realizar la operación, saldo insuficiente");
+                    }
                 }
             }
+            else if(cvu is not null)
+            {
+                var usuario = _context.Cuentas.Where(x => x.IdCuenta == operacione.IdCuenta).FirstOrDefault();
+                var usuarioDestinatario = _context.Cuentas.Where(x => x.Cvu == cvu).FirstOrDefault();
+                usuario.Saldo -= operacione.Monto;
+                if (usuario.Saldo >= 0)
+                {
+                    var subtotal = _mapper.Map<Cuenta>(usuario);
+                    _context.Update(subtotal);
+                    _context.SaveChanges();
+                    usuarioDestinatario.Saldo += operacione.Monto;
+                    var subtotaldes = _mapper.Map<Cuenta>(usuarioDestinatario);
+                    _context.Update(subtotaldes);
+                    _context.SaveChanges();
+
+                    var entity = _mapper.Map<Operacione>(operacione);
+                    entity.FechaOperacion = DateTime.Now.ToString("dd/MM/yyyy");
+                    entity.Destinatario = usuarioDestinatario.IdCuenta;
+                    entity.Monto = entity.Monto * -1;
+                    _context.Add(entity);
+                    await _context.SaveChangesAsync();
+                    return Ok();
+                }
+                return BadRequest("No se puede realizar la operación, saldo insuficiente");
+            }
+           
             return BadRequest("el usuario no se cargo");
         }
 

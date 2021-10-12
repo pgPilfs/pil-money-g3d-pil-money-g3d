@@ -18,4 +18,8 @@ readonly urlmov= "https://localhost:44331/api/operaciones";
   Operaciones(objet:any){
     return this.http.post<any>(this.urlmov,objet);
   }
+
+  OperacionesCuenta(cvu:string,objet:any){
+    return this.http.post<any>(this.urlmov+"?cvu="+cvu,objet);
+  }
 }

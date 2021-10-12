@@ -72,8 +72,6 @@ getData = (): void => {
 }
 
 initForm(data:any){
-
-
 this.contactoForm = this.fb.group({
 alias: [data.alias],
 cvu: [data.cvu],

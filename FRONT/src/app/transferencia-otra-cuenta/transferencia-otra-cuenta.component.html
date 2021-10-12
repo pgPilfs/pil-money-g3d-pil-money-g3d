@@ -1,6 +1,7 @@
 <body>
     
-   
+    
+         
     <div class="container-fluid home-section">
         
             <div class="volver row">
@@ -10,54 +11,43 @@
                     <span class="links_name">Volver</span>
                     </a>
                 </div>
-                <span class="titulo-sup"> Transferencia a otra cuenta </span>
+                <span class="titulo-sup"> Transferencia a una cuenta </span>
             </div>
-        
+    <form [formGroup]="destinoForm" >      
         <!-- seleccion de transferencia -->
         <div class="wrapper bg-white mt-sm-5">
             <span class="titulo border-bottom" style="margin-bottom: 10px;"> Transferir desde </span>
+            
             <div class="dropdown listaCuenta">
                 <select name="mov" id="mov" class="bg-light" class="btn-mov" style="background-color: #591E4A; color:white">
-                    <option value="pesos" selected>CA $ N° 4017421-1 - $50.000,00</option>
-                    <option value="dolares" selected>CA $ N° 4017421-2 - U$D 500</option>
-                    <option value="cripto" selected>CA $ N° 4017421-3 - CTU 165</option>
+                    <option value="pesos" selected><span> $ CVU {{datos.cvu}} - $ {{datos.saldo}} </span></option>
+                    
                 </select>
             </div>
+            
             <div class="iputs row">
-                <label class="label" for="alias">
-
-                    <span class="span-txt">Alias</span>
-                    <input  class="input" type="text" id="alias" placeholder="Alias">
-                    
-                </label>
-                <div class="row">
-                    <label class="label" for="cvu">
-                        <span class="span-txt">Cvu/CBU</span>
-                        <input  class="input" type="text" id="cvu" placeholder="Cvu/CBU">
-                        
-                    </label>
-                </div>
-                
-                
-               
+                    <div class="col-md-6">
+                        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required" formControlName="cvu"> <span>CVU</span> </div>
+                    </div>
                 
             </div>
            
         </div>
-      
-            
-        
+    </form>   
+    
+    <form [formGroup]="operacionForm" (ngSubmit)="transferir(content)" >
+    
         <!-- Dinero -->
         <div class="wrapper bg-white mt-sm-5">
             <label class=" border-bottom titulo" style="margin-bottom: 10px;">¿Cuánto dinero querés enviar?</label>
             <div class="imput-dinero">
-                <label class="label" for="dinero">
-                    <span class="span-txt">$0.00</span>
-                    <input  class="input" type="number" id="dinero" placeholder="$0.00">
-                    
-                </label>
+                <div class="col-md-6">
+                    <div class="inputbox mt-3 mr-2"> <input type="number" name="name" class="form-control" required="required" formControlName="monto"> <span>Monto</span> </div>
+                </div>
+               
             </div>
         </div>
+    
     <!-- concepto -->
         <div class="wrapper bg-white mt-sm-5">
             <label class=" border-bottom titulo" style="margin-bottom: 10px;">Concepto</label>
@@ -80,17 +70,57 @@
                 Mensaje (opcional)
             </label>
             <div class="imput-mensaje">
-                <label class="label" for="mensaje">
-                    <span class="span-txt">Mensaje</span>
-                    <input  class="input" type="text" id="mensaje" placeholder="Mensaje">
-                    
-                </label>
+                <div class="col-md-6">
+                    <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required" > <span>Mensaje</span> </div>
+                </div>
             </div>
         </div>
         
          <button class="btn-block btn-color"
-            routerLink="/paginaprincipal/inicio" style="float: right;margin-right: 140px;margin-bottom: 20px;width: 200px;">Transferir</button>
-        
+            type="submit" style="float: right;margin-right: 140px;margin-bottom: 20px;width: 200px;">Transferir</button>
+    </form>    
     </div>
     
 </body>
+<ng-template #content let-modal>
+        
+         
+    <div class="modal-content rounded-0 p-4" style="align-items: center;border-radius: 30px;background-color: transparent;">
+        <div class='top'>
+          <div class="success-checkmark">
+            <div class="check-icon">
+              <span class="icon-line line-tip"></span>
+              <span class="icon-line line-long"></span>
+              <div class="icon-circle"></div>
+              <div class="icon-fix"></div>
+            </div>
+          </div>
+            <div class="headr">Transferencia Realizado</div>
+        </div>
+        
+        <div class="modal-body">
+          <div class="">
+            <div class="text-center" style="float: left;">
+              <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/inicio" (click)="modal.close()"> 
+                <a routerLink="/paginaprincipal/inicio">
+                  <i class="fas fa-home" style="color:white"></i>
+                </a>
+              </button><br>
+              <span class="links_name text-dark">Inicio</span>
+            </div>
+            <div class="text-center" style="float: right;margin-left: 30px;" >
+              <button class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal" routerlink="/paginaprincipal/mov-pesos" (click)="modal.close()"> 
+                <a routerLink="/paginaprincipal/inicio">
+                  <i class="fas fa-hand-holding-usd" style="color: white;"></i>
+                </a>
+              </button><br>
+              <span class="links_name text-dark" >Otra operacion</span>
+            </div>
+          </div>
+         
+        </div>
+         
+    </div>
+
+
+</ng-template>
